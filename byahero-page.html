@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,7 +16,7 @@
     rel="stylesheet" />
 </head>
 
-<body>
+<body class="detail-page">
   <header class="header">
     <div class="header__content">
       <div class="header__logo-container">
@@ -85,11 +85,20 @@
   <section class="project-details">
     <div class="main-container">
       <div class="project-details__content">
-        <div class="project-details__showcase-img-cont">
-          <img src="./assets/mockups/byahero-sc-1.jpg" alt="Project Image" class="project-details__showcase-img" style="display: block; margin:40px auto; width: 50%; " />
-          <img src="./assets/mockups/byahero-sc-2.jpg" alt="Project Image" class="project-details__showcase-img" style=" display: block; margin:40px auto; width: 50%;" />
-          <img src="./assets/mockups/byahero-sc-3.jpg" alt="Project Image" class="project-details__showcase-img" style=" display: block; margin:40px auto; width: 50%;" />
-          <img src="./assets/mockups/byahero-sc-4.jpg" alt="Project Image" class="project-details__showcase-img" style=" display: block; margin:40px auto; width: 50%;" />
+        <div class="detail-carousel">
+          <div class="detail-carousel__nav">
+            <button class="detail-carousel__btn detail-carousel__btn--prev" aria-label="Previous screenshot" disabled>&#8592;</button>
+            <div class="detail-carousel__viewport">
+              <div class="detail-carousel__track">
+                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-1.webp" alt="Byahero screenshot 1" loading="lazy" /></div>
+                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-2.webp" alt="Byahero screenshot 2" loading="lazy" /></div>
+                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-3.webp" alt="Byahero screenshot 3" loading="lazy" /></div>
+                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-4.webp" alt="Byahero screenshot 4" loading="lazy" /></div>
+              </div>
+            </div>
+            <button class="detail-carousel__btn detail-carousel__btn--next" aria-label="Next screenshot">&#8594;</button>
+          </div>
+          <p class="detail-carousel__counter"><span class="dc-current">1</span> / 4</p>
         </div>
         <div class="project-details__content-main">
           <div class="project-details__desc">
@@ -138,9 +147,9 @@
             </div>
           </div>
           <div class="project-details__links">
-            <h3 class="project-details__content-title">See Code</h3>
-            <a href="https://github.com/JohnDominicJasmin/Byahero_App" class="btn btn--med btn--theme project-details__links-btn" target="_blank">Source Code</a>
-            <a href="/" class="btn btn--med btn--theme-inv project-details__links-btn" >Go Back</a >
+            <!-- <h3 class="project-details__content-title">See Code</h3> -->
+            <!-- <a href="https://github.com/JohnDominicJasmin/Byahero_App" class="btn btn--med btn--theme project-details__links-btn" target="_blank"></a> -->
+            <a href="./index.html" class="btn btn--med btn--theme-inv project-details__links-btn">Go Back</a>
           </div>
         </div>
       </div>
@@ -194,7 +203,7 @@
       </div>
 
       <div class="main-footer__lower">
-        &copy; Copyright 2021. Made by
+        &copy; Copyright 2026. Made by
         <a href="#">John Dominic </a>
       </div>
     </div>
