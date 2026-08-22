@@ -1,426 +1,314 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>John Dominic | Senior Android Developer & AI Automation Engineer</title>
-  <meta name="description" content="Portfolio" />
-  <link rel = "icon" href = "./assets/png/profile-picture.png" type = "image/x-icon">
-  <link rel="stylesheet" href="css/style.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
-
 <body>
-  <header class="header">
-    <div class="header__content">
-      <div class="header__logo-container">
-        <div class="header__logo-img-cont">
-          <img src="./assets/png/profile-picture.png" alt="John Dominic Logo Image" class="header__logo-img" />
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0F8C82"/><text x="100" y="115" font-family="monospace" font-size="64" font-weight="700" fill="#fff" text-anchor="middle">JD</text></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+body { margin: 0; }
+a { text-decoration: none; }
+a:link, a:visited { color: inherit; }
+</style>
+</helmet>
+<div style="font-family: 'Inter', sans-serif; background: {{ bg }}; color: {{ text }}; position: relative;">
+
+  <header style="position: sticky; top: 0; z-index: 100; background: color-mix(in oklab, {{ bg }} 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid {{ border }};">
+    <div style="max-width: 1180px; margin: auto; width: 92%; display: flex; align-items: center; justify-content: space-between; height: 76px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1.5px solid {{ border }};">
+          <img src="assets/profile-picture.png" alt="John Dominic" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <span class="header__logo-sub">John Dominic Jasmin</span>
+        <span style="font-size: 14.5px; font-weight: 700;">John Dominic Jasmin</span>
       </div>
-      <div class="header__main">
-        <ul class="header__links">
-          <li class="header__link-wrapper">
-            <a href="./index.html" class="header__link"> Home </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#about" class="header__link">About </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#ai-automation" class="header__link"> AI Work </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#mobile-projects" class="header__link"> Mobile </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#contact" class="header__link"> Contact </a>
-          </li>
-        </ul>
-        <div class="header__main-ham-menu-cont">
-          <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close"
-            class="header__main-ham-menu-close d-none" />
-        </div>
-      </div>
-    </div>
-    <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link">
-            <a href="./index.html"> Home </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#about"> About </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#ai-automation"> AI Work </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#mobile-projects"> Mobile </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#contact"> Contact </a>
-          </li>
-        </ul>
-      </div>
+      <nav style="display: flex; align-items: center; gap: 4px;">
+        <a href="#about" style="padding: 10px 14px; font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">About</a>
+        <a href="#skills" style="padding: 10px 14px; font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">Skills</a>
+        <a href="#ai-automation" style="padding: 10px 14px; font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">AI Systems</a>
+        <sc-if value="{{ showMobileTrack }}">
+          <a href="#mobile-projects" style="padding: 10px 14px; font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">Mobile</a>
+        </sc-if>
+        <a href="#contact" style="margin-left: 8px; padding: 9px 20px; font-size: 13px; font-weight: 600; color: #fff; background: {{ accent }}; border-radius: 8px;" style-hover="background: {{ accentHover }};">Get in touch</a>
+      </nav>
     </div>
   </header>
-  <section class="home-hero">
-    <div class="home-hero__content">
-      <h1 class="heading-primary">Hey, I'm John Dominic — Senior Android Developer & AI Automation Engineer</h1>
-      <div class="home-hero__info">
-        <p class="text-primary">
-          I build AI-powered automation systems and production-grade Android apps. I help businesses eliminate manual work through n8n, OpenAI, GoHighLevel, and Supabase — and build scalable mobile apps using Kotlin and React Native.
-        </p>
-      </div>
-      <div class="home-hero__cta">
-        <a href="#ai-automation" class="btn btn--bg">My Work</a>
-      </div>
+
+  <section style="max-width: 1180px; margin: auto; width: 92%; padding: 110px 0 90px; text-align: center;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accent }}; margin-bottom: 22px;">AI Automation Engineer · Android Developer</div>
+    <h1 style="font-size: 54px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin: 0 auto; max-width: 820px; color: {{ text }};">I build the systems businesses run on.</h1>
+    <p style="font-size: 18px; line-height: 1.7; color: {{ textSecondary }}; max-width: 640px; margin: 26px auto 0;">AI chatbots, voice agents, and lead-routing pipelines that work while you sleep — plus production Android apps built in Kotlin that don't break.</p>
+    <div style="display: flex; gap: 14px; justify-content: center; margin-top: 42px; flex-wrap: wrap;">
+      <a href="#ai-automation" style="padding: 14px 30px; font-size: 14px; font-weight: 600; color: #fff; background: {{ accent }}; border-radius: 10px;" style-hover="background: {{ accentHover }};">See the AI work</a>
+      <a href="#contact" style="padding: 14px 30px; font-size: 14px; font-weight: 600; color: {{ text }}; background: transparent; border: 1.5px solid {{ border }}; border-radius: 10px;" style-hover="border-color: {{ accent }}; color: {{ accent }};">Get in touch</a>
     </div>
-    <div class="home-hero__socials">
-
-      <div class="home-hero__social">
-        <a href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0" class="home-hero__social-icon-link" rel="noopener noreferrer" target="_blank">
-          <img src="./assets/png/linkedin-ico.png" alt="icon" class="home-hero__social-icon" />
-        </a>
-      </div>
-
-      <div class="home-hero__social">
-        <a href="https://github.com/JohnDominicJasmin" class="home-hero__social-icon-link" rel="noopener noreferrer" target="_blank">
-          <img src="./assets/png/github-ico.png" alt="icon" class="home-hero__social-icon" />
-        </a>
-      </div>
-
-      <div class="home-hero__social">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=johndominicjasmin@gmail.com" class="home-hero__social-icon-link" rel="noopener noreferrer" target="_blank">
-          <img src="./assets/svg/mail.svg" alt="icon" class="home-hero__social-icon" />
-        </a>
-      </div>
-
-      <div class="home-hero__social">
-        <a href="#" class="home-hero__social-icon-link" rel="noopener noreferrer" target="_blank">
-          <img src="./assets/svg/curriculum-resume-svgrepo-com.svg" alt="icon" class="home-hero__social-icon" />
-        </a>
-      </div>
-    </div>
-    <div class="home-hero__mouse-scroll-cont">
-      <div class="mouse"></div>
+    <div style="display: flex; gap: 22px; justify-content: center; margin-top: 56px;">
+      <a href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0" target="_blank" style="font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">LinkedIn</a>
+      <a href="https://github.com/JohnDominicJasmin" target="_blank" style="font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">GitHub</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=johndominicjasmin@gmail.com" target="_blank" style="font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">Email</a>
+      <a href="#" style="font-size: 13px; font-weight: 500; color: {{ textSecondary }};" style-hover="color: {{ text }};">Resume</a>
     </div>
   </section>
-  <section id="about" class="about sec-pad">
-    <div class="main-container">
-      <h2 class="heading heading-sec heading-sec__mb-med">
-        <span class="heading-sec__main">About Me</span>
-        <span class="heading-sec__sub">
-          Here you will find more information about me, what I do, and my current skills mostly in terms of programming and technology
-        </span>
-      </h2>
-      <div class="about__content">
-        <div class="about__content-main">
-          <h3 class="about__content-title">Get to know me!</h3>
-          <div class="about__content-details">
-            <p class="about__content-details-para">
-              Hey! I'm <strong>John Dominic</strong> — an <strong>AI Automation Engineer</strong> and Senior Android Developer. The majority of my work is building <strong>intelligent automation systems</strong> for businesses: AI chatbots, voice agents, lead routing pipelines, and end-to-end workflow automation powered by <strong>n8n, OpenAI, GoHighLevel, and Vapi</strong>. I help businesses eliminate repetitive manual work and scale faster.
-            </p>
-            <p class="about__content-details-para">
-              The other side of my craft is <strong>production-grade Android development</strong> in Kotlin — building reliable, well-architected mobile apps. Feel free to <strong>contact</strong> me here.
-            </p>
+
+  <section id="about" style="background: {{ surface }}; border-top: 1px solid {{ border }}; border-bottom: 1px solid {{ border }}; padding: 100px 0;">
+    <div style="max-width: 720px; margin: auto; width: 92%;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accent }}; margin-bottom: 16px;">About</div>
+      <h2 style="font-size: 28px; font-weight: 700; margin: 0 0 22px; color: {{ text }};">Get to know me</h2>
+      <p style="font-size: 16.5px; color: {{ textSecondary }}; line-height: 1.85; margin: 0 0 18px;">I'm John Dominic, an <strong style="color: {{ text }};">AI Automation Engineer</strong> and Senior Android Developer. Most of my work is building intelligent automation for businesses — AI chatbots, voice agents, lead-routing pipelines, and full workflow automation powered by <strong style="color: {{ text }};">n8n, OpenAI, GoHighLevel, and Vapi</strong>. The result: less manual work, faster scaling.</p>
+      <p style="font-size: 16.5px; color: {{ textSecondary }}; line-height: 1.85; margin: 0 0 30px;">The other half of my craft is <strong style="color: {{ text }};">production-grade Android development</strong> in Kotlin — apps built to be reliable and well-architected, not just shipped.</p>
+      <a href="#contact" style="display: inline-block; padding: 12px 26px; font-size: 13.5px; font-weight: 600; color: #fff; background: {{ accent }}; border-radius: 8px;" style-hover="background: {{ accentHover }};">Contact</a>
+    </div>
+  </section>
+
+  <section id="skills" style="padding: 100px 0;">
+    <div style="max-width: 1180px; margin: auto; width: 92%;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accent }}; margin-bottom: 16px;">Skills</div>
+        <h2 style="font-size: 30px; font-weight: 700; margin: 0 0 14px; color: {{ text }};">What I work with</h2>
+        <p style="font-size: 15.5px; color: {{ textSecondary }}; max-width: 460px; margin: 0 auto; line-height: 1.7;">Two toolsets, one goal — ship reliable systems fast.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 18px;">Automation &amp; AI</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <sc-for list="{{ automationSkills }}" as="s" hint-placeholder-count="11">
+              <div style="padding: 9px 18px; font-size: 14px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: {{ accentTint }}; border: 1px solid {{ accentTintBorder }}; border-radius: 8px; color: {{ text }};">{{ s }}</div>
+            </sc-for>
           </div>
-          <a href="#contact" class="btn btn--med btn--theme dynamicBgClr">Contact</a>
         </div>
-        <div class="about__content-skills">
-          <h3 class="about__content-title">My Skills</h3>
-          <div class="skills">
-            <div class="skills__skill skills__skill--highlight">n8n</div>
-            <div class="skills__skill skills__skill--highlight">OpenAI</div>
-            <div class="skills__skill skills__skill--highlight">Python</div>
-            <div class="skills__skill skills__skill--highlight">FastAPI</div>
-            <div class="skills__skill skills__skill--highlight">JavaScript</div>
-            <div class="skills__skill skills__skill--highlight">Node.js</div>
-            <div class="skills__skill skills__skill--highlight">REST API</div>
-            <div class="skills__skill skills__skill--highlight">GoHighLevel</div>
-            <div class="skills__skill skills__skill--highlight">Vapi</div>
-            <div class="skills__skill skills__skill--highlight">Meta Graph API</div>
-            <div class="skills__skill skills__skill--highlight">Supabase</div>
-            <div class="skills__skill">Kotlin</div>
-            <div class="skills__skill">Android</div>
-            <div class="skills__skill">Firebase</div>
-            <div class="skills__skill">Java</div>
-            <div class="skills__skill">Jetpack Compose</div>
-            <div class="skills__skill">GIT</div>
-            <div class="skills__skill">SQL</div>
-            <div class="skills__skill">NoSQL</div>
-            <div class="skills__skill">Figma</div>
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 18px;">Mobile &amp; Backend</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <sc-for list="{{ mobileSkills }}" as="s" hint-placeholder-count="9">
+              <div style="padding: 9px 18px; font-size: 14px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: {{ cardBg }}; border: 1px solid {{ border }}; border-radius: 8px; color: {{ textSecondary }};">{{ s }}</div>
+            </sc-for>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <section id="ai-automation" class="projects sec-pad">
-    <div class="main-container">
-      <h2 class="heading heading-sec heading-sec__mb-bg">
-        <span class="heading-sec__main">AI Automation</span>
-        <span class="heading-sec__sub">
-          Real-world AI automation systems built for businesses — from messenger chatbots and voice agents to lead routing and ROI calculators
-        </span>
-      </h2>
-      <!-- BENTO GRID — 3 cols: row1 wide+1, row2 three equal -->
-      <div class="bento-grid">
 
-        <article class="bento-card bento-card--lg">
-          <div class="bento-card__img">
-            <img src="./assets/ai-automation/cs1_portfolio_cover.png" alt="Multi-Branch AI Messenger Chatbot" loading="lazy" />
-          </div>
-          <div class="bento-card__body">
-            <div class="bento-tags">
-              <span class="bento-tag">n8n</span>
-              <span class="bento-tag">OpenAI Assistants API</span>
-              <span class="bento-tag">Supabase</span>
-              <span class="bento-tag">Meta Graph API</span>
-            </div>
-            <h3 class="bento-card__title">Multi-Branch AI Messenger Chatbot</h3>
-            <p class="bento-card__desc">AI chatbot on Facebook Messenger handling inquiries and bookings for a motorcycle shop across multiple Metro Manila branches — 24/7, responses in seconds instead of hours.</p>
-            <a href="#" class="bento-btn" data-loom="https://www.loom.com/embed/893b8d1747d14f79be7aebfcd1a8a3a8">Watch Demo →</a>
-          </div>
-        </article>
-
-        <article class="bento-card">
-          <div class="bento-card__img">
-            <img src="./assets/ai-automation/cs5_prop_connect.png" alt="PropConnect AI Voice Agent" loading="lazy" />
-          </div>
-          <div class="bento-card__body">
-            <div class="bento-tags">
-              <span class="bento-tag">Vapi</span>
-              <span class="bento-tag">n8n</span>
-              <span class="bento-tag">GoHighLevel</span>
-              <span class="bento-tag">OpenAI</span>
-            </div>
-            <h3 class="bento-card__title">PropConnect AI Voice Agent</h3>
-            <p class="bento-card__desc">AI voice agent handling inbound real estate calls 24/7 — qualifies leads and books viewings with under 5-second response time.</p>
-            <a href="#" class="bento-btn" data-loom="https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342">Watch Demo →</a>
-          </div>
-        </article>
-
-        <article class="bento-card">
-          <div class="bento-card__img">
-            <img src="./assets/ai-automation/cs09_lead_route_cover.png" alt="Smart Lead Routing System" loading="lazy" />
-          </div>
-          <div class="bento-card__body">
-            <div class="bento-tags">
-              <span class="bento-tag">n8n</span>
-              <span class="bento-tag">GoHighLevel</span>
-              <span class="bento-tag">OpenAI</span>
-              <span class="bento-tag">Supabase</span>
-            </div>
-            <h3 class="bento-card__title">Smart Lead Routing System</h3>
-            <p class="bento-card__desc">Scores leads High/Medium/Low, generates personalized replies, and routes them to the right CRM pipeline in under 2 seconds.</p>
-            <a href="#" class="bento-btn" data-loom="https://www.loom.com/embed/ac73a668c366408798b56963c4835e0a">Watch Demo →</a>
-          </div>
-        </article>
-
-        <article class="bento-card">
-          <div class="bento-card__img">
-            <img src="./assets/ai-automation/cs_8_voice_appointment_setter.png" alt="AI Appointment Setter" loading="lazy" />
-          </div>
-          <div class="bento-card__body">
-            <div class="bento-tags">
-              <span class="bento-tag">Vapi</span>
-              <span class="bento-tag">n8n</span>
-              <span class="bento-tag">GoHighLevel</span>
-            </div>
-            <h3 class="bento-card__title">AI Appointment Setter</h3>
-            <p class="bento-card__desc">"Alex" — AI voice agent that qualifies leads and books property viewings in under 5 seconds, with instant CRM sync.</p>
-            <a href="#" class="bento-btn" data-loom="https://www.loom.com/embed/c6ad99c6f2b848e99f99853f8c5ce489">Watch Demo →</a>
-          </div>
-        </article>
-
-        <article class="bento-card">
-          <div class="bento-card__img">
-            <img src="./assets/ai-automation/cs3_solar_roi_cover.png" alt="Solar ROI Calculator" loading="lazy" />
-          </div>
-          <div class="bento-card__body">
-            <div class="bento-tags">
-              <span class="bento-tag">n8n</span>
-              <span class="bento-tag">OpenAI</span>
-              <span class="bento-tag">React Native</span>
-              <span class="bento-tag">Supabase</span>
-            </div>
-            <h3 class="bento-card__title">Solar ROI Calculator</h3>
-            <p class="bento-card__desc">Cross-platform app delivering solar ROI estimates in under 2 minutes with automated lead capture and pipeline management.</p>
-            <a href="#" class="bento-btn" data-loom="https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b">Watch Demo →</a>
-          </div>
-        </article>
-
+  <div style="display: flex; flex-direction: column;">
+  <section id="ai-automation" style="max-width: 1180px; margin: auto; width: 92%; padding: 100px 0 30px; order: {{ aiOrder }};">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 44px; flex-wrap: wrap;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accent }}; margin-bottom: 12px;">Track 01</div>
+        <h2 style="font-size: 30px; font-weight: 700; margin: 0; color: {{ text }};">AI Automation</h2>
       </div>
+      <p style="font-size: 15.5px; color: {{ textSecondary }}; max-width: 420px; margin: 0; line-height: 1.7;">Real systems running in production — chatbots, voice agents, lead routing, and ROI tools.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <article style="grid-column: span 2; display: flex; background: {{ cardBg }}; border: 1px solid {{ border }}; border-radius: 16px; overflow: hidden;" style-hover="border-color: {{ accent }};">
+        <div style="width: 46%; flex-shrink: 0; overflow: hidden;"><img src="assets/cs1_portfolio_cover.png" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+        <div style="padding: 28px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">n8n</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">OpenAI Assistants</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Supabase</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Meta Graph API</span>
+          </div>
+          <h3 style="font-size: 19px; font-weight: 700; color: {{ text }}; margin: 0;">Multi-Branch AI Messenger Chatbot</h3>
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Problem</div>
+            <p style="font-size: 14px; color: {{ textSecondary }}; line-height: 1.6; margin: 0 0 10px;">{{ featuredProblem }}</p>
+          </div>
+          <p style="font-size: 14.5px; color: {{ textSecondary }}; line-height: 1.75; margin: 0;">AI chatbot on Facebook Messenger handling inquiries and bookings for a motorcycle shop across multiple Metro Manila branches.</p>
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Result</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: {{ accent }}; font-weight: 600;">{{ featuredResult }}</div>
+          </div>
+          <button onClick="{{ featuredDemo }}" style="margin-top: auto; align-self: flex-start; font-size: 13px; font-weight: 600; color: {{ text }}; background: transparent; border: 1.5px solid {{ border }}; padding: 9px 18px; border-radius: 8px; cursor: pointer;" style-hover="background: {{ text }}; color: {{ bg }}; border-color: {{ text }};">Watch demo →</button>
+        </div>
+      </article>
+
+      <sc-for list="{{ aiCards }}" as="c" hint-placeholder-count="4">
+        <article style="display: flex; flex-direction: column; background: {{ cardBg }}; border: 1px solid {{ border }}; border-radius: 16px; overflow: hidden;" style-hover="border-color: {{ accent }};">
+          <div style="width: 100%; height: 190px; overflow: hidden;"><img src="{{ c.img }}" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <sc-for list="{{ c.tags }}" as="t" hint-placeholder-count="3">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">{{ t }}</span>
+              </sc-for>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 700; color: {{ text }}; margin: 0;">{{ c.title }}</h3>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Problem</div>
+              <p style="font-size: 13.5px; color: {{ textSecondary }}; line-height: 1.6; margin: 0;">{{ c.problem }}</p>
+            </div>
+            <p style="font-size: 14px; color: {{ textSecondary }}; line-height: 1.7; margin: 0; flex: 1;">{{ c.desc }}</p>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Result</div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: {{ accent }}; font-weight: 600;">{{ c.result }}</div>
+            </div>
+            <button onClick="{{ c.openDemo }}" style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: {{ text }}; background: transparent; border: 1.5px solid {{ border }}; padding: 8px 16px; border-radius: 8px; cursor: pointer;" style-hover="background: {{ text }}; color: {{ bg }}; border-color: {{ text }};">Watch demo →</button>
+          </div>
+        </article>
+      </sc-for>
     </div>
   </section>
-  <section id="mobile-projects" class="projects sec-pad">
-    <div class="main-container">
-      <h2 class="heading heading-sec heading-sec__mb-bg">
-        <span class="heading-sec__main">Mobile Projects</span>
-        <span class="heading-sec__sub">
-          Android and desktop applications I've built — from community tools to consumer apps
-        </span>
-      </h2>
 
-      <!-- CAROUSEL — 3 visible, prev/next buttons -->
-      <div class="carousel-container">
-
-        <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide" disabled>&#8592;</button>
-
-        <div class="carousel-viewport">
-          <div class="carousel-track">
-
-            <article class="bento-card carousel-card">
-              <div class="bento-card__img">
-                <img src="./assets/mockups/cyclistance-3.png" alt="Cyclistance" loading="lazy" style="object-position: top;" />
-              </div>
-              <div class="bento-card__body">
-                <div class="bento-tags">
-                  <span class="bento-tag bento-tag--blue">Android</span>
-                  <span class="bento-tag bento-tag--blue">Kotlin</span>
-                  <span class="bento-tag bento-tag--blue">Firebase</span>
-                  <span class="bento-tag bento-tag--blue">Google Maps API</span>
-                </div>
-                <h3 class="bento-card__title">Cyclistance</h3>
-                <p class="bento-card__desc">Android app that helps cyclists order roadside assistance within clicks — the closest available helper arrives at your exact GPS location.</p>
-                <a href="./cyclistance-page.html" class="bento-btn" target="_blank">More Details →</a>
-              </div>
-            </article>
-
-            <article class="bento-card carousel-card">
-              <div class="bento-card__img">
-                <img src="./assets/mockups/coinsearch2.webp" alt="CoinSearch" loading="lazy" />
-              </div>
-              <div class="bento-card__body">
-                <div class="bento-tags">
-                  <span class="bento-tag bento-tag--blue">Android</span>
-                  <span class="bento-tag bento-tag--blue">Kotlin</span>
-                  <span class="bento-tag bento-tag--blue">REST API</span>
-                </div>
-                <h3 class="bento-card__title">CoinSearch</h3>
-                <p class="bento-card__desc">Android app for searching crypto coins and their live market data — built for quick familiarity with the crypto market.</p>
-                <a href="./crypto-page.html" class="bento-btn" target="_blank">More Details →</a>
-              </div>
-            </article>
-
-            <article class="bento-card carousel-card">
-              <div class="bento-card__img">
-                <img src="./assets/mockups/byahero-prev-sc.webp" alt="Byahero" loading="lazy" />
-              </div>
-              <div class="bento-card__body">
-                <div class="bento-tags">
-                  <span class="bento-tag bento-tag--blue">Android</span>
-                  <span class="bento-tag bento-tag--blue">Kotlin</span>
-                  <span class="bento-tag bento-tag--blue">Google Maps</span>
-                </div>
-                <h3 class="bento-card__title">Byahero</h3>
-                <p class="bento-card__desc">Commuter app that alerts riders when their stop is approaching — no more missing your destination or falling asleep on the bus.</p>
-                <a href="./byahero-page.html" class="bento-btn" target="_blank">More Details →</a>
-              </div>
-            </article>
-
-
-          </div>
+  <sc-if value="{{ showMobileTrack }}">
+    <section id="mobile-projects" style="max-width: 1180px; margin: auto; width: 92%; padding: 90px 0 100px; order: {{ mobileOrder }};">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 44px; flex-wrap: wrap;">
+        <div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accent }}; margin-bottom: 12px;">Track 02</div>
+          <h2 style="font-size: 30px; font-weight: 700; margin: 0; color: {{ text }};">Mobile Projects</h2>
         </div>
-
-        <button class="carousel-btn carousel-btn--next" aria-label="Next slide">&#8594;</button>
-
+        <p style="font-size: 15.5px; color: {{ textSecondary }}; max-width: 420px; margin: 0; line-height: 1.7;">Android apps built end-to-end — from idea to Play Store, in Kotlin.</p>
       </div>
-    </div>
-  </section>
-  <section id="contact" class="contact sec-pad dynamicBg">
-    <div class="main-container">
-      <h2 class="heading heading-sec heading-sec__mb-med">
-        <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-        <span class="heading-sec__sub heading-sec__sub--lt">
-          Feel free to Contact me by submitting the form below and I will get back to you as soon as possible
 
-        </span>
-      </h2>
-      <div class="contact__form-container">
-        <form name="contact" method="POST" data-netlify="true" class="contact__form">
-          <div class="contact__form-field">
-            <label class="contact__form-label" for="name">Name</label>
-            <input required placeholder="Enter Your Name" type="text" class="contact__form-input" name="name"
-              id="name" />
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 780px;">
+        <article style="display: flex; flex-direction: column; background: {{ cardBg }}; border: 1px solid {{ border }}; border-radius: 16px; overflow: hidden;" style-hover="border-color: {{ accent }};">
+          <div style="width: 100%; height: 190px; overflow: hidden; background: {{ surface }}; display: flex; align-items: center; justify-content: center;"><img src="assets/cyclistance-sc-1.png" style="width: 100%; height: 100%; object-fit: contain; display: block;"></div>
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Android</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Kotlin</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Firebase</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 700; color: {{ text }}; margin: 0;">Cyclistance</h3>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Problem</div>
+              <p style="font-size: 13.5px; color: {{ textSecondary }}; line-height: 1.6; margin: 0;">Cyclists stranded with no fast way to call for roadside help.</p>
+            </div>
+            <p style="font-size: 14px; color: {{ textSecondary }}; line-height: 1.7; margin: 0; flex: 1;">Helps cyclists order roadside assistance in a few taps — the closest available helper arrives at your exact GPS location.</p>
+            <a href="./cyclistance-page.html" style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: {{ text }}; background: transparent; border: 1.5px solid {{ border }}; padding: 8px 16px; border-radius: 8px;" style-hover="background: {{ text }}; color: {{ bg }}; border-color: {{ text }};">More details →</a>
           </div>
-          <div class="contact__form-field">
-            <label class="contact__form-label" for="email">Email</label>
-            <input required placeholder="Enter Your Email" type="text" class="contact__form-input" name="email"
-              id="email" />
+        </article>
+
+        <article style="display: flex; flex-direction: column; background: {{ cardBg }}; border: 1px solid {{ border }}; border-radius: 16px; overflow: hidden;" style-hover="border-color: {{ accent }};">
+          <div style="width: 100%; height: 190px; overflow: hidden;"><img src="assets/byahero-prev-sc.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block;"></div>
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1;">
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Android</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Kotlin</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: {{ textSecondary }}; background: {{ surface }}; border: 1px solid {{ border }}; padding: 3px 9px; border-radius: 5px; white-space: nowrap; flex-shrink: 0;">Google Maps</span>
+            </div>
+            <h3 style="font-size: 17px; font-weight: 700; color: {{ text }}; margin: 0;">Byahero</h3>
+            <div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: {{ textMuted }}; margin-bottom: 4px;">Problem</div>
+              <p style="font-size: 13.5px; color: {{ textSecondary }}; line-height: 1.6; margin: 0;">Missing your stop because there's no heads-up before it arrives.</p>
+            </div>
+            <p style="font-size: 14px; color: {{ textSecondary }}; line-height: 1.7; margin: 0; flex: 1;">Alerts commuters when their stop is approaching — no more missing your destination or falling asleep on the bus.</p>
+            <a href="./byahero-page.html" style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: {{ text }}; background: transparent; border: 1.5px solid {{ border }}; padding: 8px 16px; border-radius: 8px;" style-hover="background: {{ text }}; color: {{ bg }}; border-color: {{ text }};">More details →</a>
           </div>
-          <div class="contact__form-field">
-            <label class="contact__form-label" for="message">Message</label>
-            <textarea required cols="30" rows="10" class="contact__form-input" placeholder="Enter Your Message"
-              name="message" id="message"></textarea>
-          </div>
-          <button type="submit" class="btn btn--theme contact__btn">
-            Submit
-          </button>
-        </form>
+        </article>
       </div>
-    </div>
-  </section>
-  <footer class="main-footer">
-    <div class="main-container">
-      <div class="main-footer__upper">
-        <div class="main-footer__row main-footer__row-1">
-          <h2 class="heading heading-sm main-footer__heading-sm">
-            <span>Social</span>
-          </h2>
-          <div class="main-footer__social-cont">
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0">
-              <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/JohnDominicJasmin">
-              <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://mail.google.com/mail/?view=cm&fs=1&to=johndominicjasmin@gmail.com">
-              <img class="main-footer__icon" src="./assets/svg/mail.svg" alt="icon" />
-            </a>
-
-          </div>
-        </div>
-        <div class="main-footer__row main-footer__row-2">
-          <h4 class="heading heading-sm text-lt">John Doe</h4>
-          <p class="main-footer__short-desc">
-           Senior Android Developer & AI Automation Engineer. I build AI-powered automation systems and production-grade Android apps that help businesses eliminate manual work and scale faster.
-          </p>
-        </div>
-      </div>
-
-
-      <div class="main-footer__lower">
-        &copy; Copyright 2026. Made by
-        <a href="#">John Dominic</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Video Modal -->
-  <div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Demo video">
-    <div class="video-modal__backdrop"></div>
-    <div class="video-modal__container">
-      <button class="video-modal__close" aria-label="Close video">&times;</button>
-      <div class="video-modal__iframe-wrap">
-        <iframe id="video-modal__iframe" src="" frameborder="0" allowfullscreen allow="autoplay; fullscreen; picture-in-picture"></iframe>
-      </div>
-    </div>
+    </section>
+  </sc-if>
   </div>
 
-  <script src="./index.js"></script>
-</body>
+  <section id="contact" style="background: {{ dark }}; padding: 100px 0 0;">
+    <div style="max-width: 1180px; margin: auto; width: 92%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding-bottom: 90px;">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: {{ accentLight }}; margin-bottom: 16px;">Get in touch</div>
+        <h2 style="font-size: 32px; font-weight: 700; color: #fff; margin: 0 0 18px; max-width: 380px;">Let's build something.</h2>
+        <p style="font-size: 15.5px; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 380px; margin: 0 0 32px;">Automating a workflow, or need a senior Android developer on your team — tell me what you're working on.</p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=johndominicjasmin@gmail.com" target="_blank" style="display: block; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 22px;" style-hover="color: {{ accentLight }};">johndominicjasmin@gmail.com</a>
+        <div style="display: flex; gap: 20px;">
+          <a href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0" target="_blank" style="font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.55);" style-hover="color: #fff;">LinkedIn</a>
+          <a href="https://github.com/JohnDominicJasmin" target="_blank" style="font-size: 13.5px; font-weight: 500; color: rgba(255,255,255,0.55);" style-hover="color: #fff;">GitHub</a>
+        </div>
+      </div>
+      <form style="display: flex; flex-direction: column; gap: 18px;">
+        <div>
+          <label style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Name</label>
+          <input placeholder="Your name" style="width: 100%; box-sizing: border-box; padding: 13px 16px; color: #fff; font-size: 14.5px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;">
+        </div>
+        <div>
+          <label style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Email</label>
+          <input placeholder="you@company.com" style="width: 100%; box-sizing: border-box; padding: 13px 16px; color: #fff; font-size: 14.5px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px;">
+        </div>
+        <div>
+          <label style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Message</label>
+          <textarea rows="4" placeholder="What are you building?" style="width: 100%; box-sizing: border-box; padding: 13px 16px; color: #fff; font-size: 14.5px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; font-family: inherit; resize: none;"></textarea>
+        </div>
+        <button type="submit" style="padding: 14px; font-size: 13.5px; font-weight: 600; border-radius: 8px; background: {{ accent }}; color: #fff; border: none; cursor: pointer;" style-hover="background: {{ accentHover }};">Send message</button>
+      </form>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.08);">
+      <div style="max-width: 1180px; margin: auto; width: 92%; padding: 26px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <span style="font-size: 13px; color: rgba(255,255,255,0.35);">© 2026 John Dominic Jasmin</span>
+        <span style="font-size: 13px; color: rgba(255,255,255,0.35);">Senior Android Developer &amp; AI Automation Engineer</span>
+      </div>
+    </div>
+  </section>
 
+  <sc-if value="{{ videoUrl }}">
+    <div style="position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px;">
+      <div onClick="{{ closeVideo }}" style="position: absolute; inset: 0; background: rgba(0,0,0,0.8);"></div>
+      <div style="position: relative; z-index: 1; width: 100%; max-width: 900px; background: #000; border-radius: 20px; overflow: hidden;">
+        <button onClick="{{ closeVideo }}" style="position: absolute; top: 12px; right: 12px; z-index: 2; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,0.15); border: none; color: #fff; font-size: 20px; cursor: pointer;">×</button>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+          <iframe src="{{ videoUrl }}" style="position: absolute; inset: 0; width: 100%; height: 100%; border: none;" allow="autoplay; fullscreen"></iframe>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accent&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#0F8C82&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#0F8C82&quot;, &quot;#2D5BFF&quot;, &quot;#B5482A&quot;, &quot;#5B4B8A&quot;], &quot;section&quot;: &quot;Theme&quot;},
+  &quot;sectionOrder&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;ai-first&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;ai-first&quot;, &quot;mobile-first&quot;], &quot;section&quot;: &quot;Layout&quot;},
+  &quot;showMobileTrack&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Layout&quot;}
+}">
+function mix(hex, target, ratio) {
+  const h = hex.replace('#', '');
+  const t = target.replace('#', '');
+  const r1 = parseInt(h.substr(0,2),16), g1 = parseInt(h.substr(2,2),16), b1 = parseInt(h.substr(4,2),16);
+  const r2 = parseInt(t.substr(0,2),16), g2 = parseInt(t.substr(2,2),16), b2 = parseInt(t.substr(4,2),16);
+  const r = Math.round(r1 + (r2-r1)*ratio), g = Math.round(g1 + (g2-g1)*ratio), b = Math.round(b1 + (b2-b1)*ratio);
+  return '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0')).join('');
+}
+
+class Component extends DCLogic {
+  state = { videoUrl: null };
+
+  openVideo(url) { return () => this.setState({ videoUrl: url }); }
+  closeVideo = () => this.setState({ videoUrl: null });
+
+  renderVals() {
+    const accent = this.props.accent ?? '#0F8C82';
+    const sectionOrder = this.props.sectionOrder ?? 'ai-first';
+    const showMobileTrack = this.props.showMobileTrack ?? true;
+
+    const automationSkills = ['n8n','OpenAI','Python','FastAPI','JavaScript','Node.js','REST API','GoHighLevel','Vapi','Meta Graph API','Supabase'];
+    const mobileSkills = ['Kotlin','Android','Firebase','Java','Jetpack Compose','GIT','SQL','NoSQL','Figma'];
+
+    const featuredDemo = this.openVideo('https://www.loom.com/embed/893b8d1747d14f79be7aebfcd1a8a3a8');
+    const featuredProblem = 'Branches fielding inquiries and bookings by hand, with replies taking hours.';
+    const featuredResult = '24/7 coverage, replies in seconds instead of hours';
+    const aiCards = [
+      { img: 'assets/cs5_prop_connect.png', tags: ['Vapi','n8n','GoHighLevel','OpenAI'], title: 'PropConnect AI Voice Agent', problem: 'Inbound real estate calls going unanswered outside office hours.', desc: 'AI voice agent handling inbound real estate calls 24/7 — qualifies leads and books viewings.', result: 'Under 5-second response time', openDemo: this.openVideo('https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342') },
+      { img: 'assets/cs09_lead_route_cover.png', tags: ['n8n','GoHighLevel','OpenAI','Supabase'], title: 'Smart Lead Routing System', problem: 'Leads replied to inconsistently and routed to the wrong pipeline by hand.', desc: 'Scores leads High/Medium/Low, generates personalized replies, and routes them to the right CRM pipeline.', result: 'Routed in under 2 seconds', openDemo: this.openVideo('https://www.loom.com/embed/ac73a668c366408798b56963c4835e0a') },
+      { img: 'assets/cs_8_voice_appointment_setter.png', tags: ['Vapi','n8n','GoHighLevel'], title: 'AI Appointment Setter', problem: 'Property viewing requests needing manual qualification and scheduling.', desc: '"Alex" — AI voice agent that qualifies leads and books property viewings, with instant CRM sync.', result: 'Booked in under 5 seconds', openDemo: this.openVideo('https://www.loom.com/embed/c6ad99c6f2b848e99f99853f8c5ce489') },
+      { img: 'assets/cs3_solar_roi_cover.png', tags: ['n8n','OpenAI','React Native','Supabase'], title: 'Solar ROI Calculator', problem: 'Manual ROI estimates slowing down solar sales conversations.', desc: 'Cross-platform app delivering solar ROI estimates with automated lead capture and pipeline management.', result: 'Estimate delivered in under 2 minutes', openDemo: this.openVideo('https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b') },
+    ];
+
+    return {
+      bg: '#F7F5F1', surface: '#EFEBE3', cardBg: '#FFFFFF', dark: '#12181A',
+      text: '#181614', textSecondary: '#5B564F', textMuted: '#8A8478', border: '#E2DDD2',
+      accent, accentHover: mix(accent, '#000000', 0.22), accentLight: mix(accent, '#ffffff', 0.55),
+      accentTint: mix(accent, '#ffffff', 0.9), accentTintBorder: mix(accent, '#ffffff', 0.72),
+      aiOrder: sectionOrder === 'mobile-first' ? 2 : 1,
+      mobileOrder: sectionOrder === 'mobile-first' ? 1 : 2,
+      showMobileTrack,
+      automationSkills, mobileSkills, aiCards, featuredDemo, featuredProblem, featuredResult,
+      videoUrl: this.state.videoUrl, openVideo: (u) => this.openVideo(u), closeVideo: this.closeVideo,
+    };
+  }
+}
+
+</script>
+</body>
 </html>

@@ -1,214 +1,114 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Byahero Android App</title>
-  <meta name="description" content="Case study page of Project" />
-  <link rel = "icon" href = "./assets/png/profile-picture.png" type = "image/x-icon">
-  <link rel="stylesheet" href="css/style.css" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-    rel="stylesheet" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0F8C82"/><text x="100" y="115" font-family="monospace" font-size="56" font-weight="700" fill="#fff" text-anchor="middle">BY</text></svg></template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; }
+a { text-decoration: none; }
+a:link, a:visited { color: inherit; }
+</style>
+</helmet>
+<div style="font-family: 'Inter', sans-serif; background: #F7F5F1; color: #181614;">
 
-<body class="detail-page">
-  <header class="header">
-    <div class="header__content">
-      <div class="header__logo-container">
-        <div class="header__logo-img-cont">
-          <img src="./assets/png/profile-picture.png" alt="John Dominic Profile Picture" class="header__logo-img" />
+  <header style="position: sticky; top: 0; z-index: 100; background: rgba(247,245,241,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid #E2DDD2;">
+    <div style="max-width: 1180px; margin: auto; width: 92%; display: flex; align-items: center; justify-content: space-between; height: 76px;">
+      <a href="./index.html" style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1.5px solid #E2DDD2;">
+          <img src="assets/profile-picture.png" alt="John Dominic" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <span class="header__logo-sub">John Dominic Jasmin</span>
-      </div>
-      <div class="header__main">
-        <ul class="header__links">
-          <li class="header__link-wrapper">
-            <a href="./index.html" class="header__link"> Home </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#about" class="header__link">About </a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#projects" class="header__link">Projects</a>
-          </li>
-          <li class="header__link-wrapper">
-            <a href="./index.html#contact" class="header__link"> Contact </a>
-          </li>
-        </ul>
-        <div class="header__main-ham-menu-cont">
-          <img src="./assets/svg/ham-menu.svg" alt="hamburger menu" class="header__main-ham-menu" />
-          <img src="./assets/svg/ham-menu-close.svg" alt="hamburger menu close"
-            class="header__main-ham-menu-close d-none" />
-        </div>
-      </div>
-    </div>
-    <div class="header__sm-menu">
-      <div class="header__sm-menu-content">
-        <ul class="header__sm-menu-links">
-          <li class="header__sm-menu-link">
-            <a href="./index.html"> Home </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#about"> About </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#projects"> Projects </a>
-          </li>
-
-          <li class="header__sm-menu-link">
-            <a href="./index.html#contact"> Contact </a>
-          </li>
-        </ul>
-      </div>
+        <span style="font-size: 14.5px; font-weight: 700;">John Dominic Jasmin</span>
+      </a>
+      <a href="./index.html#mobile-projects" style="padding: 9px 18px; font-size: 13px; font-weight: 600; color: #181614; border: 1.5px solid #E2DDD2; border-radius: 8px;" style-hover="border-color: #0F8C82; color: #0F8C82;">← Back to projects</a>
     </div>
   </header>
-  <section class="project-cs-hero">
-    <div class="project-cs-hero__content">
-      <h1 class="heading-primary">Byahero</h1>
-      <div class="project-cs-hero__info">
-        <p class="text-primary">
-          This page contains the Project Details of Byahero App which includes the Project Overview, Tools Used and Source Code of the official product.
-        </p>
-      </div>
-      <div class="project-cs-hero__cta">
-        <a href="https://github.com/JohnDominicJasmin/Byahero_App" class="btn btn--bg" target="_blank">Source Code</a>
-      </div>
+
+  <section style="max-width: 820px; margin: auto; width: 92%; padding: 90px 0 50px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: #0F8C82; margin-bottom: 18px;">Mobile Project</div>
+    <h1 style="font-size: 42px; font-weight: 800; letter-spacing: -1px; margin: 0 0 20px; color: #181614;">Byahero</h1>
+    <p style="font-size: 17px; line-height: 1.75; color: #5B564F; margin: 0 0 32px; max-width: 640px;">A lighter, faster alternative to Google Maps for commuters — built with live weather updates and a stop-approaching alert so riders never miss their destination.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="https://github.com/JohnDominicJasmin/Byahero_App" target="_blank" style="padding: 12px 24px; font-size: 13.5px; font-weight: 600; color: #fff; background: #0F8C82; border-radius: 8px;" style-hover="background: #0C6D65;">Source code</a>
     </div>
   </section>
-  <section class="project-details">
-    <div class="main-container">
-      <div class="project-details__content">
-        <div class="detail-carousel">
-          <div class="detail-carousel__nav">
-            <button class="detail-carousel__btn detail-carousel__btn--prev" aria-label="Previous screenshot" disabled>&#8592;</button>
-            <div class="detail-carousel__viewport">
-              <div class="detail-carousel__track">
-                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-1.webp" alt="Byahero screenshot 1" loading="lazy" /></div>
-                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-2.webp" alt="Byahero screenshot 2" loading="lazy" /></div>
-                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-3.webp" alt="Byahero screenshot 3" loading="lazy" /></div>
-                <div class="detail-carousel__slide"><img src="./assets/mockups/byahero-sc-4.webp" alt="Byahero screenshot 4" loading="lazy" /></div>
-              </div>
-            </div>
-            <button class="detail-carousel__btn detail-carousel__btn--next" aria-label="Next screenshot">&#8594;</button>
-          </div>
-          <p class="detail-carousel__counter"><span class="dc-current">1</span> / 4</p>
-        </div>
-        <div class="project-details__content-main">
-          <div class="project-details__desc">
-            <h3 class="project-details__content-title">Project Overview</h3>
-            <p class="project-details__desc-para">
-              Byahero is a lighter version of Google Maps but with Authentication and Live Weather Updates. 
-              Weather Updates help track weather forecasts and current conditions in real-time. You can view the upcoming 24-hour forecast.
-            </p>
-            <p class="project-details__desc-para">
-              Byahero is my first Android App. While building this app, I learned so many things like how to use APIs, Persistent Storage, Networking, Permissions, Architecture, Clean code practices, Material Designs, etc.
-               I created this project for my family members to replace their Google Maps with a lighter version.
-            </p>
 
-            
-          </div>
-          <div class="project-details__tools-used">
-            <h3 class="project-details__content-title">Tools Used</h3>
-            <div class="skills">
-              <div class="skills__skill">GIT</div>
-              <div class="skills__skill">Java</div>
-              <div class="skills__skill">Kotlin</div>
-              <div class="skills__skill">SQLite</div>
-              <div class="skills__skill">Android Studio</div>
-            </div>
-          </div>
-         
-
-          <div class="project-details__tools-used">
-            <h3 class="project-details__content-title">Library and APIs Used</h3>
-            <div class="skills">
-              <div class="skills__skill"><a href="https://dagger.dev/hilt/" target="_blank">Hilt</a></div>
-              <div class="skills__skill"><a href="https://developer.android.com/jetpack/androidx/releases/room?hl=id" target="_blank">Room</a></div>
-              <div class="skills__skill"><a href="https://square.github.io/retrofit/" target="_blank">Retrofit</a></div>
-              <div class="skills__skill"><a href="https://coil-kt.github.io/coil/getting_started/" target="_blank">Coil</a></div>
-              <div class="skills__skill"><a href="https://github.com/koral--/android-gif-drawable" target="_blank">Android-Gif-Drawable</a></div>
-              <div class="skills__skill"><a href="https://github.com/gabriel-TheCode/AestheticDialogs" target="_blank">AestheticDialogs</a></div>
-              <div class="skills__skill"><a href="https://firebase.google.com/docs/auth" target="_blank">Firebase Auth</a></div>
-              <div class="skills__skill"><a href="https://firebase.google.com/docs/crashlytics/get-started?authuser=0&platform=android" target="_blank">FirebaseCrashlytics</a></div>
-              <div class="skills__skill"><a href="https://github.com/delight-im/Android-SimpleLocation" target="_blank">SimpleLocation</a></div>
-              <div class="skills__skill"><a href="https://docs.mapbox.com/android/maps/guides/" target="_blank">Mapbox Maps Sdk</a></div>
-              <div class="skills__skill"><a href="https://docs.mapbox.com/android/navigation/guides/" target="_blank">Mapbox Navigation Sdk</a></div>
-              <div class="skills__skill"><a href="https://github.com/googlesamples/easypermissions" target="_blank">EasyPermissions</a></div>
-              <div class="skills__skill"><a href="https://docs.mapbox.com/api/search/geocoding/" target="_blank">Mapbox Geocoding</a></div>
-              <div class="skills__skill"><a href="https://docs.mapbox.com/api/search/" target="_blank">Mapbox Search API</a></div>
-              <div class="skills__skill"><a href="https://www.weatherapi.com/" target="_blank">Weather API</a></div>
-            </div>
-          </div>
-          <div class="project-details__links">
-            <!-- <h3 class="project-details__content-title">See Code</h3> -->
-            <!-- <a href="https://github.com/JohnDominicJasmin/Byahero_App" class="btn btn--med btn--theme project-details__links-btn" target="_blank"></a> -->
-            <a href="./index.html" class="btn btn--med btn--theme-inv project-details__links-btn">Go Back</a>
-          </div>
+  <section style="max-width: 1180px; margin: auto; width: 92%; padding: 20px 0 60px;">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+      <sc-for list="{{ screenshots }}" as="src" hint-placeholder-count="4">
+        <div style="border-radius: 14px; overflow: hidden; border: 1px solid #E2DDD2; background: #FFFFFF;">
+          <img src="{{ src }}" style="width: 100%; display: block;">
         </div>
-      </div>
+      </sc-for>
     </div>
   </section>
-  <footer class="main-footer">
-    <div class="main-container">
-      <div class="main-footer__upper">
-        <div class="main-footer__row main-footer__row-1">
-          <h2 class="heading heading-sm main-footer__heading-sm">
-            <span>Social</span>
-          </h2>
-          <div class="main-footer__social-cont">
-            <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0">
-              <img class="main-footer__icon" src="./assets/png/linkedin-ico.png" alt="icon" />
-            </a>
-            <a target="_blank" rel="noreferrer" href="https://github.com/JohnDominicJasmin">
-              <img class="main-footer__icon" src="./assets/png/github-ico.png" alt="icon" />
-            </a>
-            <!-- <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/twitter-ico.png"
-                  alt="icon"
-                />
-              </a> -->
-            <!-- <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a> -->
-            <!-- <a target="_blank" rel="noreferrer" href="#">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a> -->
-          </div>
-        </div>
-        <div class="main-footer__row main-footer__row-2">
-          <h4 class="heading heading-sm text-lt">John Dominic </h4>
-          <p class="main-footer__short-desc">
-            A Software Engineer Bringing forth a motivated attitude and a variety of powerful skills. Knowledgeable in
-            user interface, testing, and debugging processes. Able to effectively self-manage during independent
-            projects, as well as collaborate in a team setting.
-          </p>
-        </div>
-      </div>
 
-      <div class="main-footer__lower">
-        &copy; Copyright 2026. Made by
-        <a href="#">John Dominic </a>
-      </div>
+  <section style="background: #EFEBE3; border-top: 1px solid #E2DDD2; padding: 80px 0;">
+    <div style="max-width: 820px; margin: auto; width: 92%;">
+      <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 20px; color: #181614;">Project overview</h2>
+      <p style="font-size: 16px; line-height: 1.85; color: #5B564F; margin: 0 0 16px;">Byahero is a lighter version of Google Maps with authentication and live weather updates — including a rolling 24-hour forecast so riders can plan around conditions, not just routes.</p>
+      <p style="font-size: 16px; line-height: 1.85; color: #5B564F; margin: 0;">It was my first Android app. Building it meant learning APIs, persistent storage, networking, permissions, architecture, and clean-code practices from the ground up — originally built so my own family could replace Google Maps with something lighter.</p>
+    </div>
+  </section>
+
+  <section style="max-width: 820px; margin: auto; width: 92%; padding: 70px 0;">
+    <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 20px; color: #181614;">Tools used</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px;">
+      <sc-for list="{{ tools }}" as="t" hint-placeholder-count="5">
+        <div style="padding: 8px 16px; font-size: 13.5px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 8px; color: #5B564F;">{{ t }}</div>
+      </sc-for>
+    </div>
+    <h2 style="font-size: 22px; font-weight: 700; margin: 0 0 20px; color: #181614;">Libraries &amp; APIs</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <sc-for list="{{ libs }}" as="l" hint-placeholder-count="14">
+        <a href="{{ l.href }}" target="_blank" style="padding: 8px 16px; font-size: 13.5px; font-weight: 500; font-family: 'JetBrains Mono', monospace; background: #FFFFFF; border: 1px solid #E2DDD2; border-radius: 8px; color: #5B564F;" style-hover="border-color: #0F8C82; color: #0F8C82;">{{ l.name }}</a>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="background: #12181A; padding: 40px 0;">
+    <div style="max-width: 1180px; margin: auto; width: 92%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <a href="./index.html" style="font-size: 13px; font-weight: 600; color: #fff;" style-hover="color: #0F8C82;">← Back to John Dominic's portfolio</a>
+      <span style="font-size: 13px; color: rgba(255,255,255,0.35);">© 2026 John Dominic Jasmin</span>
     </div>
   </footer>
-  <script src="./index.js"></script>
-</body>
+</div>
 
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      screenshots: ['assets/byahero-sc-1.jpg','assets/byahero-sc-2.jpg','assets/byahero-sc-3.jpg','assets/byahero-sc-4.jpg'],
+      tools: ['GIT','Java','Kotlin','SQLite','Android Studio'],
+      libs: [
+        {name:'Hilt', href:'https://dagger.dev/hilt/'},
+        {name:'Room', href:'https://developer.android.com/jetpack/androidx/releases/room?hl=id'},
+        {name:'Retrofit', href:'https://square.github.io/retrofit/'},
+        {name:'Coil', href:'https://coil-kt.github.io/coil/getting_started/'},
+        {name:'Android-Gif-Drawable', href:'https://github.com/koral--/android-gif-drawable'},
+        {name:'AestheticDialogs', href:'https://github.com/gabriel-TheCode/AestheticDialogs'},
+        {name:'Firebase Auth', href:'https://firebase.google.com/docs/auth'},
+        {name:'Firebase Crashlytics', href:'https://firebase.google.com/docs/crashlytics/get-started?authuser=0&platform=android'},
+        {name:'SimpleLocation', href:'https://github.com/delight-im/Android-SimpleLocation'},
+        {name:'Mapbox Maps SDK', href:'https://docs.mapbox.com/android/maps/guides/'},
+        {name:'Mapbox Navigation SDK', href:'https://docs.mapbox.com/android/navigation/guides/'},
+        {name:'EasyPermissions', href:'https://github.com/googlesamples/easypermissions'},
+        {name:'Mapbox Geocoding', href:'https://docs.mapbox.com/api/search/geocoding/'},
+        {name:'Weather API', href:'https://www.weatherapi.com/'},
+      ],
+    };
+  }
+}
+
+</script>
+</body>
 </html>
