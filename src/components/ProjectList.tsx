@@ -6,6 +6,7 @@ import type { Project } from "@/data/projects";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
   const [loom, setLoom] = useState<string | null>(null);
+  const [openChapter, setOpenChapter] = useState<string | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLElement | null>(null);
 
@@ -32,7 +33,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
         {projects.map((project, i) => (
           <article
             key={project.slug}
-            className={`project${i === 0 ? " project--featured" : ""}`}
+            className={`project${project.demos ? " project--featured" : ""}`}
           >
             <div className="project__media">
               <img src={project.cover} alt={project.coverAlt} loading="lazy" />
@@ -55,6 +56,49 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                 <div>
                   <span className="project__problem-label">Result</span>
                   <div className="project__result">{project.result}</div>
+                </div>
+              ) : null}
+              {project.demos ? (
+                <div className="breakdown">
+                  <span className="project__problem-label">
+                    Component breakdown
+                  </span>
+                  {project.demos.map((demo) => {
+                    const id = project.slug + demo.title;
+                    const open = openChapter === id;
+                    return (
+                      <div className="chapter" key={demo.title}>
+                        <button
+                          type="button"
+                          className="chapter__head"
+                          aria-expanded={open}
+                          onClick={() => setOpenChapter(open ? null : id)}
+                        >
+                          <span>{demo.title}</span>
+                          <span className="chapter__chevron" aria-hidden="true">
+                            {open ? "−" : "+"}
+                          </span>
+                        </button>
+                        {open ? (
+                          <div className="chapter__body">
+                            <p className="chapter__desc">{demo.desc}</p>
+                            {demo.result ? (
+                              <div className="project__result">
+                                {demo.result}
+                              </div>
+                            ) : null}
+                            <button
+                              type="button"
+                              className="chapter__demo"
+                              onClick={() => setLoom(demo.url)}
+                            >
+                              Watch demo →
+                            </button>
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : null}
               <div className="project__actions">
