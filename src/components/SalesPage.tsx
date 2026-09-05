@@ -404,6 +404,28 @@ export default function SalesPage() {
         <BeforeAfterPanel />
       </section>
 
+      {/* TESTIMONIALS */}
+      <section id="in-their-words" className="l-quotes l-wrap">
+        <div className="l-center" style={{ marginBottom: 46 }}>
+          <span className="l-eyebrow">In their words</span>
+          <h2 className="l-h2">Three owners on what changed.</h2>
+        </div>
+        <div className="l-grid-3">
+          {quotes.map((quote) => (
+            <blockquote className="l-quote" key={quote.who}>
+              <span className="l-quote__mark" aria-hidden="true">
+                &ldquo;
+              </span>
+              <div className="l-quote__label">{quote.label}</div>
+              {quote.body.map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+              <cite className="l-quote__who">{quote.who}</cite>
+            </blockquote>
+          ))}
+        </div>
+      </section>
+
       {/* PROOF */}
       <section className="l-proof l-wrap">
         <div className="l-proof__grid">
@@ -452,28 +474,6 @@ export default function SalesPage() {
               liquidity-hq.com &middot; live, paid, and mine
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section id="in-their-words" className="l-quotes l-wrap">
-        <div className="l-center" style={{ marginBottom: 46 }}>
-          <span className="l-eyebrow">In their words</span>
-          <h2 className="l-h2">Three owners on what changed.</h2>
-        </div>
-        <div className="l-grid-3">
-          {quotes.map((quote) => (
-            <blockquote className="l-quote" key={quote.who}>
-              <span className="l-quote__mark" aria-hidden="true">
-                &ldquo;
-              </span>
-              <div className="l-quote__label">{quote.label}</div>
-              {quote.body.map((para) => (
-                <p key={para}>{para}</p>
-              ))}
-              <cite className="l-quote__who">{quote.who}</cite>
-            </blockquote>
-          ))}
         </div>
       </section>
 
