@@ -168,6 +168,39 @@ export const automationProjects: Project[] = [
     ],
   },
   {
+    // Copy below is lifted from the old site's own entry for this system, not
+    // rewritten — the only claims here are the ones you already published.
+    slug: "solar-roi-calculator",
+    title: "Solar ROI Calculator",
+    loom: "https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b",
+    tags: ["n8n", "OpenAI", "React Native", "Supabase"],
+    cover: "/assets/cs3_solar_roi_cover.png",
+    coverAlt: "Solar ROI Calculator",
+    problem:
+      "Manual ROI estimates slowing down solar sales conversations.",
+    summary:
+      "Cross-platform app delivering solar ROI estimates with automated lead capture and pipeline management.",
+    intro:
+      "A cross-platform app that turns a solar sales conversation into a number the customer can see, then captures the lead and moves it into the pipeline without anyone retyping it.",
+    body: [
+      "Solar sales stall at the estimate. A prospect asks what it would save them, and the answer needs a spreadsheet, a follow-up call, or both — by which point the conversation has cooled.",
+      "The app produces the ROI estimate on the spot, then hands the lead straight to the pipeline: captured, recorded, and routed without a manual step in between.",
+    ],
+    shots: [
+      {
+        src: "/assets/cs3_solar_roi_cover.png",
+        alt: "Solar ROI Calculator",
+      },
+    ],
+    facts: [
+      {
+        label: "Built with",
+        items: ["n8n", "OpenAI", "React Native", "Supabase"],
+      },
+      { label: "Result", items: ["Estimate delivered in under 2 minutes"] },
+    ],
+  },
+  {
     slug: "reconciliation-pipeline",
     title: "Reconciliation Pipeline & Resilience Engine",
     loom: "https://www.youtube.com/embed/FxTpqahnpJY",
