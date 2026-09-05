@@ -845,3 +845,68 @@ a {
     padding: 26px;
   }
 }
+
+/* =========================================
+   PER-SYSTEM DEMOS (bundled projects)
+========================================= */
+.systems {
+  margin: 56px 0 8px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.systems__list {
+  display: grid;
+  gap: 0;
+  margin-top: 28px;
+}
+
+.system {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.system__title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  margin-bottom: 6px;
+}
+
+.system__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 64ch;
+}
+
+.system__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.system__result {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+@media (max-width: 700px) {
+  .system {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .system__side {
+    align-items: flex-start;
+  }
+}

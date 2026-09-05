@@ -65,6 +65,36 @@ export default async function WorkPage(props: PageProps<"/work/[slug]">) {
         <div className="container">
           <Shots shots={project.shots} portrait={project.portraitShots} />
 
+          {project.demos ? (
+            <div className="systems">
+              <span className="eyebrow">Demos</span>
+              <h2 className="section__title">Each system, running</h2>
+              <div className="systems__list">
+                {project.demos.map((demo) => (
+                  <article className="system" key={demo.title}>
+                    <div>
+                      <h3 className="system__title">{demo.title}</h3>
+                      <p className="system__desc">{demo.desc}</p>
+                    </div>
+                    <div className="system__side">
+                      {demo.result ? (
+                        <span className="system__result">{demo.result}</span>
+                      ) : null}
+                      <a
+                        className="btn btn--link"
+                        href={demo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Watch demo &rarr;
+                      </a>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
           <div className="detail__body">
             <div className="detail__prose">
               <span className="eyebrow">The problem</span>

@@ -10,6 +10,12 @@ export type Project = {
   summary: string;
   loom?: string;
   liveUrl?: string;
+  /**
+   * Per-system demos, for a project that bundles several. The old site gave
+   * each of these its own card and video; the rebuild collapsed them into one
+   * project and only carried a single demo across.
+   */
+  demos?: { title: string; desc: string; result?: string; url: string }[];
   intro: string;
   body: string[];
   shots: Shot[];
@@ -99,6 +105,36 @@ export const automationProjects: Project[] = [
     summary:
       "Five systems unified into one B2B automation machine: Dead Lead Reactivation, a missed-call voice receptionist, PropConnect's voice agent, Smart Lead Routing, and an AI Appointment Setter.",
     loom: "https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342",
+    demos: [
+      {
+        title: "PropConnect AI Voice Agent",
+        desc: "AI voice agent handling inbound real estate calls 24/7 — qualifies leads and books viewings automatically.",
+        result: "Under 5-second response time",
+        url: "https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342",
+      },
+      {
+        title: "Smart Lead Routing System",
+        desc: "Scores leads High/Medium/Low, generates personalized replies, and routes them to the right CRM pipeline in seconds.",
+        result: "Routed in under 2 seconds",
+        url: "https://www.loom.com/embed/ac73a668c366408798b56963c4835e0a",
+      },
+      {
+        title: "AI Appointment Setter",
+        desc: "“Alex” — AI voice agent that qualifies leads and books property viewings, with instant CRM sync.",
+        result: "Booked in under 5 seconds",
+        url: "https://www.loom.com/embed/c6ad99c6f2b848e99f99853f8c5ce489",
+      },
+      {
+        title: "AI Voice Receptionist for Missed Calls",
+        desc: "AI voice agent that captures caller information, answers questions, and books appointments when the business cannot pick up the phone.",
+        url: "https://www.youtube.com/embed/MrMQjHjfgtA",
+      },
+      {
+        title: "Dead Lead Reactivation Engine",
+        desc: "Engaging old, neglected leads via personalized AI-powered conversations to recover lost revenue.",
+        url: "https://www.youtube.com/embed/sOgKiULP4Bg",
+      },
+    ],
     intro:
       "Five automation systems unified into one B2B growth machine, covering every point where a lead can go cold: dead lists, missed calls, inbound calls, routing, and booking.",
     body: [
