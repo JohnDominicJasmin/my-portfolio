@@ -8,6 +8,8 @@ export type Project = {
   coverAlt: string;
   problem: string;
   summary: string;
+  /** Outcome line shown on the card, as published on the previous site. */
+  result?: string;
   loom?: string;
   liveUrl?: string;
   /**
@@ -171,6 +173,7 @@ export const automationProjects: Project[] = [
     // Copy below is lifted from the old site's own entry for this system, not
     // rewritten — the only claims here are the ones you already published.
     slug: "solar-roi-calculator",
+    result: "Estimate delivered in under 2 minutes",
     title: "Solar ROI Calculator",
     loom: "https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b",
     tags: ["n8n", "OpenAI", "React Native", "Supabase"],
@@ -202,6 +205,7 @@ export const automationProjects: Project[] = [
   },
   {
     slug: "reconciliation-pipeline",
+    result: "Zero duplicates, zero data loss, automatic recovery after a forced real outage",
     title: "Reconciliation Pipeline & Resilience Engine",
     loom: "https://www.youtube.com/embed/FxTpqahnpJY",
     tags: ["FastAPI", "n8n", "OpenAI", "Python"],
@@ -239,6 +243,7 @@ export const automationProjects: Project[] = [
   },
   {
     slug: "messenger-chatbot",
+    result: "24/7 coverage, replies in seconds instead of hours",
     title: "Multi-Branch AI Messenger Chatbot",
     tags: ["n8n", "OpenAI", "Supabase", "Meta Graph API"],
     cover: "/assets/cs1_portfolio_cover.png",

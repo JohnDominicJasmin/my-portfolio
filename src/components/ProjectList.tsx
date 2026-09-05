@@ -29,8 +29,11 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
   return (
     <>
       <div className="projects">
-        {projects.map((project) => (
-          <article key={project.slug} className="project">
+        {projects.map((project, i) => (
+          <article
+            key={project.slug}
+            className={`project${i === 0 ? " project--featured" : ""}`}
+          >
             <div className="project__media">
               <img src={project.cover} alt={project.coverAlt} loading="lazy" />
             </div>
@@ -48,6 +51,12 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                 <p className="project__problem">{project.problem}</p>
               </div>
               <p className="project__desc">{project.summary}</p>
+              {project.result ? (
+                <div>
+                  <span className="project__problem-label">Result</span>
+                  <div className="project__result">{project.result}</div>
+                </div>
+              ) : null}
               <div className="project__actions">
                 <Link href={`/work/${project.slug}`} className="btn btn--link">
                   More details →
