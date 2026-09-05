@@ -809,9 +809,32 @@ body:has(.sales) {
   border-top: 1px solid var(--l-line);
 }
 
+/* Deliberately not `.l-card`. The FIX cards use that treatment, and repeating
+   it here made "what it does" and "who says it works" read at equal weight.
+   These get a rule and a serif mark instead, like the FAQ. */
 .l-quote {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--l-line-md);
+}
+
+.l-quote__mark {
+  font-family: var(--l-serif);
+  font-size: 54px;
+  line-height: 0.6;
+  color: var(--l-amber);
+  margin-bottom: 14px;
+}
+
+.l-quote__label {
+  font-family: var(--l-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--l-fg-60);
+  margin-bottom: 16px;
 }
 
 .l-quote p {

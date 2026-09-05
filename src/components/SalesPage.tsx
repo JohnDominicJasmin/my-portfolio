@@ -463,8 +463,11 @@ export default function SalesPage() {
         </div>
         <div className="l-grid-3">
           {quotes.map((quote) => (
-            <blockquote className="l-card l-quote" key={quote.who}>
-              <div className="l-card__label">{quote.label}</div>
+            <blockquote className="l-quote" key={quote.who}>
+              <span className="l-quote__mark" aria-hidden="true">
+                &ldquo;
+              </span>
+              <div className="l-quote__label">{quote.label}</div>
               {quote.body.map((para) => (
                 <p key={para}>{para}</p>
               ))}

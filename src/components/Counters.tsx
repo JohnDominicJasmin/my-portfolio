@@ -10,7 +10,10 @@ import { useEffect, useState } from "react";
  * Renders at its final values, so the no-JS and pre-hydration view is correct.
  */
 
-const TARGETS = { seconds: 5, route: 2, hours: 24, years: 6 };
+// The fourth figure was "6 yrs engineering behind it" — a hiring credential
+// sitting among three client outcomes. `systems` is the count of builds in the
+// table below it, so a visitor can check it on the same screen.
+const TARGETS = { seconds: 5, route: 2, hours: 24, systems: 6 };
 
 export default function Counters() {
   const [counts, setCounts] = useState(TARGETS);
@@ -37,7 +40,7 @@ export default function Counters() {
         seconds: Math.max(1, Math.round(TARGETS.seconds * eased)),
         route: Math.max(1, Math.round(TARGETS.route * eased)),
         hours: Math.max(1, Math.round(TARGETS.hours * eased)),
-        years: Math.max(1, Math.round(TARGETS.years * eased)),
+        systems: Math.max(1, Math.round(TARGETS.systems * eased)),
       });
     }, 42);
 
@@ -59,8 +62,8 @@ export default function Counters() {
         <div className="l-counter__label">Coverage, no shifts</div>
       </div>
       <div className="l-counter">
-        <div className="l-counter__value">{counts.years} yrs</div>
-        <div className="l-counter__label">Engineering behind it</div>
+        <div className="l-counter__value">{counts.systems}</div>
+        <div className="l-counter__label">Systems running for businesses</div>
       </div>
     </section>
   );
