@@ -134,6 +134,7 @@ export const automationProjects: Project[] = [
   {
     slug: "reconciliation-pipeline",
     title: "Reconciliation Pipeline & Resilience Engine",
+    loom: "https://www.youtube.com/embed/FxTpqahnpJY",
     tags: ["FastAPI", "n8n", "OpenAI", "Python"],
     cover: "/assets/reconciliation-pipeline.png",
     coverAlt: "Reconciliation Pipeline and Resilience Engine",
