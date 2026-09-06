@@ -1580,6 +1580,17 @@ body:has(.sales) {
   color: var(--l-fg);
 }
 
+/* Steps in the plan read as one list, so they sit closer together than prose
+   and hang their number into the left margin. The gap goes back afterwards. */
+.l-quiz__result p.l-quiz__step {
+  font-size: 16px;
+  margin: 0 0 7px;
+  padding-left: 25px;
+  text-indent: -25px;
+}
+
+.l-quiz__result p.l-quiz__step:last-of-type { margin-bottom: 15px; }
+
 .l-quiz__capture {
   margin-top: 30px;
   padding-top: 30px;

@@ -44,6 +44,8 @@ type Node = {
   short: string;
   q: string;
   hint?: string;
+  /** Overrides the generic prompt on the "other" box when the question needs one. */
+  otherLabel?: string;
   field: Field;
   next?: string | ((picked: string[]) => string);
 };
@@ -172,6 +174,23 @@ const NODES: Node[] = [
         { label: "Something else", other: true },
       ],
     },
+    next: "existing",
+  },
+  {
+    id: "existing",
+    short: "Automated already",
+    q: "Is any of this handled automatically today?",
+    hint: "This decides whether we start from scratch or build on what you have.",
+    otherLabel: "What have you got running today?",
+    field: {
+      kind: "single",
+      options: [
+        { label: "No, none of it" },
+        // The text box is the point of this one: what they already run
+        // decides whether the plan extends it or replaces nothing at all.
+        { label: "Yes, and I want it to do more", other: true },
+      ],
+    },
     next: "problem",
   },
   {
@@ -191,6 +210,9 @@ const BY_ID: Record<string, Node> = Object.fromEntries(
 type Answer = { picked: string[]; other: string };
 
 const EMPTY: Answer = { picked: [], other: "" };
+
+/** "1." / "2)" at the start of a line: a step in the plan, not a paragraph. */
+const STEP = /^\d+[.)]\s/;
 
 function display(a: Answer | undefined): string {
   if (!a) return "";
@@ -364,7 +386,7 @@ export default function AuditQuiz() {
     const timer = setTimeout(() => abort.abort(), 45_000);
 
     let text =
-      "I could not reach the assistant just now, but your answers are still going straight to John. Leave your details below and he will come back to you himself.";
+      "We could not reach the assistant just now, but your answers are still going straight to us. Leave your details below and we will come back to you.";
 
     try {
       if (auditWebhookUrl) {
@@ -409,10 +431,10 @@ export default function AuditQuiz() {
     <div className="l-quiz" id="audit">
       <div className="l-quiz__head">
         <span className="l-eyebrow">Two minutes, no call needed</span>
-        <h2 className="l-h2">Tell me where they are slipping away.</h2>
+        <h2 className="l-h2">Tell us where they are slipping away.</h2>
         <p className="l-quiz__lede">
           A few questions, and the next one depends on your last answer. You get
-          back the one thing I would build first for a business like yours, and
+          back the one thing we would build first for a business like yours, and
           why.
         </p>
       </div>
@@ -513,7 +535,7 @@ export default function AuditQuiz() {
               {wantsOther ? (
                 <>
                   <label className="l-quiz__sr" htmlFor={`other-${node.id}`}>
-                    Tell me in your own words
+                    {node.otherLabel ?? "Tell us in your own words"}
                   </label>
                   <input
                     id={`other-${node.id}`}
@@ -521,7 +543,7 @@ export default function AuditQuiz() {
                     type="text"
                     value={answer.other}
                     maxLength={160}
-                    placeholder="Type it here instead"
+                    placeholder={node.otherLabel ?? "Type it here instead"}
                     onChange={(e) => setAnswer({ picked: answer.picked, other: e.target.value })}
                   />
                 </>
@@ -557,12 +579,17 @@ export default function AuditQuiz() {
           </>
         ) : (
           <div className="l-quiz__result" ref={resultRef} aria-live="polite">
-            <span className="l-quiz__stamp">What I would build first</span>
+            <span className="l-quiz__stamp">What we would build first</span>
             {result
               .split("\n")
+              .map((line) => line.trim())
               .filter(Boolean)
               .map((para, i) => (
-                <p key={i}>{para}</p>
+                // A numbered step is one line of a plan, not a paragraph, so it
+                // sits tighter and hangs its number out to the left.
+                <p key={i} className={STEP.test(para) ? "l-quiz__step" : undefined}>
+                  {para}
+                </p>
               ))}
             <button type="button" className="l-quiz__back" onClick={restart}>
               Answer again
@@ -575,7 +602,7 @@ export default function AuditQuiz() {
           field every time so a branch nobody took still has its column. */}
       <div className="l-quiz__capture" hidden={!done}>
         <p className="l-quiz__lede">
-          Want the specifics? Leave your details and I will come back with what
+          Want the specifics? Leave your details and we will come back with what
           this would actually take for your setup.
         </p>
 
@@ -632,7 +659,7 @@ export default function AuditQuiz() {
               Send it over
             </button>
             <p className="l-form__note">
-              Goes straight to me with your answers attached. Or{" "}
+              Goes straight to us with your answers attached. Or{" "}
               <a
                 href={booking.href}
                 {...(booking.external
