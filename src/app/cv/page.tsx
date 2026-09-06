@@ -218,13 +218,24 @@ export default function CvPage() {
               </div>
             </div>
 
+            {/* Had no honeypot and no action, so it fell through to Netlify's
+                own success page. Now matches the sales form: spam trap, and it
+                lands on /thanks. */}
             <form
               name="contact"
               method="POST"
+              action="/thanks"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               className="form"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="form__pot" aria-hidden="true">
+                <label>
+                  Leave this empty
+                  <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                </label>
+              </p>
               <div className="field">
                 <label htmlFor="name">Name</label>
                 <input id="name" name="name" type="text" required />

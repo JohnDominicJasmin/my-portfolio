@@ -301,7 +301,7 @@ a {
 
 .hero__facts li {
   padding: 0 16px;
-  border-left: 1px solid var(--line);
+  border-left: 1px solid var(--border-md);
 }
 
 .hero__facts li:first-child {
@@ -645,6 +645,16 @@ a {
 /* =========================================
    FOOTER
 ========================================= */
+/* Honeypot: off-screen rather than display:none, so bots that read computed
+   style still fill it in. */
+.form__pot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .footer {
   border-top: 1px solid var(--border);
   padding: 48px 0 34px;
