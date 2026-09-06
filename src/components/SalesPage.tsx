@@ -15,7 +15,7 @@ const ticker: Tick[] = [
   {
     time: "02:14",
     tone: "var(--l-amber)",
-    text: "Missed call returned, qualified, booked for Tuesday 9am",
+    text: "Missed call rung back, asked what they needed, booked for Tuesday 9am",
   },
   {
     time: "03:02",
@@ -25,12 +25,12 @@ const ticker: Tick[] = [
   {
     time: "04:37",
     tone: "var(--l-mint)",
-    text: "Web form scored hot, routed to the closer with a draft reply",
+    text: "Enquiry from your website marked urgent, sent to you with a reply ready",
   },
   {
     time: "06:11",
     tone: "var(--l-amber)",
-    text: "Old lead reopened after 4 months, replied, back in pipeline",
+    text: "Customer who went quiet four months ago got back in touch and booked",
   },
   {
     time: "07:45",
@@ -40,7 +40,7 @@ const ticker: Tick[] = [
   {
     time: "08:20",
     tone: "var(--l-amber)",
-    text: "Duplicate submission rejected before it hit the ledger",
+    text: "Same order came in twice, second one caught before it billed",
   },
 ];
 
@@ -53,7 +53,7 @@ const cases = [
     business: "Andres Moto Parts",
     sector: "MOTO PARTS AND SERVICE",
     before:
-      "Replies going out days later, with leads quietly lost in the backlog.",
+      "Replies going out days later, with customers quietly lost in the backlog.",
     after:
       "Enquiries answered in seconds at any hour, and the appointment booked in the same conversation.",
     // Before comes from their own quote ("replied to customers days later"),
@@ -84,31 +84,31 @@ const cases = [
   },
   {
     business: "Property business",
-    sector: "REAL ESTATE",
+    sector: "PROPERTY AND VIEWINGS",
     before:
-      "Inbound calls after hours going to voicemail, with no record that the lead ever existed.",
+      "Calls after hours going to voicemail, with no record the person ever rang.",
     after:
-      "A voice agent picks up, qualifies the caller, and books the viewing straight into the calendar.",
+      "A voice agent picks up, asks what they are after, and books the viewing straight into the calendar.",
     change: "Under 5s",
     note: "to answer",
   },
   {
     business: "Sales team",
-    sector: "B2B PIPELINE",
+    sector: "ENQUIRIES AND FOLLOW-UP",
     before:
-      "Every lead getting the same generic reply and the same queue slot, ready buyers behind browsers.",
+      "Everyone getting the same generic reply in the same order, ready buyers stuck behind window-shoppers.",
     after:
-      "Each lead scored, given a personal reply, and routed to the right pipeline before anyone logs in.",
+      "Each enquiry answered personally and put in front of the right person before anyone logs in.",
     change: "Under 2s",
-    note: "to sort and route",
+    note: "to sort an enquiry",
   },
   {
-    business: "Bookkeeping workflow",
-    sector: "BACK OFFICE",
+    business: "Bookkeeping",
+    sector: "INVOICES AND PAYMENTS",
     before:
       "Duplicate charges slipping through unnoticed, one outage taking the whole run down with it.",
     after:
-      "Duplicates rejected outright, and a failing service gets dropped instead of dragging everything down.",
+      "Duplicates caught outright, and one broken service gets skipped instead of taking the whole run down.",
     change: "Zero",
     note: "double-processing",
   },
@@ -122,8 +122,8 @@ const fixes = [
   },
   {
     label: "It decides",
-    title: "Who is serious and who is browsing",
-    body: "It asks the questions your best person would ask, then sorts the queue before anyone opens it.",
+    title: "Who needs you now and who is still looking",
+    body: "It asks what your best person would ask, so the urgent ones are already at the top when you open your phone.",
   },
   {
     label: "It finishes",
@@ -224,12 +224,17 @@ export default function SalesPage() {
           AI automation for service businesses
         </span>
         <h1 className="l-hero__title">
-          The lead you missed at 2am <em>already hired someone else</em>.
+          {/* Was "The lead you missed at 2am already hired someone else."
+              Two problems: it opened by telling the owner they had already
+              failed, and nobody "hires" a parts shop or a salon — that is
+              agency vocabulary for agency clients. Same loss, stated as
+              something customers do rather than something you got wrong. */}
+          The customer who called at 2am <em>booked with whoever picked up</em>.
         </h1>
         <p className="l-hero__sub">
-          I build the system that answers instantly, asks the right questions,
-          and books the job, whether it is a Tuesday afternoon or a public
-          holiday at 3am.
+          I build the system that answers straight away, asks what they need,
+          and puts the booking in your calendar — Tuesday afternoon or a public
+          holiday at 3am, same thing.
         </p>
         <div className="l-hero__ctas">
           <a href={booking.href} {...bookingAttrs} className="l-btn l-btn--solid">
@@ -318,7 +323,7 @@ export default function SalesPage() {
           viewBox="0 0 1296 380"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="Diagram: calls, messages and forms flow into the system, which books jobs, routes leads and logs the conversation"
+          aria-label="Diagram: calls, messages and forms flow into the system, which books jobs, sorts enquiries and logs what was said"
         >
           <path className="l-flow-line l-flow-1" d="M300 76 C 420 76, 470 190, 566 190" fill="none" stroke="#d99a3d" strokeWidth="2" />
           <path className="l-flow-line l-flow-2" d="M300 190 L 566 190" fill="none" stroke="#d99a3d" strokeWidth="2" />
@@ -358,7 +363,7 @@ export default function SalesPage() {
           <g>
             <rect className="l-node l-node-out-2" x="996" y="158" width="260" height="64" rx="6" fill="#1c1915" stroke="rgba(242,239,233,0.22)" strokeWidth="1.5" />
             <text x="1022" y="184" className="l-svg-mono"fontSize="10" letterSpacing="1.6" fill="#4ec9a5">OUTCOME</text>
-            <text x="1022" y="206" className="l-svg-sans"fontSize="16" fontWeight="500" fill="#f2efe9">Lead in the right list</text>
+            <text x="1022" y="206" className="l-svg-sans"fontSize="16" fontWeight="500" fill="#f2efe9">Enquiry in the right list</text>
           </g>
           <g>
             <rect className="l-node l-node-out-3" x="996" y="272" width="260" height="64" rx="6" fill="#1c1915" stroke="rgba(242,239,233,0.22)" strokeWidth="1.5" />
@@ -378,7 +383,7 @@ export default function SalesPage() {
         <div className="l-center" style={{ marginBottom: 48 }}>
           <span className="l-eyebrow">The fix</span>
           <h2 className="l-h2">
-            One system doing the job of a very attentive employee.
+            One system covering the hours nobody is in the shop.
           </h2>
         </div>
         <div className="l-grid-3">
@@ -438,8 +443,11 @@ export default function SalesPage() {
               when something breaks at 3am it is my problem, not a client&rsquo;s.
             </p>
             <p className="l-proof__body">
-              Under that sits six years of production engineering, which is why
-              these systems are built to keep running rather than to demo well
+              {/* Was "six years of production engineering". A shop owner does
+                  not buy your years — that is a hiring credential and it lives
+                  on /cv. The standard is the part they care about. */}
+              That is the standard these are built to: something that keeps
+              running when nobody is watching, not something that demos well
               once.
             </p>
             <a

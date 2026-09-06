@@ -7,7 +7,7 @@ import "./sales.css";
 
 const title = "John Dominic Jasmin | AI Automation for Service Businesses";
 const description =
-  "The lead you missed at 2am already hired someone else. I build the system that answers instantly, qualifies the caller, and books the job, at any hour.";
+  "The customer who called at 2am booked with whoever picked up. I build the system that answers straight away, asks what they need, and books the job, at any hour.";
 const ogImage = siteUrl
   ? `${siteUrl}/assets/og-cover.png`
   : "/assets/og-cover.png";
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "The lead you missed at 2am already hired someone else — John Dominic Jasmin, AI automation for service businesses.",
+        alt: "The customer who called at 2am booked with whoever picked up — John Dominic Jasmin, AI automation for service businesses.",
       },
     ],
   },

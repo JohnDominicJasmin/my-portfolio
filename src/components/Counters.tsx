@@ -55,7 +55,7 @@ export default function Counters() {
       </div>
       <div className="l-counter">
         <div className="l-counter__value">&lt;{counts.route}s</div>
-        <div className="l-counter__label">To score and route a lead</div>
+        <div className="l-counter__label">To sort an enquiry</div>
       </div>
       <div className="l-counter">
         <div className="l-counter__value">{counts.hours}/7</div>
