@@ -26,18 +26,6 @@ export const siteUrl = "https://johndominicjasmin.com";
  */
 export const bookingUrl = "https://cal.com/johndominic/audit";
 
-/**
- * Endpoint the site chat widget posts to.
- *
- * Point this at an n8n Chat Trigger webhook (Production URL), e.g.
- *   "https://your-n8n-host/webhook/abc123/chat"
- *
- * While this is empty the chat widget does not render at all, so nothing
- * half-working ever ships. See the note in ChatWidget.tsx for the request
- * and response shape it expects.
- */
-export const chatWebhookUrl = "";
-
 const mailtoFallback = `mailto:${email}?subject=${encodeURIComponent(
   "Free automation audit",
 )}&body=${encodeURIComponent(

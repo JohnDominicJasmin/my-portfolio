@@ -1,6 +1,5 @@
 import Link from "next/link";
 import BeforeAfterPanel from "@/components/BeforeAfterPanel";
-import ChatWidget from "@/components/ChatWidget";
 import Counters from "@/components/Counters";
 import { booking, email } from "@/data/site";
 
@@ -517,8 +516,6 @@ export default function SalesPage() {
           <Link href="/cv">CV and portfolio</Link>
         </span>
       </footer>
-
-      <ChatWidget />
     </div>
   );
 }

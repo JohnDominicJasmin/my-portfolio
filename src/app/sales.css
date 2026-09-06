@@ -890,154 +890,6 @@ body:has(.sales) {
 }
 
 /* =========================================
-   CHAT
-========================================= */
-.l-chat__toggle {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 40;
-  background: var(--l-amber);
-  color: var(--l-ink);
-  border: none;
-  padding: 14px 24px;
-  font-family: var(--l-sans);
-  font-size: 14.5px;
-  font-weight: 600;
-  border-radius: 999px;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-  transition: transform 0.18s ease, background 0.18s ease;
-}
-
-.l-chat__toggle:hover {
-  transform: translateY(-2px);
-  background: var(--l-amber-lift);
-}
-
-/* `display: flex` below would otherwise beat the UA rule for [hidden]. */
-.l-chat[hidden] {
-  display: none;
-}
-
-.l-chat {
-  position: fixed;
-  right: 24px;
-  bottom: 86px;
-  z-index: 40;
-  width: 372px;
-  max-width: calc(100vw - 48px);
-  max-height: min(560px, calc(100vh - 130px));
-  display: flex;
-  flex-direction: column;
-  background: var(--l-raised);
-  border: 1px solid rgba(242, 239, 233, 0.18);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-}
-
-.l-chat__head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--l-line);
-}
-
-.l-chat__title {
-  font-family: var(--l-mono);
-  font-size: 10.5px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: var(--l-fg-70);
-}
-
-.l-chat__log {
-  flex: 1;
-  overflow-y: auto;
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.l-chat__msg {
-  font-size: 14.5px;
-  line-height: 1.6;
-  padding: 11px 14px;
-  max-width: 88%;
-  margin: 0;
-}
-
-.l-chat__msg--them {
-  background: rgba(242, 239, 233, 0.07);
-  color: var(--l-fg-70);
-  align-self: flex-start;
-}
-
-.l-chat__msg--you {
-  background: var(--l-amber);
-  color: var(--l-ink);
-  align-self: flex-end;
-}
-
-.l-chat__typing {
-  color: var(--l-fg-45);
-  font-style: italic;
-}
-
-.l-chat__form {
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  padding: 14px 16px;
-  border-top: 1px solid var(--l-line);
-}
-
-.l-chat__input {
-  flex: 1;
-  resize: none;
-  background: var(--l-ink);
-  color: var(--l-cream);
-  border: 1px solid rgba(242, 239, 233, 0.18);
-  padding: 10px 12px;
-  font-family: var(--l-sans);
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-
-.l-chat__input::placeholder {
-  color: var(--l-fg-45);
-}
-
-.l-chat__send {
-  background: var(--l-amber);
-  color: var(--l-ink);
-  border: none;
-  padding: 11px 18px;
-  font-family: var(--l-sans);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.18s ease, opacity 0.18s ease;
-}
-
-.l-chat__send:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.l-chat__send:not(:disabled):hover {
-  background: var(--l-amber-lift);
-}
-
-.l-chat__note {
-  padding: 0 20px 14px;
-  font-size: 13px;
-  color: var(--l-rust);
-  margin: 0;
-}
-
-/* =========================================
    CTA
 ========================================= */
 .l-cta {
@@ -1348,20 +1200,6 @@ body:has(.sales) {
     line-height: 44px;
   }
 
-  .l-chat__toggle,
-  .l-chat {
-    right: 14px;
-  }
-
-  .l-chat__toggle {
-    bottom: 14px;
-  }
-
-  .l-chat {
-    bottom: 74px;
-    max-width: calc(100vw - 28px);
-    max-height: min(500px, calc(100vh - 110px));
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1377,8 +1215,7 @@ body:has(.sales) {
 
   .l-btn:hover,
   .l-card:hover,
-  .l-case:hover,
-  .l-chat__toggle:hover {
+  .l-case:hover {
     transform: none;
   }
 }
