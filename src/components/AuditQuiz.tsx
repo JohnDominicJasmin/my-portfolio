@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { auditWebhookUrl, booking, email } from "@/data/site";
+import { useEffect, useRef, useState } from "react";
+import { auditWebhookUrl, booking, dropoffWebhookUrl, email } from "@/data/site";
 
 /**
  * The audit quiz: a branching questionnaire that ends in a written
@@ -209,6 +209,22 @@ export default function AuditQuiz() {
   const sessionRef = useRef<string>("");
   const resultRef = useRef<HTMLDivElement>(null);
 
+  /** Set the moment they answer anything, so an untouched quiz reports nothing. */
+  const startedRef = useRef<string>("");
+  /** One drop-off report per run. Leaving and returning must not send twice. */
+  const sentRef = useRef(false);
+  /**
+   * The unload handler is registered once, so it cannot read state directly
+   * without reading whatever the first render had. This carries the current
+   * values to it instead.
+   */
+  const liveRef = useRef({
+    nodeId: "business",
+    trail: [] as string[],
+    answers: {} as Record<string, Answer>,
+    done: false,
+  });
+
   function sessionId() {
     if (!sessionRef.current) {
       sessionRef.current =
@@ -225,7 +241,68 @@ export default function AuditQuiz() {
   const wantsOther = node.field.kind !== "text" &&
     node.field.options.some((o) => o.other && answer.picked.includes(o.label));
 
+  // Runs after every render, so the unload handler below always sees the step
+  // they were actually on rather than the one the page opened on.
+  useEffect(() => {
+    liveRef.current = { nodeId, trail, answers, done };
+  });
+
+  /**
+   * Report a quiz that was started and left unfinished.
+   *
+   * Defined inside the effect and reading only refs, so the listeners are
+   * registered once and still see current answers. `pagehide` covers closing
+   * the tab and navigating away; `visibilitychange` covers switching apps on
+   * mobile, where `pagehide` is unreliable and the tab is often never
+   * foregrounded again.
+   */
+  useEffect(() => {
+    if (!dropoffWebhookUrl) return;
+
+    function report() {
+      const s = liveRef.current;
+      if (sentRef.current || s.done || !startedRef.current) return;
+
+      const answered = [...s.trail, s.nodeId]
+        .map((id) => ({ q: BY_ID[id]?.q ?? id, a: display(s.answers[id]) }))
+        .filter((row) => row.a);
+      if (answered.length === 0) return;
+
+      sentRef.current = true;
+      const body = JSON.stringify({
+        sessionId: sessionId(),
+        lastStep: BY_ID[s.nodeId]?.short ?? s.nodeId,
+        startedAt: startedRef.current,
+        answers: answered,
+      });
+
+      try {
+        // text/plain keeps this a simple request. Anything else triggers a CORS
+        // preflight, and a page being torn down does not get to make two trips.
+        navigator.sendBeacon?.(
+          dropoffWebhookUrl,
+          new Blob([body], { type: "text/plain;charset=UTF-8" }),
+        );
+      } catch {
+        // A lost drop-off row is never worth breaking someone's exit over.
+      }
+    }
+
+    const onHide = () => report();
+    const onVisibility = () => {
+      if (document.visibilityState === "hidden") report();
+    };
+
+    window.addEventListener("pagehide", onHide);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("pagehide", onHide);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, []);
+
   function setAnswer(next: Answer) {
+    if (!startedRef.current) startedRef.current = new Date().toISOString();
     setAnswers((a) => ({ ...a, [nodeId]: next }));
   }
 
@@ -319,6 +396,9 @@ export default function AuditQuiz() {
   }
 
   function restart() {
+    // A second run is a new run: it can be started fresh and abandoned again.
+    startedRef.current = "";
+    sentRef.current = false;
     setAnswers({});
     setTrail([]);
     setResult("");

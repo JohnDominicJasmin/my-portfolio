@@ -55,6 +55,18 @@ export const chatWebhookUrl =
 export const auditWebhookUrl =
   "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-audit";
 
+/**
+ * Endpoint the quiz beacons to when someone answers a question or two and
+ * then leaves without finishing. Without it an abandoned quiz is invisible:
+ * the only thing that ever reaches n8n is a completed run, so the questions
+ * people quit on look exactly like questions nobody was asked.
+ *
+ * Deliberately writes nothing but a row — no model call — so an abandonment
+ * costs nothing and a wave of them cannot run up a bill.
+ */
+export const dropoffWebhookUrl =
+  "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-dropoff";
+
 const mailtoFallback = `mailto:${email}?subject=${encodeURIComponent(
   "Free automation audit",
 )}&body=${encodeURIComponent(
