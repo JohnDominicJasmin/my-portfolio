@@ -392,14 +392,13 @@ export default function SalesPage() {
         </div>
       </section>
 
-      {/* INTERACTIVE BEFORE / AFTER */}
+      {/* BEFORE / AFTER, THE SAME NIGHT */}
       <section className="l-band l-wrap">
         <div className="l-center" style={{ marginBottom: 40 }}>
-          <span className="l-eyebrow">Click between them</span>
+          <span className="l-eyebrow">One call, both ways</span>
           <h2 className="l-h2">Same enquiry. Two very different days.</h2>
         </div>
 
-        {/* Toggle and panel — client island */}
         <BeforeAfterPanel />
       </section>
 

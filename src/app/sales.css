@@ -625,43 +625,19 @@ body:has(.sales) {
 /* =========================================
    TOGGLE PANEL
 ========================================= */
-.l-toggle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 34px;
-}
-
-.l-toggle button {
-  font-family: var(--l-mono);
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  padding: 13px 34px;
-  border: 1px solid rgba(23, 27, 24, 0.2);
-  background: transparent;
-  color: var(--l-cream-body);
-  cursor: pointer;
-  transition: background 0.22s ease, color 0.22s ease;
-}
-
-.l-toggle button + button {
-  border-left: none;
-}
-
-.l-toggle button[aria-pressed="true"] {
-  background: var(--l-cream-ink);
-  color: #f3f5f0;
-}
-
-.l-toggle button:last-child[aria-pressed="true"] {
-  /* --l-amber-deep gave white text 3.58:1 here. */
-  background: var(--l-amber-ink);
-  color: #ffffff;
+/* Two columns, no gap: the seam between the white ground and the ink one is
+   what separates them, so the pair reads as one object split down the middle
+   rather than two cards that happen to sit near each other. */
+.l-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .l-panel {
-  padding: 44px 48px;
+  padding: 38px 40px 40px;
   border: 1px solid;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .l-panel--before {
@@ -674,20 +650,31 @@ body:has(.sales) {
   background: var(--l-ink);
   color: var(--l-cream);
   border-color: rgba(242, 239, 233, 0.18);
+  /* One seam, not two abutting borders. */
+  border-left: none;
 }
 
-.l-panel__grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 46px;
-  align-items: start;
+.l-panel__tag {
+  font-family: var(--l-mono);
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 500;
+  margin-bottom: 18px;
+}
+
+.l-panel--before .l-panel__tag {
+  color: var(--l-rust);
+}
+
+.l-panel--after .l-panel__tag {
+  color: var(--l-amber);
 }
 
 .l-panel__label {
   font-family: var(--l-mono);
   font-size: 10.5px;
   letter-spacing: 1.6px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .l-panel--before .l-panel__label {
@@ -700,17 +687,19 @@ body:has(.sales) {
 
 .l-panel__headline {
   font-family: var(--l-serif);
-  font-size: 40px;
-  letter-spacing: -0.9px;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.7px;
   line-height: 1.1;
   text-wrap: balance;
+  margin-bottom: 22px;
 }
 
 .l-step {
   display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 22px;
-  padding: 15px 0;
+  grid-template-columns: 62px 1fr;
+  gap: 16px;
+  padding: 14px 0;
   border-bottom: 1px solid;
 }
 
@@ -728,13 +717,24 @@ body:has(.sales) {
   font-variant-numeric: tabular-nums;
 }
 
+.l-panel--before .l-step__time {
+  color: var(--l-cream-muted);
+}
+
+.l-panel--after .l-step__time {
+  color: var(--l-amber);
+}
+
 .l-step__text {
-  font-size: 15.5px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
+/* Pushed to the bottom so both outcome lines sit on the same baseline even
+   though the two columns of copy do not run to the same height. */
 .l-panel__outcome {
-  padding-top: 18px;
+  margin-top: auto;
+  padding-top: 22px;
   font-size: 16px;
   font-weight: 600;
 }
@@ -1059,17 +1059,26 @@ body:has(.sales) {
     gap: 44px;
   }
 
-  .l-panel__grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .l-panel {
+    padding: 32px 28px 34px;
   }
 
-  .l-panel {
-    padding: 34px 30px;
+  .l-panel__headline {
+    font-size: 28px;
   }
 }
 
 @media (max-width: 900px) {
+  /* Stacked, so the seam moves from the left edge to the top one. */
+  .l-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .l-panel--after {
+    border-left: 1px solid rgba(242, 239, 233, 0.18);
+    border-top: none;
+  }
+
   .l-nav__links {
     gap: 18px;
   }
@@ -1168,20 +1177,12 @@ body:has(.sales) {
   }
 
   .l-panel__headline {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .l-step {
-    grid-template-columns: 74px 1fr;
-    gap: 14px;
-  }
-
-  /* Keep every tap target at or above 44px on touch. */
-  .l-toggle button {
-    min-height: 46px;
-    padding: 12px 18px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
   }
 
   .sales .l-btn--solid,
