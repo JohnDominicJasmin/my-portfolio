@@ -1421,6 +1421,15 @@ body:has(.sales) {
   margin-bottom: 34px;
 }
 
+/* .l-h2 is capped at 24ch, so `text-align: center` alone only centres the words
+   INSIDE a box that is still flush left — the heading ends up visibly off to the
+   left of the lede and the panel, which both centre on the full width. Every
+   other centred section gets this from `.l-center .l-h2`; this one is centred
+   without that class, so it needs the auto margins directly. */
+.l-quiz__head .l-h2 {
+  margin-inline: auto;
+}
+
 .l-quiz__lede {
   color: var(--l-fg-70);
   font-size: 17px;

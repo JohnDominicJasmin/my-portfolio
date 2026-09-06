@@ -141,21 +141,21 @@ export default function ChatWidget({
   }
 
   return (
-    <div className={`chatw chatw--${variant}`}>
+    <div className={`chatw chatw--${variant}${open ? " chatw--open" : ""}`}>
+      {/* The launcher hides once the panel is up — it used to stay, which put a
+          second, brighter close button on top of the conversation. The icon is
+          a rule rather than a speech balloon; the balloon is the most generic
+          mark this widget could wear and it matched nothing else on the page. */}
       <button
         ref={launcherRef}
         type="button"
         className="chatw__launch"
         aria-expanded={open}
         aria-controls="chatw-panel"
-        onClick={() => setOpen((o) => !o)}
+        onClick={() => setOpen(true)}
       >
-        <span className="chatw__launch-icon" aria-hidden="true">
-          {open ? "✕" : "💬"}
-        </span>
-        <span className="chatw__launch-text">
-          {open ? "Close" : "Ask a question"}
-        </span>
+        <span className="chatw__launch-icon" aria-hidden="true" />
+        <span className="chatw__launch-text">Ask a question</span>
       </button>
 
       <div
@@ -203,10 +203,9 @@ export default function ChatWidget({
           ))}
 
           {busy ? (
-            <div className="chatw__msg chatw__msg--bot chatw__typing">
-              <span />
-              <span />
-              <span />
+            <div className="chatw__msg chatw__typing">
+              <span className="chatw__typing-label">Thinking</span>
+              <span className="chatw__typing-bar" aria-hidden="true" />
             </div>
           ) : null}
         </div>
