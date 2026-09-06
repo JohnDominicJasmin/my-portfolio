@@ -35,10 +35,18 @@ export default function CvPage() {
           <span className="eyebrow">AI Automation Engineer</span>
           <h1 className="hero__title">I build the systems businesses run on.</h1>
           <p className="hero__sub">
-            AI chatbots, voice agents, and lead-routing pipelines that work while
-            you sleep, plus a live SaaS product of my own and production Android
-            apps built in Kotlin that don&apos;t break.
+            AI chatbots, voice agents and lead-routing pipelines running for
+            real businesses, a live SaaS product of my own with paying users,
+            and six years of production Android in Kotlin behind all of it.
           </p>
+          {/* A recruiter's first three questions were unanswerable anywhere on
+              this page: where are they, can I hire them, how long have they
+              done this. The PDF had it; the page is what gets scanned. */}
+          <ul className="hero__facts">
+            <li>Philippines &middot; GMT+8</li>
+            <li>6 years in production</li>
+            <li>Open to remote, available now</li>
+          </ul>
           <div className="hero__ctas">
             <a href="#portfolio" className="btn btn--primary">
               See the work
@@ -81,7 +89,7 @@ export default function CvPage() {
                 <strong>AI Automation Engineer</strong>. Most of my work is
                 building intelligent automation for businesses: AI chatbots,
                 voice agents, lead-routing pipelines, and full workflow
-                automation. The result is less manual work and faster scaling.
+                automation, running in production for real clients.
               </p>
               <p>
                 I also build and run <strong>LiquidityHQ</strong>, my own live
@@ -133,7 +141,7 @@ export default function CvPage() {
           <h2 className="section__title">AI Automation</h2>
           <p className="section__lede">
             Systems running for real businesses, plus a SaaS product of my own.
-            Each one built to kill a specific bottleneck.
+            Each one replaced a specific manual process.
           </p>
           <ProjectList projects={automationProjects} />
         </div>
@@ -153,10 +161,14 @@ export default function CvPage() {
       <section id="capabilities" className="section section--band">
         <div className="container">
           <span className="eyebrow">Capabilities</span>
-          <h2 className="section__title">Ready-to-deploy frameworks</h2>
+          <h2 className="section__title">Patterns I have already built</h2>
+          {/* Was "Ready-to-deploy frameworks / Engineered by experience, not
+              theory" — a recruiter reads a menu of things you would like to
+              sell, not things you have done, and slogans get discounted. Each
+              group below already cites the architecture it came out of. */}
           <p className="section__lede">
-            Engineered by experience, not theory. Every capability below maps
-            directly to a system I have built and shipped.
+            Each group below came out of a system that shipped and is running.
+            The note under each one is the architecture it was built on.
           </p>
           <div className="caps">
             {capabilities.map((cap) => (
@@ -182,8 +194,8 @@ export default function CvPage() {
               <span className="eyebrow">Get in touch</span>
               <h2 className="section__title">Let&apos;s build something.</h2>
               <p className="section__lede" style={{ marginBottom: 0 }}>
-                Automating a workflow, or need a senior Android developer on your
-                team? Tell me what you&apos;re working on.
+                Hiring for AI automation, or want any of the systems above
+                walked through? Tell me what you&apos;re building.
               </p>
               <div className="contact__links">
                 <a href="mailto:johndominicjasmin@gmail.com">

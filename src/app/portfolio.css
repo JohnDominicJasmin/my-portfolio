@@ -280,7 +280,50 @@ a {
   color: var(--muted);
   font-size: 17px;
   max-width: 60ch;
-  margin: 0 auto 32px;
+  margin: 0 auto 22px;
+}
+
+/* The facts a recruiter scans for first. Set as instrumentation, not prose:
+   mono, small, separated by rules rather than punctuation. */
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 30px;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  color: var(--ink);
+}
+
+.hero__facts li {
+  padding: 0 16px;
+  border-left: 1px solid var(--line);
+}
+
+.hero__facts li:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.hero__facts li:last-child {
+  padding-right: 0;
+}
+
+@media (max-width: 560px) {
+  .hero__facts {
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .hero__facts li {
+    border-left: none;
+    padding: 0;
+  }
 }
 
 .hero__ctas {
