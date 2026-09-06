@@ -43,6 +43,18 @@ export const bookingUrl = "https://cal.com/johndominic/audit";
 export const chatWebhookUrl =
   "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-chat";
 
+/**
+ * Endpoint the audit quiz posts to: the "Portfolio-audit" workflow. Same
+ * shape and the same protections as the chat, with tighter caps because one
+ * visitor has no reason to run it five times.
+ *
+ * This only writes the answer the visitor reads on screen. The lead itself
+ * goes to Netlify Forms, which is a separate path on purpose: if n8n is
+ * asleep or the OpenAI call fails, the enquiry still lands in the inbox.
+ */
+export const auditWebhookUrl =
+  "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-audit";
+
 const mailtoFallback = `mailto:${email}?subject=${encodeURIComponent(
   "Free automation audit",
 )}&body=${encodeURIComponent(

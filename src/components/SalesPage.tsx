@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuditQuiz from "@/components/AuditQuiz";
 import BeforeAfterPanel from "@/components/BeforeAfterPanel";
 import ChatWidget from "@/components/ChatWidget";
 import Counters from "@/components/Counters";
@@ -220,8 +221,10 @@ export default function SalesPage() {
 
       {/* HERO */}
       <header className="l-hero l-wrap l-rise">
+        {/* The pulsing dot is gone. It read as a live-status light on a line
+            that reports no status, and a blink next to the first words on the
+            page pulls the eye off the headline. */}
         <span className="l-hero__flag">
-          <span className="l-dot" aria-hidden="true" />
           AI automation for service businesses
         </span>
         <h1 className="l-hero__title">
@@ -498,6 +501,13 @@ export default function SalesPage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/* AUDIT QUIZ — client island. Sits before the CTA on purpose: someone
+          who has just been told what to fix first is a warmer reader of the
+          booking link underneath it than someone arriving cold. */}
+      <section className="l-quizband l-wrap">
+        <AuditQuiz />
       </section>
 
       {/* CTA */}
