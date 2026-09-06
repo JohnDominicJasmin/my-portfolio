@@ -18,7 +18,7 @@ import "../chat.css";
 export const metadata: Metadata = pageMeta({
   title: "CV — John Dominic Jasmin | AI Automation Engineer",
   description:
-    "AI automation systems, a live SaaS product, and six years of production engineering. Work, skills and case studies for John Dominic Jasmin.",
+    "AI automation systems, a live SaaS product, and 6 years of production engineering. Work, skills and case studies for John Dominic Jasmin.",
   path: "/cv",
 });
 
@@ -39,7 +39,7 @@ export default function CvPage() {
           <p className="hero__sub">
             AI chatbots, voice agents and lead-routing pipelines running for
             real businesses, a live SaaS product of my own with paying users,
-            and six years of production Android in Kotlin behind all of it.
+            and 6 years of production Android in Kotlin behind all of it.
           </p>
           {/* A recruiter's first three questions were unanswerable anywhere on
               this page: where are they, can I hire them, how long have they
@@ -99,7 +99,7 @@ export default function CvPage() {
                 and operate something real, not just prototype it.
               </p>
               <p>
-                Underneath all of it is six years of production software
+                Underneath all of it is 6 years of production software
                 engineering, including{" "}
                 <strong>Android development in Kotlin</strong>. That background
                 is why these systems are built to be reliable and

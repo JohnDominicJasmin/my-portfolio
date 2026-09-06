@@ -32,7 +32,7 @@ const ticker: Tick[] = [
   {
     time: "06:11",
     tone: "var(--l-amber)",
-    text: "Customer who went quiet four months ago got back in touch and booked",
+    text: "Customer who went quiet 4 months ago got back in touch and booked",
   },
   {
     time: "07:45",
@@ -166,7 +166,7 @@ const quotes = [
 const faqs = [
   {
     q: "How much does this cost?",
-    a: "It depends what you're automating — one Messenger flow is not the same job as a voice agent across three branches. You get a number on the audit call, before you commit to anything.",
+    a: "It depends what you're automating — one Messenger flow is not the same job as a voice agent across 3 branches. You get a number on the audit call, before you commit to anything.",
   },
   {
     q: "How long before it's actually live?",
@@ -249,7 +249,7 @@ export default function SalesPage() {
           </a>
         </div>
         <p className="l-hero__note">
-          Thirty minutes, one workflow, an honest answer.
+          30 minutes, one workflow, an honest answer.
         </p>
       </header>
 
@@ -514,7 +514,7 @@ export default function SalesPage() {
       <section id="book" className="l-cta l-wrap">
         <h2 className="l-cta__title">What is the one job nobody wants?</h2>
         <p className="l-cta__sub">
-          Usually the one worth automating first. Bring it to a thirty minute
+          Usually the one worth automating first. Bring it to a 30 minute
           call. If I cannot help, I will say so and point you somewhere that can.
         </p>
         <a className="l-btn l-btn--solid" href={booking.href} {...bookingAttrs}>

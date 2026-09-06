@@ -45,7 +45,7 @@ const panels = [
     steps: [
       {
         time: "21:40",
-        text: "Call answered in under five seconds. Nobody on your team is awake.",
+        text: "Call answered in under 5 seconds. Nobody on your team is awake.",
       },
       {
         time: "21:41",

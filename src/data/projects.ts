@@ -41,7 +41,7 @@ export const automationProjects: Project[] = [
       "A live SaaS product I built and run: AI-powered crypto trading intelligence for retail traders. Squeeze scores, whale alerts, AI analysis, and macro events in one dashboard. Free tier plus a $25/mo Pro plan, with real paying users.",
     body: [
       "LiquidityHQ solves a real problem for retail crypto traders: too much market data scattered across too many places to act on before a move has already happened. It pulls live price, funding, and order-flow data across 50 coins, scores squeeze setups and whale activity in real time, and hands a trader one dashboard instead of a dozen open tabs.",
-      "The AI layer runs on Grok (xAI). Pick a coin, hit Analyze, and it reads 35 live signals, including funding rate, CVD, open interest trend, squeeze score, whale flow, and GEX, then returns a direct, actionable trade bias instead of raw numbers to interpret yourself. A separate news pipeline classifies breaking geopolitical headlines from 12+ sources for how they would move crypto, with roughly a one minute lag from publish to alert.",
+      "The AI layer runs on Grok (xAI). Pick a coin, hit Analyze, and it reads 35 live signals, including funding rate, CVD, open interest trend, squeeze score, whale flow, and GEX, then returns a direct, actionable trade bias instead of raw numbers to interpret yourself. A separate news pipeline classifies breaking geopolitical headlines from 12+ sources for how they would move crypto, with roughly a 1 minute lag from publish to alert.",
       "It shipped with a real pricing model, not a demo: a free tier covering the dashboard, morning briefing, news feed, and limited AI analyses, plus a $25/mo Pro tier that unlocks Telegram alerts, unlimited price alerts, and deeper AI usage.",
     ],
     shots: [
@@ -105,7 +105,7 @@ export const automationProjects: Project[] = [
     problem:
       "Leads slipping through the cracks across calls, forms, and follow-ups, with no single system catching them.",
     summary:
-      "Five systems unified into one B2B automation machine: Dead Lead Reactivation, a missed-call voice receptionist, PropConnect's voice agent, Smart Lead Routing, and an AI Appointment Setter.",
+      "5 systems unified into one B2B automation machine: Dead Lead Reactivation, a missed-call voice receptionist, PropConnect's voice agent, Smart Lead Routing, and an AI Appointment Setter.",
     loom: "https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342",
     demos: [
       {
@@ -141,7 +141,7 @@ export const automationProjects: Project[] = [
       "Five automation systems unified into one B2B growth machine, covering every point where a lead can go cold: dead lists, missed calls, inbound calls, routing, and booking.",
     body: [
       "Most businesses lose leads in the gaps between tools. A call comes in after hours and goes to voicemail. A form fill sits in a pipeline with no follow-up. An old list of dead leads never gets touched again. Each gap is small, and together they are most of the pipeline.",
-      "This suite closes all five gaps at once. Dead Lead Reactivation works old lists back into conversations. A voice receptionist catches missed calls instead of letting them go to voicemail. PropConnect's voice agent answers inbound real estate calls in under five seconds, qualifies the lead, and books the viewing. Smart Lead Routing scores each lead High, Medium, or Low, writes a personalized reply, and routes it to the right pipeline in under two seconds. The AI Appointment Setter books viewings around the clock with instant CRM sync.",
+      "This suite closes all 5 gaps at once. Dead Lead Reactivation works old lists back into conversations. A voice receptionist catches missed calls instead of letting them go to voicemail. PropConnect's voice agent answers inbound real estate calls in under 5 seconds, qualifies the lead, and books the viewing. Smart Lead Routing scores each lead High, Medium, or Low, writes a personalized reply, and routes it to the right pipeline in under 2 seconds. The AI Appointment Setter books viewings around the clock with instant CRM sync.",
       "The pieces run on asynchronous webhook triggers, contact syncing loops, and native CRM booking automations, so each system feeds the others instead of standing alone.",
     ],
     shots: [

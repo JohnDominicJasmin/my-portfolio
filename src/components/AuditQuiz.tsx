@@ -430,7 +430,7 @@ export default function AuditQuiz() {
   return (
     <div className="l-quiz" id="audit">
       <div className="l-quiz__head">
-        <span className="l-eyebrow">Two minutes, no call needed</span>
+        <span className="l-eyebrow">2 minutes, no call needed</span>
         <h2 className="l-h2">Tell us where they are slipping away.</h2>
         <p className="l-quiz__lede">
           A few questions, and the next one depends on your last answer. You get
@@ -526,7 +526,7 @@ export default function AuditQuiz() {
                     rows={4}
                     value={answer.other}
                     onChange={(e) => setAnswer({ picked: [], other: e.target.value })}
-                    placeholder="In your own words. One or two lines is plenty."
+                    placeholder="In your own words. 1 or 2 lines is plenty."
                     maxLength={800}
                   />
                 </>
