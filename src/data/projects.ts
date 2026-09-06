@@ -30,7 +30,7 @@ export const automationProjects: Project[] = [
     slug: "liquidity-hq",
     title: "LiquidityHQ",
     tags: ["Next.js", "Grok (xAI)", "Live SaaS"],
-    cover: "/assets/liquidity-hq-sc-1.png",
+    cover: "/assets/liquidity-hq-sc-1.webp",
     coverAlt: "LiquidityHQ dashboard",
     problem:
       "Retail traders drowning in scattered market data across a dozen tabs, acting too late.",
@@ -46,19 +46,19 @@ export const automationProjects: Project[] = [
     ],
     shots: [
       {
-        src: "/assets/liquidity-hq-sc-1.png",
+        src: "/assets/liquidity-hq-sc-1.webp",
         alt: "LiquidityHQ landing page: read the map, hunt the stops",
       },
       {
-        src: "/assets/liquidity-hq-sc-2.png",
+        src: "/assets/liquidity-hq-sc-2.webp",
         alt: "LiquidityHQ feature grid: AI Arena, Telegram Alerts, Morning Briefing, News Feed, Whale Tracker, Squeeze Scanner",
       },
       {
-        src: "/assets/liquidity-hq-sc-3.png",
+        src: "/assets/liquidity-hq-sc-3.webp",
         alt: "LiquidityHQ pricing: Free and Pro tiers",
       },
       {
-        src: "/assets/liquidity-hq-sc-4.png",
+        src: "/assets/liquidity-hq-sc-4.webp",
         alt: "LiquidityHQ AI Arena: live chart with Grok analysis",
       },
     ],
@@ -100,7 +100,7 @@ export const automationProjects: Project[] = [
     slug: "crm-growth-suite",
     title: "Omnichannel CRM AI Growth Suite",
     tags: ["Vapi", "n8n", "GoHighLevel", "OpenAI", "Supabase"],
-    cover: "/assets/cs5_prop_connect.png",
+    cover: "/assets/cs5_prop_connect.webp",
     coverAlt: "Omnichannel CRM AI Growth Suite",
     problem:
       "Leads slipping through the cracks across calls, forms, and follow-ups, with no single system catching them.",
@@ -145,10 +145,10 @@ export const automationProjects: Project[] = [
       "The pieces run on asynchronous webhook triggers, contact syncing loops, and native CRM booking automations, so each system feeds the others instead of standing alone.",
     ],
     shots: [
-      { src: "/assets/cs5_prop_connect.png", alt: "PropConnect AI Voice Agent" },
-      { src: "/assets/cs09_lead_route_cover.png", alt: "Smart Lead Routing System" },
+      { src: "/assets/cs5_prop_connect.webp", alt: "PropConnect AI Voice Agent" },
+      { src: "/assets/cs09_lead_route_cover.webp", alt: "Smart Lead Routing System" },
       {
-        src: "/assets/cs_8_voice_appointment_setter.png",
+        src: "/assets/cs_8_voice_appointment_setter.webp",
         alt: "AI Appointment Setter",
       },
     ],
@@ -177,7 +177,7 @@ export const automationProjects: Project[] = [
     title: "Solar ROI Calculator",
     loom: "https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b",
     tags: ["n8n", "OpenAI", "React Native", "Supabase"],
-    cover: "/assets/cs3_solar_roi_cover.png",
+    cover: "/assets/cs3_solar_roi_cover.webp",
     coverAlt: "Solar ROI Calculator",
     problem:
       "Manual ROI estimates slowing down solar sales conversations.",
@@ -191,7 +191,7 @@ export const automationProjects: Project[] = [
     ],
     shots: [
       {
-        src: "/assets/cs3_solar_roi_cover.png",
+        src: "/assets/cs3_solar_roi_cover.webp",
         alt: "Solar ROI Calculator",
       },
     ],
@@ -209,7 +209,7 @@ export const automationProjects: Project[] = [
     title: "Reconciliation Pipeline & Resilience Engine",
     loom: "https://www.youtube.com/embed/FxTpqahnpJY",
     tags: ["FastAPI", "n8n", "OpenAI", "Python"],
-    cover: "/assets/reconciliation-pipeline.png",
+    cover: "/assets/reconciliation-pipeline.webp",
     coverAlt: "Reconciliation Pipeline and Resilience Engine",
     problem:
       "Bookkeeping automation that breaks quietly: duplicate charges slip through and one outage takes the whole run down.",
@@ -224,7 +224,7 @@ export const automationProjects: Project[] = [
     ],
     shots: [
       {
-        src: "/assets/reconciliation-pipeline.png",
+        src: "/assets/reconciliation-pipeline.webp",
         alt: "Reconciliation pipeline architecture",
       },
     ],
@@ -246,7 +246,7 @@ export const automationProjects: Project[] = [
     result: "24/7 coverage, replies in seconds instead of hours",
     title: "Multi-Branch AI Messenger Chatbot",
     tags: ["n8n", "OpenAI", "Supabase", "Meta Graph API"],
-    cover: "/assets/cs1_portfolio_cover.png",
+    cover: "/assets/cs1_portfolio_cover.webp",
     coverAlt: "Multi-Branch AI Messenger Chatbot",
     problem:
       "Branches fielding inquiries by hand, with replies taking hours and no consistent coverage.",
@@ -262,7 +262,7 @@ export const automationProjects: Project[] = [
     ],
     shots: [
       {
-        src: "/assets/cs1_portfolio_cover.png",
+        src: "/assets/cs1_portfolio_cover.webp",
         alt: "Multi-Branch AI Messenger Chatbot",
       },
     ],
@@ -290,7 +290,7 @@ export const mobileProjects: Project[] = [
     slug: "cyclistance",
     title: "Cyclistance",
     tags: ["Android", "Kotlin", "Firebase", "Google Maps API"],
-    cover: "/assets/cyclistance-sc-1.png",
+    cover: "/assets/cyclistance-sc-1.webp",
     coverAlt: "Cyclistance app",
     problem: "Cyclists stranded with no fast way to call for roadside help.",
     summary:
@@ -302,10 +302,10 @@ export const mobileProjects: Project[] = [
       "Cyclistance handles both. A rider requests assistance in a few taps and the app matches them with the nearest available helper, passing exact coordinates so there is no explaining involved. Under the hood it runs low-latency database sync loops and a peer-to-peer mapping grid, with live state kept consistent between both riders as the helper moves.",
     ],
     shots: [
-      { src: "/assets/cyclistance-sc-1.png", alt: "Cyclistance screenshot 1" },
-      { src: "/assets/cyclistance-sc-2.png", alt: "Cyclistance screenshot 2" },
-      { src: "/assets/cyclistance-sc-3.png", alt: "Cyclistance screenshot 3" },
-      { src: "/assets/cyclistance-sc-4.png", alt: "Cyclistance screenshot 4" },
+      { src: "/assets/cyclistance-sc-1.webp", alt: "Cyclistance screenshot 1" },
+      { src: "/assets/cyclistance-sc-2.webp", alt: "Cyclistance screenshot 2" },
+      { src: "/assets/cyclistance-sc-3.webp", alt: "Cyclistance screenshot 3" },
+      { src: "/assets/cyclistance-sc-4.webp", alt: "Cyclistance screenshot 4" },
     ],
     portraitShots: true,
     facts: [
@@ -325,7 +325,7 @@ export const mobileProjects: Project[] = [
     slug: "byahero",
     title: "Byahero",
     tags: ["Android", "Kotlin", "Google Maps API"],
-    cover: "/assets/byahero-prev-sc.jpg",
+    cover: "/assets/byahero-prev-sc.webp",
     coverAlt: "Byahero app",
     problem: "Missing your stop because there is no heads-up before it arrives.",
     summary:
@@ -337,10 +337,10 @@ export const mobileProjects: Project[] = [
       "Byahero watches the route in the background and alerts the rider as their stop approaches. It runs real-time geolocation mapping with geofencing triggers and background processing, so the alert fires reliably even with the screen off. It also carries lighter navigation and live weather so a rider can check conditions without a second app.",
     ],
     shots: [
-      { src: "/assets/byahero-sc-1.jpg", alt: "Byahero screenshot 1" },
-      { src: "/assets/byahero-sc-2.jpg", alt: "Byahero screenshot 2" },
-      { src: "/assets/byahero-sc-3.jpg", alt: "Byahero screenshot 3" },
-      { src: "/assets/byahero-sc-4.jpg", alt: "Byahero screenshot 4" },
+      { src: "/assets/byahero-sc-1.webp", alt: "Byahero screenshot 1" },
+      { src: "/assets/byahero-sc-2.webp", alt: "Byahero screenshot 2" },
+      { src: "/assets/byahero-sc-3.webp", alt: "Byahero screenshot 3" },
+      { src: "/assets/byahero-sc-4.webp", alt: "Byahero screenshot 4" },
     ],
     portraitShots: true,
     facts: [

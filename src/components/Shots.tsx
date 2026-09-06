@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { sizeOf } from "@/data/imageSizes";
 import type { Shot } from "@/data/projects";
 
 export default function Shots({
@@ -50,7 +51,12 @@ export default function Shots({
           >
             {shots.map((shot) => (
               <div key={shot.src} className="shots__slide">
-                <img src={shot.src} alt={shot.alt} loading="lazy" />
+                <img
+                  src={shot.src}
+                  alt={shot.alt}
+                  loading="lazy"
+                  {...sizeOf(shot.src)}
+                />
               </div>
             ))}
           </div>

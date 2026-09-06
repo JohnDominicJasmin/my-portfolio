@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { siteUrl } from "@/data/site";
 import "./base.css";
 
 export const metadata: Metadata = {
   title: "John Dominic Jasmin | AI Automation Engineer",
   description:
     "AI Automation Engineer. I build AI chatbots, voice agents, and lead-routing pipelines for businesses, and run LiquidityHQ, my own live SaaS product.",
+  // Lives here rather than on `/` so every route can declare a relative
+  // canonical and resolve its own absolute URLs.
+  ...(siteUrl ? { metadataBase: new URL(siteUrl) } : {}),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

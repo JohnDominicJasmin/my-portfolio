@@ -663,9 +663,11 @@ a {
   top: 96px;
 }
 
-.detail__aside h3 {
+/* h2 since the heading level was corrected; the look is unchanged. */
+.detail__aside h2 {
   font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 11.5px;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--muted);
@@ -843,6 +845,41 @@ a {
 }
 
 @media (max-width: 720px) {
+  /* Tap targets. sales.css got this treatment and measures zero failures;
+     portfolio.css never did, so /cv kept desktop sizes on touch — 22 targets
+     under 44px, the worst of them the 19px "Watch demo" buttons. WCAG 2.2 AA
+     (2.5.8) puts the floor at 24x24 CSS px, so those were a conformance
+     failure rather than a preference. */
+  .btn--link,
+  .chapter__demo,
+  .contact__links a,
+  .footer__links a,
+  .header__burger {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .btn--primary,
+  .btn--ghost,
+  .form button,
+  button[type="submit"] {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .chapter__head {
+    min-height: 48px;
+  }
+
+  .header__brand {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
   .header__nav {
     display: none;
   }

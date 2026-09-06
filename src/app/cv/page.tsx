@@ -10,13 +10,15 @@ import {
   skillGroups,
 } from "@/data/projects";
 import { cvFonts } from "../fonts";
+import { pageMeta } from "../metadata";
 import "../portfolio.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "CV — John Dominic Jasmin | AI Automation Engineer",
   description:
-    "Work history, skills, and projects for John Dominic Jasmin: AI automation systems, a live SaaS product, and six years of production Android engineering in Kotlin.",
-};
+    "AI automation systems, a live SaaS product, and six years of production engineering. Work, skills and case studies for John Dominic Jasmin.",
+  path: "/cv",
+});
 
 export default function CvPage() {
   return (

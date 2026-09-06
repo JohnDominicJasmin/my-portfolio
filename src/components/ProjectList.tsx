@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { sizeOf } from "@/data/imageSizes";
 import type { Project } from "@/data/projects";
 
 export default function ProjectList({ projects }: { projects: Project[] }) {
@@ -36,7 +37,12 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             className={`project${project.demos ? " project--featured" : ""}`}
           >
             <div className="project__media">
-              <img src={project.cover} alt={project.coverAlt} loading="lazy" />
+              <img
+                src={project.cover}
+                alt={project.coverAlt}
+                loading="lazy"
+                {...sizeOf(project.cover)}
+              />
             </div>
             <div className="project__body">
               <div className="project__tags">

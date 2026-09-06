@@ -6,6 +6,7 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { allProjects } from "@/data/projects";
 import { cvFonts } from "../../fonts";
+import { pageMeta } from "../../metadata";
 import "../../portfolio.css";
 
 export function generateStaticParams() {
@@ -18,10 +19,11 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const project = allProjects.find((p) => p.slug === slug);
   if (!project) return {};
-  return {
+  return pageMeta({
     title: `${project.title} | John Dominic Jasmin`,
     description: project.summary,
-  };
+    path: `/work/${slug}`,
+  });
 }
 
 export default async function WorkPage(props: PageProps<"/work/[slug]">) {
@@ -107,9 +109,13 @@ export default async function WorkPage(props: PageProps<"/work/[slug]">) {
             </div>
 
             <aside className="detail__aside">
+              {/* h2, not h3. On a project with no demos section this is the
+                  first heading after the h1, and jumping straight to level 3
+                  leaves a screen-reader user unsure whether they missed a
+                  section. */}
               {(project.facts ?? []).map((fact) => (
                 <div key={fact.label}>
-                  <h3>{fact.label}</h3>
+                  <h2>{fact.label}</h2>
                   <div className="skills__list">
                     {fact.items.map((item) => (
                       <span key={item} className="chip">

@@ -19,10 +19,14 @@ export default function SiteHeader() {
       <div className="container">
         <div className="header__inner">
           <Link href="/cv" className="header__brand">
+            {/* Was a 1254px PNG rendered at 34px — 29.5x oversampled, 313 KB,
+                and the one eager image on every route. Now 96px / ~1 KB. */}
             <img
-              src="/assets/profile-picture.png"
+              src="/assets/profile-picture.webp"
               alt=""
               className="header__avatar"
+              width={96}
+              height={96}
             />
             <span>John Dominic Jasmin</span>
           </Link>
