@@ -740,6 +740,109 @@ body:has(.sales) {
 }
 
 /* =========================================
+   LEAD FORM
+========================================= */
+.l-form {
+  max-width: 760px;
+  margin: 54px auto 0;
+  padding-top: 40px;
+  border-top: 1px solid var(--l-line);
+  text-align: left;
+}
+
+.l-form__lede {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--l-fg-70);
+  margin: 0 0 26px;
+  text-align: center;
+}
+
+.l-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 22px;
+}
+
+/* honeypot: off-screen rather than display:none, so bots that check
+   computed style still fill it in */
+.l-form__pot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.l-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.l-field--wide {
+  grid-column: 1 / -1;
+}
+
+.l-field label {
+  font-family: var(--l-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--l-amber);
+}
+
+.l-field input,
+.l-field textarea {
+  font-family: var(--l-sans);
+  font-size: 15.5px;
+  color: var(--l-fg);
+  background: var(--l-raised);
+  border: 1px solid var(--l-line-md);
+  padding: 13px 15px;
+  width: 100%;
+  min-height: 48px;
+  transition: border-color 0.18s ease;
+}
+
+.l-field textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.l-field input:hover,
+.l-field textarea:hover {
+  border-color: rgba(242, 239, 233, 0.3);
+}
+
+.l-field input:focus-visible,
+.l-field textarea:focus-visible {
+  outline: 2px solid var(--l-amber);
+  outline-offset: 2px;
+  border-color: var(--l-amber);
+}
+
+.l-form__send {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 4px;
+}
+
+.l-form__note {
+  font-size: 13.5px;
+  color: var(--l-fg-45);
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .l-form__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
    PROOF
 ========================================= */
 .l-proof {
@@ -934,13 +1037,74 @@ body:has(.sales) {
    FOOTER
 ========================================= */
 .l-foot {
+  padding-top: 54px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--l-line);
+}
+
+.l-foot__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 56px;
+  padding-bottom: 40px;
+}
+
+.l-foot__name {
+  font-family: var(--l-serif);
+  font-size: 26px;
+  letter-spacing: -0.3px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.l-foot__line {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--l-fg-70);
+  max-width: 40ch;
+  margin: 0 0 22px;
+}
+
+.l-foot__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.l-foot__nav > div {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-width: 0;
+}
+
+.l-foot__label {
+  font-family: var(--l-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--l-amber);
+  margin-bottom: 3px;
+}
+
+.l-foot__nav a {
+  font-size: 14.5px;
+  color: var(--l-fg-70);
+  /* the email is long; let it wrap rather than push the grid wide */
+  overflow-wrap: anywhere;
+}
+
+.l-foot__nav a:hover {
+  color: var(--l-amber);
+}
+
+.l-foot__base {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
-  padding-top: 26px;
-  padding-bottom: 40px;
+  padding-top: 24px;
   border-top: 1px solid var(--l-line);
   font-family: var(--l-mono);
   font-size: 11px;
@@ -1069,6 +1233,12 @@ body:has(.sales) {
 }
 
 @media (max-width: 900px) {
+  .l-foot__top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+
   /* Stacked, so the seam moves from the left edge to the top one. */
   .l-compare {
     grid-template-columns: 1fr;

@@ -512,16 +512,128 @@ export default function SalesPage() {
         <p className="l-cta__mail">
           Or just email me: <a href={`mailto:${email}`}>{email}</a>
         </p>
+
+        {/* Booking a call is a bigger ask than typing a phone number, and
+            everyone in between was being lost. This is a real POST, not JS:
+            Netlify picks the form up from the exported HTML at deploy time,
+            so it keeps working with no server and even if scripts fail. */}
+        <div className="l-form">
+          <p className="l-form__lede">
+            Not ready for a call? Leave your details and I will come back to
+            you with what I would automate first.
+          </p>
+
+          <form
+            name="audit"
+            method="POST"
+            action="/thanks"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            className="l-form__grid"
+          >
+            <input type="hidden" name="form-name" value="audit" />
+            <p className="l-form__pot" aria-hidden="true">
+              <label>
+                Leave this empty
+                <input name="bot-field" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
+
+            <div className="l-field">
+              <label htmlFor="lf-name">Name</label>
+              <input id="lf-name" name="name" type="text" required autoComplete="name" />
+            </div>
+
+            <div className="l-field">
+              <label htmlFor="lf-business">Business</label>
+              <input id="lf-business" name="business" type="text" autoComplete="organization" />
+            </div>
+
+            <div className="l-field">
+              <label htmlFor="lf-email">Email</label>
+              <input id="lf-email" name="email" type="email" required autoComplete="email" />
+            </div>
+
+            <div className="l-field">
+              <label htmlFor="lf-phone">Phone or WhatsApp</label>
+              <input id="lf-phone" name="phone" type="tel" autoComplete="tel" />
+            </div>
+
+            <div className="l-field l-field--wide">
+              <label htmlFor="lf-job">What is the job nobody wants?</label>
+              <textarea id="lf-job" name="job" rows={3} />
+            </div>
+
+            <div className="l-field--wide">
+              <button type="submit" className="l-btn l-btn--solid l-form__send">
+                Send it over
+              </button>
+              <p className="l-form__note">
+                Goes straight to me. No list, no sequence, no sharing it on.
+              </p>
+            </div>
+          </form>
+        </div>
       </section>
 
       </main>
 
       {/* FOOTER */}
+      {/* Someone who scrolled this far is the most qualified reader on the
+          page. The footer used to be a copyright line and one link, so it
+          gave them nowhere to go. */}
       <footer className="l-foot l-wrap">
-        <span>&copy; 2026 John Dominic Jasmin</span>
-        <span>
-          <Link href="/cv">CV and portfolio</Link>
-        </span>
+        <div className="l-foot__top">
+          <div className="l-foot__brand">
+            <span className="l-foot__name">John Dominic Jasmin</span>
+            <p className="l-foot__line">
+              Systems that answer your customers when nobody is available.
+              Voice, Messenger, and web enquiries, any hour.
+            </p>
+            <a
+              href={booking.href}
+              {...bookingAttrs}
+              className="l-btn l-btn--solid l-btn--small"
+            >
+              Book a free audit
+            </a>
+          </div>
+
+          <nav className="l-foot__nav" aria-label="Footer">
+            <div>
+              <span className="l-foot__label">This page</span>
+              <a href="#results">What changed for them</a>
+              <a href="#the-fix">How it works</a>
+              <a href="#in-their-words">In their words</a>
+              <a href="#faq">Questions</a>
+              <a href="#book">Book a call</a>
+            </div>
+            <div>
+              <span className="l-foot__label">Elsewhere</span>
+              <Link href="/cv">CV and portfolio</Link>
+              <a
+                href="https://liquidity-hq.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LiquidityHQ
+              </a>
+              <a
+                href="https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a href={`mailto:${email}`}>{email}</a>
+            </div>
+          </nav>
+        </div>
+
+        <div className="l-foot__base">
+          <span>&copy; 2026 John Dominic Jasmin</span>
+          <span>Philippines &middot; GMT+8 &middot; working with clients worldwide</span>
+        </div>
       </footer>
     </div>
   );

@@ -647,7 +647,78 @@ a {
 ========================================= */
 .footer {
   border-top: 1px solid var(--border);
-  padding: 32px 0;
+  padding: 48px 0 34px;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 52px;
+  padding-bottom: 34px;
+}
+
+.footer__name {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer__line {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 42ch;
+  margin: 0 0 14px;
+}
+
+.footer__meta {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: var(--ink);
+  margin: 0;
+}
+
+.footer__nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.footer__nav > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.footer__label {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 2px;
+}
+
+.footer__nav a {
+  font-size: 14.5px;
+  color: var(--muted);
+  text-decoration: none;
+  /* the email is long; wrap instead of widening the grid */
+  overflow-wrap: anywhere;
+}
+
+.footer__nav a:hover {
+  color: var(--teal);
+}
+
+.footer__base {
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
   font-size: 13.5px;
   color: var(--muted);
   display: flex;
@@ -660,6 +731,13 @@ a {
   font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 12px;
   letter-spacing: 1px;
+}
+
+@media (max-width: 720px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
 }
 
 /* =========================================
