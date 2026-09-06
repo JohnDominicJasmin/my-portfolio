@@ -72,13 +72,11 @@
   display: none;
 }
 
-/* A short rule rather than an icon: the speech-balloon glyph is the single
-   most generic mark this widget could wear. */
 .chatw__launch-icon {
-  width: 14px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.75;
+  width: 17px;
+  height: 17px;
+  flex: none;
+  display: block;
 }
 
 /* ---------- panel ---------- */
@@ -335,6 +333,13 @@
     padding: 0;
     width: 52px;
     justify-content: center;
+  }
+
+  /* Nothing else is left in the button at this size, so give the mark enough
+     weight to read as one. */
+  .chatw__launch-icon {
+    width: 21px;
+    height: 21px;
   }
 
   .chatw__panel {

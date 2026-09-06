@@ -154,7 +154,25 @@ export default function ChatWidget({
         aria-controls="chatw-panel"
         onClick={() => setOpen(true)}
       >
-        <span className="chatw__launch-icon" aria-hidden="true" />
+        {/* Squared message mark, drawn rather than set as a glyph. The label is
+            hidden under 520px and the button becomes a 52px tile, so whatever
+            sits here has to carry the meaning on its own — a bare rule did not.
+            Squared corners and a hairline stroke keep it away from the rounded
+            balloon every other chat widget on the internet uses. */}
+        <svg
+          className="chatw__launch-icon"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path
+            d="M2.75 3.25h14.5v10h-8.5l-3.75 3.5v-3.5H2.75z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          />
+        </svg>
         <span className="chatw__launch-text">Ask a question</span>
       </button>
 
