@@ -1,5 +1,6 @@
 import Link from "next/link";
 import BeforeAfterPanel from "@/components/BeforeAfterPanel";
+import ChatWidget from "@/components/ChatWidget";
 import Counters from "@/components/Counters";
 import { booking, email } from "@/data/site";
 
@@ -644,6 +645,8 @@ export default function SalesPage() {
           <span>Philippines &middot; GMT+8 &middot; working with clients worldwide</span>
         </div>
       </footer>
+
+      <ChatWidget variant="sales" />
     </div>
   );
 }

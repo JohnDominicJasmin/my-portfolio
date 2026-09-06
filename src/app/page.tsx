@@ -4,6 +4,7 @@ import StructuredData from "@/components/StructuredData";
 import { siteUrl } from "@/data/site";
 import { salesFonts } from "./fonts";
 import "./sales.css";
+import "./chat.css";
 
 const title = "John Dominic Jasmin | AI Automation for Service Businesses";
 const description =

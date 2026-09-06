@@ -26,6 +26,21 @@ export const siteUrl = "https://johndominicjasmin.com";
  */
 export const bookingUrl = "https://cal.com/johndominic/audit";
 
+/**
+ * Endpoint the chat widget posts to.
+ *
+ * Point this at an n8n Chat Trigger webhook (Production URL), e.g.
+ *   "https://your-n8n-host/webhook/abc123/chat"
+ *
+ * While it is empty the widget still renders and opens, but says plainly
+ * that the assistant is not connected and points at the booking link and
+ * email instead. It never pretends something is answering.
+ *
+ * This URL ships in client JavaScript, so anyone can read it and hammer it.
+ * Put a per-session cap in the workflow before setting it.
+ */
+export const chatWebhookUrl = "";
+
 const mailtoFallback = `mailto:${email}?subject=${encodeURIComponent(
   "Free automation audit",
 )}&body=${encodeURIComponent(

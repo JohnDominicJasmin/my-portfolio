@@ -1,0 +1,297 @@
+/*
+  Chat widget. One stylesheet for both routes.
+
+  Every colour comes from a custom property, and each page sets those in its
+  own tokens. The sales page renders dark on amber, /cv renders light on
+  teal, and neither needs a second copy of this markup.
+*/
+
+.chatw {
+  --chatw-surface: #ffffff;
+  --chatw-raised: #f4f2ee;
+  --chatw-fg: #18160f;
+  --chatw-muted: #6b6659;
+  --chatw-line: rgba(24, 22, 20, 0.14);
+  --chatw-accent: #0b6f67;
+  --chatw-accent-fg: #ffffff;
+  --chatw-you: #0b6f67;
+  --chatw-you-fg: #ffffff;
+
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 200;
+  font-family: inherit;
+}
+
+/* ---------- launcher ---------- */
+.chatw__launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: var(--chatw-accent);
+  color: var(--chatw-accent-fg);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.chatw__launch:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.chatw__launch-icon {
+  font-size: 17px;
+  line-height: 1;
+}
+
+/* ---------- panel ---------- */
+.chatw__panel {
+  position: absolute;
+  right: 0;
+  bottom: 66px;
+  width: min(380px, calc(100vw - 44px));
+  max-height: min(560px, calc(100vh - 120px));
+  display: flex;
+  flex-direction: column;
+  background: var(--chatw-surface);
+  color: var(--chatw-fg);
+  border: 1px solid var(--chatw-line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* The attribute has to beat the flex display above, or a closed panel
+   still paints. Same bug that shipped in the first version of this widget. */
+.chatw__panel[hidden] {
+  display: none;
+}
+
+.chatw__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--chatw-line);
+  background: var(--chatw-raised);
+}
+
+.chatw__title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.chatw__status {
+  display: block;
+  font-size: 12px;
+  color: var(--chatw-muted);
+  margin-top: 2px;
+}
+
+.chatw__close {
+  background: none;
+  border: none;
+  color: var(--chatw-muted);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px;
+  margin: -6px -6px 0 0;
+}
+
+.chatw__close:hover {
+  color: var(--chatw-fg);
+}
+
+/* ---------- log ---------- */
+.chatw__log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 180px;
+}
+
+.chatw__msg {
+  max-width: 86%;
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.chatw__msg--bot {
+  align-self: flex-start;
+  background: var(--chatw-raised);
+  border: 1px solid var(--chatw-line);
+  border-bottom-left-radius: 5px;
+}
+
+.chatw__msg--you {
+  align-self: flex-end;
+  background: var(--chatw-you);
+  color: var(--chatw-you-fg);
+  border-bottom-right-radius: 5px;
+}
+
+/* ---------- typing ---------- */
+.chatw__typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px;
+}
+
+.chatw__typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--chatw-muted);
+  animation: chatw-bounce 1.2s infinite ease-in-out;
+}
+
+.chatw__typing span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.chatw__typing span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes chatw-bounce {
+  0%,
+  70%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  35% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* ---------- composer ---------- */
+.chatw__form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--chatw-line);
+}
+
+.chatw__input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--chatw-line);
+  border-radius: 999px;
+  background: var(--chatw-surface);
+  color: var(--chatw-fg);
+  font-family: inherit;
+  font-size: 14.5px;
+}
+
+.chatw__input:focus-visible {
+  outline: 2px solid var(--chatw-accent);
+  outline-offset: 1px;
+}
+
+.chatw__send {
+  min-height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--chatw-accent);
+  color: var(--chatw-accent-fg);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chatw__send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.chatw__foot {
+  margin: 0;
+  padding: 0 18px 14px;
+  font-size: 12.5px;
+  color: var(--chatw-muted);
+}
+
+.chatw__foot a {
+  color: var(--chatw-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chatw__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- sales theme ---------- */
+.chatw--sales {
+  --chatw-surface: #1c1915;
+  --chatw-raised: #262119;
+  --chatw-fg: #f2efe9;
+  --chatw-muted: rgba(242, 239, 233, 0.6);
+  --chatw-line: rgba(242, 239, 233, 0.16);
+  --chatw-accent: #d99a3d;
+  --chatw-accent-fg: #12100d;
+  --chatw-you: #d99a3d;
+  --chatw-you-fg: #12100d;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 520px) {
+  .chatw {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .chatw__launch-text {
+    display: none;
+  }
+
+  .chatw__launch {
+    padding: 0;
+    width: 54px;
+    justify-content: center;
+  }
+
+  .chatw__panel {
+    width: calc(100vw - 28px);
+    max-height: calc(100vh - 110px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chatw__launch,
+  .chatw__typing span {
+    transition: none;
+    animation: none;
+  }
+}

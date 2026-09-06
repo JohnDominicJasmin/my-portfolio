@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ChatWidget from "@/components/ChatWidget";
 import ProjectList from "@/components/ProjectList";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
@@ -12,6 +13,7 @@ import {
 import { cvFonts } from "../fonts";
 import { pageMeta } from "../metadata";
 import "../portfolio.css";
+import "../chat.css";
 
 export const metadata: Metadata = pageMeta({
   title: "CV — John Dominic Jasmin | AI Automation Engineer",
@@ -259,6 +261,8 @@ export default function CvPage() {
       </main>
 
       <SiteFooter />
+
+      <ChatWidget variant="cv" />
     </div>
   );
 }
