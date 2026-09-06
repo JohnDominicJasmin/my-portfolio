@@ -545,7 +545,9 @@ export default function SalesPage() {
             </div>
 
             <div className="l-field">
-              <label htmlFor="lf-business">Business</label>
+              <label htmlFor="lf-business">
+                Business <span className="l-field__opt">optional</span>
+              </label>
               <input id="lf-business" name="business" type="text" autoComplete="organization" />
             </div>
 
@@ -555,12 +557,17 @@ export default function SalesPage() {
             </div>
 
             <div className="l-field">
-              <label htmlFor="lf-phone">Phone or WhatsApp</label>
+              <label htmlFor="lf-phone">
+                Phone or WhatsApp <span className="l-field__opt">optional</span>
+              </label>
               <input id="lf-phone" name="phone" type="tel" autoComplete="tel" />
             </div>
 
             <div className="l-field l-field--wide">
-              <label htmlFor="lf-job">What is the job nobody wants?</label>
+              <label htmlFor="lf-job">
+                What is the job nobody wants?{" "}
+                <span className="l-field__opt">optional</span>
+              </label>
               <textarea id="lf-job" name="job" rows={3} />
             </div>
 

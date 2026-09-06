@@ -793,6 +793,14 @@ body:has(.sales) {
   color: var(--l-amber);
 }
 
+/* Says which fields can be skipped. Set apart from the amber label so the
+   pair reads as "field name, then a note", not as part of the name. */
+.l-field__opt {
+  color: var(--l-fg-45);
+  letter-spacing: 1.2px;
+  text-transform: lowercase;
+}
+
 .l-field input,
 .l-field textarea {
   font-family: var(--l-sans);
