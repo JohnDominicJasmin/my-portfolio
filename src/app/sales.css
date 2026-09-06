@@ -1784,7 +1784,7 @@ body:has(.sales) {
    a fifth of the screen spent on what you have already answered, and each row
    squeezed a fixed-width mono label against a wrapping value. Dropping the
    labels on small screens halves the height and gives the value the full row.
-   The values read fine alone: "Trades and home services", "They ring". */
+   The values read fine alone: "Trades and home services", "They call". */
 @media (max-width: 640px) {
   .l-quiz__trail { gap: 4px; }
 

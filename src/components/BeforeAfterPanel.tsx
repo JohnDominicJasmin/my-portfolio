@@ -1,5 +1,5 @@
 /**
- * The same 9:40pm enquiry, played out both ways, side by side.
+ * The same 9:40pm inquiry, played out both ways, side by side.
  *
  * This was a toggle. It rendered one panel at a time and swapped on click,
  * which removed the version you were meant to be comparing against — a
@@ -19,7 +19,7 @@ const panels = [
     steps: [
       {
         time: "21:40",
-        text: "Customer calls after hours. It rings out and goes to voicemail.",
+        text: "Customer calls after hours. Nobody picks up and it goes to voicemail.",
       },
       {
         time: "21:41",

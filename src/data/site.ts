@@ -50,7 +50,7 @@ export const chatWebhookUrl =
  *
  * This only writes the answer the visitor reads on screen. The lead itself
  * goes to Netlify Forms, which is a separate path on purpose: if n8n is
- * asleep or the OpenAI call fails, the enquiry still lands in the inbox.
+ * asleep or the OpenAI call fails, the inquiry still lands in the inbox.
  */
 export const auditWebhookUrl =
   "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-audit";

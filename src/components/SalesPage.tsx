@@ -22,12 +22,12 @@ const ticker: Tick[] = [
   {
     time: "03:02",
     tone: "var(--l-amber)",
-    text: "Messenger enquiry answered in 30 seconds, quote sent",
+    text: "Messenger inquiry answered in 30 seconds, quote sent",
   },
   {
     time: "04:37",
     tone: "var(--l-mint)",
-    text: "Enquiry from your website marked urgent, sent to you with a reply ready",
+    text: "Inquiry from your website marked urgent, sent to you with a reply ready",
   },
   {
     time: "06:11",
@@ -57,7 +57,7 @@ const cases = [
     before:
       "Replies going out days later, with customers quietly lost in the backlog.",
     after:
-      "Enquiries answered in seconds at any hour, and the appointment booked in the same conversation.",
+      "Inquiries answered in seconds at any hour, and the appointment booked in the same conversation.",
     // Before comes from their own quote ("replied to customers days later"),
     // after from the system's own response time. Both sourced, so upright.
     change: "Days to 30s",
@@ -100,9 +100,9 @@ const cases = [
     before:
       "Everyone getting the same generic reply in the same order, ready buyers stuck behind window-shoppers.",
     after:
-      "Each enquiry answered personally and put in front of the right person before anyone logs in.",
+      "Each inquiry answered personally and put in front of the right person before anyone logs in.",
     change: "Under 2s",
-    note: "to sort an enquiry",
+    note: "to sort an inquiry",
   },
   {
     business: "Bookkeeping",
@@ -327,7 +327,7 @@ export default function SalesPage() {
           viewBox="0 0 1296 380"
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="Diagram: calls, messages and forms flow into the system, which books jobs, sorts enquiries and logs what was said"
+          aria-label="Diagram: calls, messages and forms flow into the system, which books jobs, sorts inquiries and logs what was said"
         >
           <path className="l-flow-line l-flow-1" d="M300 76 C 420 76, 470 190, 566 190" fill="none" stroke="#d99a3d" strokeWidth="2" />
           <path className="l-flow-line l-flow-2" d="M300 190 L 566 190" fill="none" stroke="#d99a3d" strokeWidth="2" />
@@ -367,7 +367,7 @@ export default function SalesPage() {
           <g>
             <rect className="l-node l-node-out-2" x="996" y="158" width="260" height="64" rx="6" fill="#1c1915" stroke="rgba(242,239,233,0.22)" strokeWidth="1.5" />
             <text x="1022" y="184" className="l-svg-mono"fontSize="10" letterSpacing="1.6" fill="#4ec9a5">OUTCOME</text>
-            <text x="1022" y="206" className="l-svg-sans"fontSize="16" fontWeight="500" fill="#f2efe9">Enquiry in the right list</text>
+            <text x="1022" y="206" className="l-svg-sans"fontSize="16" fontWeight="500" fill="#f2efe9">Inquiry in the right list</text>
           </g>
           <g>
             <rect className="l-node l-node-out-3" x="996" y="272" width="260" height="64" rx="6" fill="#1c1915" stroke="rgba(242,239,233,0.22)" strokeWidth="1.5" />
@@ -405,7 +405,7 @@ export default function SalesPage() {
       <section className="l-band l-wrap">
         <div className="l-center" style={{ marginBottom: 40 }}>
           <span className="l-eyebrow">One call, both ways</span>
-          <h2 className="l-h2">Same enquiry. Two very different days.</h2>
+          <h2 className="l-h2">Same inquiry. Two very different days.</h2>
         </div>
 
         <BeforeAfterPanel />
@@ -608,7 +608,7 @@ export default function SalesPage() {
             <span className="l-foot__name">John Dominic Jasmin</span>
             <p className="l-foot__line">
               Systems that answer your customers when nobody is available.
-              Voice, Messenger, and web enquiries, any hour.
+              Voice, Messenger, and web inquiries, any hour.
             </p>
             <a
               href={booking.href}

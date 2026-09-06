@@ -8,13 +8,13 @@ import { auditWebhookUrl, booking, dropoffWebhookUrl, email } from "@/data/site"
  * recommendation from the same stack this page is selling.
  *
  * Built as a graph rather than a list. Each step names the next one, and an
- * option can override that, so answering "they ring" asks about the phone and
+ * option can override that, so answering "they call" asks about the phone and
  * answering "Messenger only" never does. Nobody is walked through questions
  * that cannot apply to them.
  *
  * Two delivery paths, deliberately separate. The recommendation comes back
  * from n8n and is only ever read on screen. The lead itself goes to Netlify
- * Forms, so if n8n is asleep or OpenAI fails, the enquiry still reaches the
+ * Forms, so if n8n is asleep or OpenAI fails, the inquiry still reaches the
  * inbox. Every answer and the generated text ride along as hidden fields.
  *
  * The form is always rendered, hidden until the result is on screen. Netlify
@@ -58,9 +58,9 @@ const NODES: Node[] = [
     field: {
       kind: "single",
       options: [
-        { label: "Shop or service centre" },
+        { label: "Shop or service center" },
         { label: "Salon, clinic or spa" },
-        { label: "Property or lettings" },
+        { label: "Property or rentals" },
         { label: "Trades and home services" },
         { label: "Restaurant, cafe or food" },
         { label: "Something else", other: true },
@@ -76,7 +76,7 @@ const NODES: Node[] = [
     field: {
       kind: "multi",
       options: [
-        { label: "They ring" },
+        { label: "They call" },
         { label: "Messenger or Instagram" },
         { label: "WhatsApp or SMS" },
         { label: "A form on the website" },
@@ -85,7 +85,7 @@ const NODES: Node[] = [
         { label: "Somewhere else", other: true },
       ],
     },
-    next: (picked) => (picked.includes("They ring") ? "phone" : "volume"),
+    next: (picked) => (picked.includes("They call") ? "phone" : "volume"),
   },
   {
     id: "phone",
@@ -95,7 +95,7 @@ const NODES: Node[] = [
       kind: "single",
       options: [
         { label: "It goes to voicemail" },
-        { label: "It just rings out" },
+        { label: "It rings and nobody picks up" },
         { label: "Someone stops what they are doing" },
         { label: "An answering service takes it" },
         { label: "Something else", other: true },
@@ -105,8 +105,8 @@ const NODES: Node[] = [
   },
   {
     id: "volume",
-    short: "Enquiries a week",
-    q: "Roughly how many enquiries come in a week?",
+    short: "Inquiries a week",
+    q: "Roughly how many inquiries come in a week?",
     hint: "A guess is fine. It changes what is worth building.",
     field: {
       kind: "select",
@@ -124,7 +124,7 @@ const NODES: Node[] = [
   {
     id: "when",
     short: "Worst times",
-    q: "When do you miss the most enquiries?",
+    q: "When do you miss the most inquiries?",
     hint: "Pick everything that applies.",
     field: {
       kind: "multi",
@@ -178,16 +178,16 @@ const NODES: Node[] = [
   },
   {
     id: "existing",
-    short: "Automated already",
-    q: "Is any of this handled automatically today?",
-    hint: "This decides whether we start from scratch or build on what you have.",
-    otherLabel: "What have you got running today?",
+    short: "Already automated",
+    q: "Do you have any automation running today?",
+    hint: "Even a simple auto-reply counts.",
+    otherLabel: "What do you have running?",
     field: {
       kind: "single",
       options: [
-        { label: "No, none of it" },
+        { label: "None at all" },
         // The text box is the point of this one: what they already run
-        // decides whether the plan extends it or replaces nothing at all.
+        // decides whether the plan extends it or starts from nothing.
         { label: "Yes, and I want it to do more", other: true },
       ],
     },
