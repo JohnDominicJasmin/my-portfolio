@@ -793,8 +793,15 @@ body:has(.sales) {
   color: var(--l-amber);
 }
 
-/* Says which fields can be skipped. Set apart from the amber label so the
-   pair reads as "field name, then a note", not as part of the name. */
+/* The note sits beside the label, not inside it. Netlify names each field in
+   the notification email from the label text, so nesting this turned every
+   email into "Business optional: ...". */
+.l-field__head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
 .l-field__opt {
   color: var(--l-fg-45);
   letter-spacing: 1.2px;
