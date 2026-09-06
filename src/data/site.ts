@@ -27,19 +27,21 @@ export const siteUrl = "https://johndominicjasmin.com";
 export const bookingUrl = "https://cal.com/johndominic/audit";
 
 /**
- * Endpoint the chat widget posts to.
- *
- * Point this at an n8n Chat Trigger webhook (Production URL), e.g.
- *   "https://your-n8n-host/webhook/abc123/chat"
+ * Endpoint the chat widget posts to: the "Portfolio-chatbot" workflow on the
+ * n8n instance. A POST webhook, not a Chat Trigger — the Chat Trigger answers
+ * no CORS preflight, so the browser never got as far as sending the message.
  *
  * While it is empty the widget still renders and opens, but says plainly
  * that the assistant is not connected and points at the booking link and
  * email instead. It never pretends something is answering.
  *
- * This URL ships in client JavaScript, so anyone can read it and hammer it.
- * Put a per-session cap in the workflow before setting it.
+ * This URL ships in client JavaScript, so anyone can read it. Two things stop
+ * that emptying the OpenAI balance: the workflow's origin allowlist, which
+ * blocks another site's browser code outright, and its rate guard, which caps
+ * a session at 20 messages an hour and the whole endpoint at 300.
  */
-export const chatWebhookUrl = "";
+export const chatWebhookUrl =
+  "https://n8n-workflows-6ig6.onrender.com/webhook/portfolio-chat";
 
 const mailtoFallback = `mailto:${email}?subject=${encodeURIComponent(
   "Free automation audit",

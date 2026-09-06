@@ -96,10 +96,17 @@ export default function ChatWidget({
       return;
     }
 
+    // The workflow runs on a host that sleeps when idle, so the first message
+    // after a quiet spell can take a while to come back. Give it room, but
+    // never leave the visitor watching a typing dot forever.
+    const abort = new AbortController();
+    const timer = setTimeout(() => abort.abort(), 45_000);
+
     try {
       const res = await fetch(chatWebhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: abort.signal,
         body: JSON.stringify({
           action: "sendMessage",
           sessionId: sessionId(),
@@ -107,7 +114,7 @@ export default function ChatWidget({
           route: variant,
         }),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = res.ok ? await res.json().catch(() => ({})) : {};
       const reply =
         data.output ?? data.text ?? data.message ?? data.reply ?? null;
       setMsgs((m) => [
@@ -128,6 +135,7 @@ export default function ChatWidget({
         },
       ]);
     } finally {
+      clearTimeout(timer);
       setBusy(false);
     }
   }
@@ -161,8 +169,13 @@ export default function ChatWidget({
         <div className="chatw__head">
           <div>
             <span className="chatw__title">John Dominic Jasmin</span>
+            {/* Says "assistant", not "replies instantly", because the panel is
+                headed with his name and a visitor would otherwise assume they
+                are talking to him. */}
             <span className="chatw__status">
-              {chatWebhookUrl ? "Usually replies instantly" : "Not connected yet"}
+              {chatWebhookUrl
+                ? "AI assistant · answers instantly"
+                : "Not connected yet"}
             </span>
           </div>
           <button
