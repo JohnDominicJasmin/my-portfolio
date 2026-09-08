@@ -384,13 +384,18 @@ body:has(.sales) {
   padding: 30px 0;
   border-bottom: 1px solid rgba(23, 27, 24, 0.12);
   align-items: center;
-  transition: background 0.2s ease, padding-left 0.25s
+  /* Slide with transform, not padding-left. The row is a grid of
+     200px 1fr 1fr 200px, so padding steals its 12px from the two fluid
+     columns and the before/after copy re-wraps mid-hover. transform moves
+     the row without touching its content width, and the reduced-motion
+     block below already expects transform to be the mechanism here. */
+  transition: background 0.2s ease, transform 0.25s
     cubic-bezier(0.22, 0.8, 0.3, 1);
 }
 
 .l-case:hover {
   background: rgba(185, 122, 34, 0.07);
-  padding-left: 12px;
+  transform: translateX(12px);
 }
 
 .l-case__name {
@@ -1276,7 +1281,7 @@ body:has(.sales) {
   .l-case:hover {
     grid-template-columns: 1fr;
     gap: 12px;
-    padding-left: 0;
+    transform: none;
     background: none;
   }
 
