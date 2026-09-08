@@ -208,7 +208,11 @@ export default function SalesPage() {
           <a href="#the-fix">The fix</a>
           <a href="#in-their-words">In their words</a>
           <a href="#faq">FAQ</a>
-          <Link href="/cv">CV</Link>
+          {/* Recruiters land here too: this URL goes out in cover letters and
+              as the proof-of-work link on job applications. Naming the audience
+              stops a hiring manager reading "Book a free audit" as the only
+              path. */}
+          <Link href="/cv">Hiring? See my CV</Link>
           <a
             href={booking.href}
             {...bookingAttrs}
@@ -250,6 +254,13 @@ export default function SalesPage() {
         </div>
         <p className="l-hero__note">
           30 minutes, one workflow, an honest answer.
+        </p>
+        {/* Nothing on the page told an overseas visitor their work was wanted.
+            Remote and time zones stated up front so a UK or US owner does not
+            assume this is Philippines-only. */}
+        <p className="l-hero__note">
+          I work remotely with service businesses in Australia, the UK and the
+          US, as well as here in the Philippines.
         </p>
       </header>
 

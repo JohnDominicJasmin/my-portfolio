@@ -258,7 +258,11 @@ export const automationProjects: Project[] = [
     body: [
       "A multi-branch service business was losing sales to slow replies. Inquiries arrived on Messenger at all hours, staff answered them by hand between other work, and response times stretched into hours. By the time someone replied, the customer had often gone elsewhere.",
       "Rather than one bot trying to do everything, I built a Master Router Agent that classifies each incoming conversation and dispatches it to a specialized sub-agent: parts and compatibility lookup, pricing, order status, or general inquiry. Each sub-agent has a narrower job and its own context boundaries, which makes it far more accurate than a single catch-all prompt.",
-      "Context is passed between agents using thread identifiers, so a specialist picking up a conversation gets the relevant history without reprocessing everything. A Supabase vector store handles retrieval for product and compatibility data. The system routes between model tiers based on task complexity, keeping cost proportional to difficulty.",
+      "Context is passed between agents using thread identifiers, so a specialist picking up a conversation gets the relevant history without reprocessing everything. Retrieval-augmented generation (RAG) over a Supabase pgvector store grounds answers in real product and compatibility data instead of letting the model guess. The system routes between model tiers based on task complexity, keeping cost proportional to difficulty: the cheap model handles the high-frequency classification and routing path, the larger model is reserved for the calls that genuinely need reasoning over messy input, and Claude handles the long-context work. The rule is the smallest model that clears the accuracy bar for that step, not one model for the whole system.",
+      // John's own account: Meta's webhook payload shape varies by message
+      // type and changes when Meta updates the API. Keep this to what he
+      // described - do not add invented detection details.
+      "The part that bites you in production is payload shape. Meta's webhook does not send one structure: a plain text message, a photo, a video and a sticker or emoji each arrive shaped differently, and those shapes change when Meta updates the API. Any handler that assumes the structure it saw yesterday will break on a customer sending a photo instead of a sentence. So the ingestion layer validates message type before routing and handles each type explicitly, rather than reaching for a field that may not be there.",
     ],
     shots: [
       {
@@ -273,7 +277,7 @@ export const automationProjects: Project[] = [
           "Master Router Agent for classification",
           "Specialist sub-agents per intent",
           "Thread-based context passing",
-          "Supabase vector store for retrieval",
+          "RAG retrieval over a Supabase pgvector store",
           "Model-tier routing by task complexity",
         ],
       },
@@ -380,7 +384,7 @@ export const capabilities = [
       "SOP & Training Doc Generator",
       "Product Listing Factory",
     ],
-    note: "Engineered on the same semantic search, text embedding, and vector database routing architecture running in my production engines.",
+    note: "Engineered on the same retrieval-augmented generation (RAG) stack running in my production engines: text embedding, semantic search, and pgvector routing.",
   },
   {
     num: "03",
@@ -401,7 +405,11 @@ export const skillGroups = [
     items: [
       "n8n",
       "OpenAI",
+      "Anthropic Claude",
       "Grok (xAI)",
+      "RAG",
+      "pgvector",
+      "MCP servers",
       "Python",
       "FastAPI",
       "JavaScript",
