@@ -410,6 +410,7 @@ export const skillGroups = [
       "RAG",
       "pgvector",
       "MCP servers",
+      "Self-hosted deployment",
       "Python",
       "FastAPI",
       "JavaScript",

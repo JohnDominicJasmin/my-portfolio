@@ -101,9 +101,13 @@ export default function CvPage() {
               <p>
                 Underneath all of it is 6 years of production software
                 engineering, including{" "}
-                <strong>Android development in Kotlin</strong>. That background
-                is why these systems are built to be reliable and
-                well-architected, not just demoed once and abandoned.
+                <strong>Android development in Kotlin</strong>. That is where
+                the reliability habits come from, and they are the reason these
+                systems hold up: my ingestion service rejects duplicate work
+                with idempotency keys instead of double-charging a customer,
+                and a circuit breaker stops calling a failing downstream step
+                rather than hammering it with retries. Built to degrade in a
+                controlled way, not demoed once and abandoned.
               </p>
             </div>
           </div>

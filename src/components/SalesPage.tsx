@@ -166,7 +166,11 @@ const quotes = [
 const faqs = [
   {
     q: "How much does this cost?",
-    a: "It depends what you're automating — one Messenger flow is not the same job as a voice agent across 3 branches. You get a number on the audit call, before you commit to anything.",
+    // Buyers who have used Zapier or Make have been burned by per-task
+    // pricing that scales with their own success. Self-hosting is a real
+    // difference and nobody selling against it can say the same. Kept honest:
+    // model usage is still a running cost, so do not imply nothing varies.
+    a: "It depends what you're automating — one Messenger flow is not the same job as a voice agent across 3 branches. You get a number on the audit call, before you commit to anything. Worth knowing up front: I build on self-hosted infrastructure, so there is no per-execution platform fee. Tools like Zapier and Make bill you per task, which means the bill grows the busier you get. Yours does not. You still pay for what the AI itself uses, and I will show you that number on the call.",
   },
   {
     q: "How long before it's actually live?",
