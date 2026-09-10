@@ -252,7 +252,7 @@ export const automationProjects: Project[] = [
       "Branches fielding inquiries by hand, with replies taking hours and no consistent coverage.",
     summary:
       "A router agent classifies each incoming conversation and dispatches it to a specialist sub-agent, answering instantly across every branch, 24/7.",
-    loom: "https://www.loom.com/embed/893b8d1747d14f79be7aebfcd1a8a3a8",
+    loom: "https://www.loom.com/embed/8166869bf3cb434da542254be79b5d19",
     intro:
       "An AI chatbot handling customer inquiries and bookings across multiple branches of a motorcycle service business, built as a router with specialist sub-agents rather than one monolithic bot.",
     body: [
