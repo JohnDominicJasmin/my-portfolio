@@ -16,7 +16,7 @@ export default function StructuredData() {
       {
         "@type": "ProfessionalService",
         "@id": `${siteUrl}/#service`,
-        name: "John Dominic Jasmin — AI Automation",
+        name: "John Dominic Jasmin: AI Automation",
         url: siteUrl,
         image: `${siteUrl}/assets/og-cover.png`,
         description:

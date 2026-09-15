@@ -4,7 +4,7 @@ import { siteUrl } from "@/data/site";
 /**
  * Shared page metadata.
  *
- * Only `/` used to emit openGraph, twitter and a canonical — the other ten
+ * Only `/` used to emit openGraph, twitter and a canonical, the other ten
  * routes had none, so pasting a case study or the CV into LinkedIn, Messenger
  * or Slack rendered a bare URL with no title, image or description. Every
  * route goes through here now.

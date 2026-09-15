@@ -142,7 +142,7 @@ export default function ChatWidget({
 
   return (
     <div className={`chatw chatw--${variant}${open ? " chatw--open" : ""}`}>
-      {/* The launcher hides once the panel is up — it used to stay, which put a
+      {/* The launcher hides once the panel is up, it used to stay, which put a
           second, brighter close button on top of the conversation. The icon is
           a rule rather than a speech balloon; the balloon is the most generic
           mark this widget could wear and it matched nothing else on the page. */}
@@ -156,7 +156,7 @@ export default function ChatWidget({
       >
         {/* Squared message mark, drawn rather than set as a glyph. The label is
             hidden under 520px and the button becomes a 52px tile, so whatever
-            sits here has to carry the meaning on its own — a bare rule did not.
+            sits here has to carry the meaning on its own, a bare rule did not.
             Squared corners and a hairline stroke keep it away from the rounded
             balloon every other chat widget on the internet uses. */}
         <svg

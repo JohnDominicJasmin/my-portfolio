@@ -1,5 +1,5 @@
 /*
-  Direction L — Before and After
+  Direction L, Before and After
   Client-facing automation page. Dark ground, amber accent, cream reversal bands.
 
   Palette : #12100d ink · #1c1915 raised · #f2efe9 cream · #d99a3d amber · #4ec9a5 mint
@@ -12,7 +12,7 @@
   --l-cream: #f2efe9;
   --l-cream-ink: #171b18;
   --l-cream-body: #4b524c;
-  /* Was #6b726c (4.31:1) — under AA on the cream band. */
+  /* Was #6b726c (4.31:1), under AA on the cream band. */
   --l-cream-muted: #5a615b;
   --l-amber: #d99a3d;
   --l-amber-deep: #b97a22;
@@ -26,7 +26,7 @@
   --l-fg: var(--l-cream);
   --l-fg-70: rgba(242, 239, 233, 0.7);
   --l-fg-60: rgba(242, 239, 233, 0.62);
-  /* Was 0.45 — that measured 4.08:1 on the ink ground, under WCAG AA. */
+  /* Was 0.45, that measured 4.08:1 on the ink ground, under WCAG AA. */
   --l-fg-45: rgba(242, 239, 233, 0.6);
   --l-line: rgba(242, 239, 233, 0.1);
   --l-line-md: rgba(242, 239, 233, 0.16);
@@ -1427,7 +1427,7 @@ body:has(.sales) {
 }
 
 /* .l-h2 is capped at 24ch, so `text-align: center` alone only centres the words
-   INSIDE a box that is still flush left — the heading ends up visibly off to the
+   INSIDE a box that is still flush left, the heading ends up visibly off to the
    left of the lede and the panel, which both centre on the full width. Every
    other centred section gets this from `.l-center .l-h2`; this one is centred
    without that class, so it needs the auto margins directly. */

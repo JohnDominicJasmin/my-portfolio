@@ -7,7 +7,7 @@ import "./portfolio.css";
 
 /**
  * There was no not-found route, so a bad URL fell through to a bare page with
- * no landmark, no skip link, and the site's default title — a lost visitor's
+ * no landmark, no skip link, and the site's default title, a lost visitor's
  * browser tab claimed they were on the homepage.
  */
 export const metadata: Metadata = {

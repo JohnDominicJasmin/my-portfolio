@@ -110,7 +110,7 @@ export const automationProjects: Project[] = [
     demos: [
       {
         title: "PropConnect AI Voice Agent",
-        desc: "AI voice agent handling inbound real estate calls 24/7 — qualifies leads and books viewings automatically.",
+        desc: "AI voice agent handling inbound real estate calls 24/7. It qualifies leads and books viewings automatically.",
         result: "Under 5-second response time",
         url: "https://www.loom.com/embed/ef471b9fd61e4978b25b4bbd7f44b342",
       },
@@ -122,7 +122,7 @@ export const automationProjects: Project[] = [
       },
       {
         title: "AI Appointment Setter",
-        desc: "“Alex” — AI voice agent that qualifies leads and books property viewings, with instant CRM sync.",
+        desc: "“Alex”, an AI voice agent that qualifies leads and books property viewings, with instant CRM sync.",
         result: "Booked in under 5 seconds",
         url: "https://www.loom.com/embed/c6ad99c6f2b848e99f99853f8c5ce489",
       },
@@ -171,7 +171,7 @@ export const automationProjects: Project[] = [
   },
   {
     // Copy below is lifted from the old site's own entry for this system, not
-    // rewritten — the only claims here are the ones you already published.
+    // rewritten, the only claims here are the ones you already published.
     slug: "solar-roi-calculator",
     result: "Estimate delivered in under 2 minutes",
     title: "Solar ROI Calculator",
@@ -186,7 +186,7 @@ export const automationProjects: Project[] = [
     intro:
       "A cross-platform app that turns a solar sales conversation into a number the customer can see, then captures the lead and moves it into the pipeline without anyone retyping it.",
     body: [
-      "Solar sales stall at the estimate. A prospect asks what it would save them, and the answer needs a spreadsheet, a follow-up call, or both — by which point the conversation has cooled.",
+      "Solar sales stall at the estimate. A prospect asks what it would save them, and the answer needs a spreadsheet, a follow-up call, or both, and by then the conversation has cooled.",
       "The app produces the ROI estimate on the spot, then hands the lead straight to the pipeline: captured, recorded, and routed without a manual step in between.",
     ],
     shots: [

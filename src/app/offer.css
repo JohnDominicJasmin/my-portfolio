@@ -493,6 +493,88 @@
   color: var(--l-amber);
 }
 
+/* ---- demo label on the results table ---- */
+
+/* The unnamed rows are builds of his own, not clients. The tag sits on the row
+   itself, so a demo never reads as a client even when the footnote is missed. */
+.l-case__demo {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-family: var(--l-mono);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--l-cream-muted);
+  border: 1px solid rgba(23, 27, 24, 0.3);
+}
+
+/* ---- partners ---- */
+
+.l-watch {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.l-terms {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 40px;
+}
+
+.l-terms li {
+  border-top: 1px solid var(--l-line-md);
+  padding-top: 12px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--l-fg-70);
+}
+
+.l-terms__note {
+  text-align: center;
+  font-size: 15px;
+  color: var(--l-fg-60);
+  margin-top: 26px;
+}
+
+.l-apply {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* sales.css styles inputs and textareas only. The intake form adds selects,
+   so they get the same box, plus a dark color-scheme for the option list. */
+.l-field select {
+  font-family: var(--l-sans);
+  font-size: 15.5px;
+  color: var(--l-fg);
+  background: var(--l-raised);
+  border: 1px solid var(--l-line-md);
+  padding: 13px 15px;
+  width: 100%;
+  min-height: 48px;
+  color-scheme: dark;
+  transition: border-color 0.18s ease;
+}
+
+.l-field select:hover {
+  border-color: rgba(242, 239, 233, 0.3);
+}
+
+.l-field select:focus-visible {
+  outline: 2px solid var(--l-amber);
+  outline-offset: 2px;
+  border-color: var(--l-amber);
+}
+
 /* ---- responsive ---- */
 
 @media (max-width: 1100px) {
@@ -507,6 +589,7 @@
   .l-leak__panel,
   .l-fit,
   .l-intake,
+  .l-terms,
   .l-prices {
     grid-template-columns: 1fr;
   }

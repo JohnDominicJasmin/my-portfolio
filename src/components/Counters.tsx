@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
  * Renders at its final values, so the no-JS and pre-hydration view is correct.
  */
 
-// The fourth figure was "6 yrs engineering behind it" — a hiring credential
+// The fourth figure was "6 yrs engineering behind it", a hiring credential
 // sitting among three client outcomes. `systems` is the count of builds in the
 // table below it, so a visitor can check it on the same screen.
 const TARGETS = { seconds: 5, route: 2, hours: 24, systems: 6 };
@@ -21,7 +21,7 @@ export default function Counters() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // No synchronous setState here — the first tick lands on the same low
+    // No synchronous setState here, the first tick lands on the same low
     // values 42ms later, and seeding it in the effect body triggers a
     // cascading render (react-hooks/set-state-in-effect).
     const steps = 26;
@@ -63,7 +63,7 @@ export default function Counters() {
       </div>
       <div className="l-counter">
         <div className="l-counter__value">{counts.systems}</div>
-        <div className="l-counter__label">Systems running for businesses</div>
+        <div className="l-counter__label">Working systems built</div>
       </div>
     </section>
   );

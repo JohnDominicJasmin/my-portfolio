@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <article className="l-legal">
           <span className="l-eyebrow">Privacy</span>
           <h1>What happens to what you send.</h1>
-          <p>Last updated September 15, 2026.</p>
+          <p>Last updated September 16, 2026.</p>
 
           <h2>Who I am</h2>
           <p>
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
           <ul>
             <li>
               What you type into a form: your name, email, phone number, business
-              name and message.
+              or agency details and message.
             </li>
             <li>Your answers to the audit quiz, including a quiz you leave early.</li>
             <li>The messages you send to the chat assistant.</li>

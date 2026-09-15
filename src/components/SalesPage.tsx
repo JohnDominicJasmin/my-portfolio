@@ -58,6 +58,9 @@ const ticker: Tick[] = [
 /**
  * `said: true` marks an outcome the client claimed rather than one measured off
  * the system. Rendered in italic so a reader can tell a quote from a metric.
+ * `demo: true` marks a build I ran myself to show the same work in another
+ * trade, not a client's system. It is labelled on the row so nobody reads a
+ * demo as a client.
  */
 const cases = [
   {
@@ -102,6 +105,7 @@ const cases = [
       "A voice agent picks up, asks what they are after, and books the viewing straight into the calendar.",
     change: "Under 5s",
     note: "to answer",
+    demo: true,
   },
   {
     business: "Sales team",
@@ -112,6 +116,7 @@ const cases = [
       "Each inquiry answered personally and put in front of the right person before anyone logs in.",
     change: "Under 2s",
     note: "to sort an inquiry",
+    demo: true,
   },
   {
     business: "Bookkeeping",
@@ -122,6 +127,7 @@ const cases = [
       "Duplicates caught outright, and one broken service gets skipped instead of taking the whole run down.",
     change: "Zero",
     note: "double-processing",
+    demo: true,
   },
 ];
 
@@ -251,7 +257,7 @@ export default function SalesPage() {
         <h1 className="l-hero__title">
           {/* Was "The lead you missed at 2am already hired someone else."
               Two problems: it opened by telling the owner they had already
-              failed, and nobody "hires" a parts shop or a salon — that is
+              failed, and nobody "hires" a parts shop or a salon, that is
               agency vocabulary for agency clients. Same loss, stated as
               something customers do rather than something you got wrong. */}
           The customer who called at 2am <em>booked with whoever picked up</em>.
@@ -300,7 +306,7 @@ export default function SalesPage() {
         </div>
       </section>
 
-      {/* COUNTERS — client island */}
+      {/* COUNTERS, client island */}
       <Counters />
 
       {/* BEFORE / AFTER TABLE */}
@@ -320,7 +326,10 @@ export default function SalesPage() {
         {cases.map((c) => (
           <article className="l-case" key={c.business}>
             <div>
-              <div className="l-case__name">{c.business}</div>
+              <div className="l-case__name">
+                {c.business}
+                {c.demo ? <span className="l-case__demo">Demo</span> : null}
+              </div>
               <div className="l-case__sector">{c.sector}</div>
             </div>
             <p className="l-case__before">{c.before}</p>
@@ -337,9 +346,9 @@ export default function SalesPage() {
         ))}
 
         <p className="l-cases__foot">
-          OUTCOMES IN ITALICS ARE THE CLIENT&rsquo;S OWN WORDS. REMAINING NAMES
-          WITHHELD UNDER AGREEMENT, AND I AM HAPPY TO WALK THROUGH ANY OF THESE
-          ON A CALL.
+          NAMED BUSINESSES ARE CLIENTS. ROWS MARKED DEMO ARE WORKING BUILDS OF
+          MY OWN, MEASURED ON THE BUILD ITSELF. OUTCOMES IN ITALICS ARE THE
+          CLIENT&rsquo;S OWN WORDS. HAPPY TO WALK THROUGH ANY OF THEM ON A CALL.
         </p>
       </section>
 
@@ -482,7 +491,7 @@ export default function SalesPage() {
             </p>
             <p className="l-proof__body">
               {/* Was "six years of production engineering". A shop owner does
-                  not buy your years — that is a hiring credential and it lives
+                  not buy your years, that is a hiring credential and it lives
                   on /cv. The standard is the part they care about. */}
               That is the standard these are built to: something that keeps
               running when nobody is watching, not something that demos well
@@ -548,7 +557,7 @@ export default function SalesPage() {
         </dl>
       </section>
 
-      {/* AUDIT QUIZ — client island. Sits before the CTA on purpose: someone
+      {/* AUDIT QUIZ, client island. Sits before the CTA on purpose: someone
           who has just been told what to fix first is a warmer reader of the
           booking link underneath it than someone arriving cold. */}
       <section className="l-quizband l-wrap">
@@ -679,6 +688,7 @@ export default function SalesPage() {
               <span className="l-foot__label">Elsewhere</span>
               <Link href="/hvac">For HVAC companies</Link>
               <Link href="/restoration">For restoration companies</Link>
+              <Link href="/partners">For agencies</Link>
               <Link href="/cv">CV and portfolio</Link>
               <Link href="/privacy">Privacy</Link>
               <a

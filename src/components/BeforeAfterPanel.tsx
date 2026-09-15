@@ -2,7 +2,7 @@
  * The same 9:40pm inquiry, played out both ways, side by side.
  *
  * This was a toggle. It rendered one panel at a time and swapped on click,
- * which removed the version you were meant to be comparing against — a
+ * which removed the version you were meant to be comparing against, a
  * before/after where the before is gone by the time you read the after.
  * Both columns now render together, so the contrast is on screen instead of
  * held in the reader's head. No state, so no client island.

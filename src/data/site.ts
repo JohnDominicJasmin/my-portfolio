@@ -5,7 +5,7 @@
 export const email = "johndominicjasmin@gmail.com";
 
 /**
- * Public origin of the deployed site, no trailing slash — e.g.
+ * Public origin of the deployed site, no trailing slash, e.g.
  *   "https://johndominicjasmin.com"  or  "https://yoursite.netlify.app"
  *
  * Set this. While it is empty there is no canonical URL and no absolute
@@ -22,13 +22,13 @@ export const siteUrl = "https://johndominicjasmin.com";
  *   "https://cal.com/johndominic/audit"
  *
  * While this is empty every "Book a free audit" control falls back to email,
- * so the page is never broken — it just converts worse.
+ * so the page is never broken, it just converts worse.
  */
 export const bookingUrl = "https://cal.com/johndominic/audit";
 
 /**
  * Endpoint the chat widget posts to: the "Portfolio-chatbot" workflow on the
- * n8n instance. A POST webhook, not a Chat Trigger — the Chat Trigger answers
+ * n8n instance. A POST webhook, not a Chat Trigger, the Chat Trigger answers
  * no CORS preflight, so the browser never got as far as sending the message.
  *
  * While it is empty the widget still renders and opens, but says plainly
@@ -61,7 +61,7 @@ export const auditWebhookUrl =
  * the only thing that ever reaches n8n is a completed run, so the questions
  * people quit on look exactly like questions nobody was asked.
  *
- * Deliberately writes nothing but a row — no model call — so an abandonment
+ * Deliberately writes nothing but a row, no model call, so an abandonment
  * costs nothing and a wave of them cannot run up a bill.
  */
 export const dropoffWebhookUrl =

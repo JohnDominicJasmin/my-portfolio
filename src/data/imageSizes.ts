@@ -1,6 +1,6 @@
 // Generated from public/assets by a build-time sweep. Declaring intrinsic
 // dimensions on every <img> lets the browser reserve space, which is the CLS
-// half of Core Web Vitals — without them every image on the page reflows as
+// half of Core Web Vitals, without them every image on the page reflows as
 // it arrives. Regenerate whenever an asset is replaced.
 export const imageSize: Record<string, [number, number]> = {
   "/assets/byahero-prev-sc.webp": [

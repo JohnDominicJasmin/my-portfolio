@@ -19,7 +19,7 @@ export default function SiteHeader() {
       <div className="container">
         <div className="header__inner">
           <Link href="/cv" className="header__brand">
-            {/* Was a 1254px PNG rendered at 34px — 29.5x oversampled, 313 KB,
+            {/* Was a 1254px PNG rendered at 34px, 29.5x oversampled, 313 KB,
                 and the one eager image on every route. Now 96px / ~1 KB. */}
             <img
               src="/assets/profile-picture.webp"

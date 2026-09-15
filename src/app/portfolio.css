@@ -6,7 +6,7 @@
 
 :root {
   /* #0f8c82 measured 3.91:1 as text on cream and 4.12:1 behind white button
-     text — both under WCAG AA. Same hue, enough depth to read. */
+     text, both under WCAG AA. Same hue, enough depth to read. */
   --teal: #0b6f67;
   --teal-dark: #095a53;
   --teal-soft: #93cbc7;
@@ -344,6 +344,21 @@ a {
 
 .hero__links a:hover {
   color: var(--teal);
+}
+
+/* Agencies hiring a builder reach /cv from job boards. This points them at the
+   partner terms without getting in a recruiter's way. */
+.hero__partner {
+  margin: 18px 0 0;
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.hero__partner a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* =========================================
@@ -977,7 +992,7 @@ a {
 
 @media (max-width: 720px) {
   /* Tap targets. sales.css got this treatment and measures zero failures;
-     portfolio.css never did, so /cv kept desktop sizes on touch — 22 targets
+     portfolio.css never did, so /cv kept desktop sizes on touch, 22 targets
      under 44px, the worst of them the 19px "Watch demo" buttons. WCAG 2.2 AA
      (2.5.8) puts the floor at 24x24 CSS px, so those were a conformance
      failure rather than a preference. */

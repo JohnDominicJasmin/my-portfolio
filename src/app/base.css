@@ -3,7 +3,7 @@
   `/` pulls sales.css, `/cv` and `/work` pull portfolio.css. Keeping them apart
   means neither page ships the other's design system.
 
-  No body background here on purpose — each route's stylesheet paints its own,
+  No body background here on purpose, each route's stylesheet paints its own,
   so there is no cream flash before the dark sales page renders.
 */
 

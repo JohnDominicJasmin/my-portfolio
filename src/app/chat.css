@@ -6,7 +6,7 @@
   teal, and neither needs a second copy of this markup.
 
   Deliberately not a stock chat bubble. The default vocabulary for this thing
-  — pill launcher, 999px radii, speech balloons, three bouncing dots — reads
+  (pill launcher, 999px radii, speech balloons, three bouncing dots) reads
   as a support widget bolted onto a page, and it fought everything else here:
   squared buttons, hairline rules, a serif display face and mono labels. So
   the panel is built from the same parts as the page. Replies are set as text
@@ -166,7 +166,7 @@
 }
 
 /* The reply is the page talking, so it is set as text against an accent rule
-   — the same device the quiz result uses — rather than in a balloon. */
+   the same device the quiz result uses, rather than in a balloon. */
 .chatw__msg--bot {
   align-self: stretch;
   max-width: 100%;

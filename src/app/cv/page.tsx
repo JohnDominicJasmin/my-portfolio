@@ -16,7 +16,7 @@ import "../portfolio.css";
 import "../chat.css";
 
 export const metadata: Metadata = pageMeta({
-  title: "CV — John Dominic Jasmin | AI Automation Engineer",
+  title: "CV: John Dominic Jasmin | AI Automation Engineer",
   description:
     "AI automation systems, a live SaaS product, and 6 years of production engineering. Work, skills and case studies for John Dominic Jasmin.",
   path: "/cv",
@@ -75,6 +75,10 @@ export default function CvPage() {
             <a href="mailto:johndominicjasmin@gmail.com">Email</a>
             <Link href="/">Automation services</Link>
           </div>
+          <p className="hero__partner">
+            Running an agency and need client builds delivered?{" "}
+            <Link href="/partners">See the partner terms</Link>
+          </p>
         </div>
       </section>
 
@@ -169,7 +173,7 @@ export default function CvPage() {
           <span className="eyebrow">Capabilities</span>
           <h2 className="section__title">Patterns I have already built</h2>
           {/* Was "Ready-to-deploy frameworks / Engineered by experience, not
-              theory" — a recruiter reads a menu of things you would like to
+              theory", a recruiter reads a menu of things you would like to
               sell, not things you have done, and slogans get discounted. Each
               group below already cites the architecture it came out of. */}
           <p className="section__lede">
