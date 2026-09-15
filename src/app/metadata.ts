@@ -19,7 +19,7 @@ const OG_IMAGE = siteUrl
   : "/assets/og-cover.png";
 
 const OG_ALT =
-  "John Dominic Jasmin — AI automation for service businesses.";
+  "John Dominic Jasmin: AI automation for service businesses.";
 
 /** Google cuts descriptions around 155-160 chars. Trim on a word boundary. */
 export function clamp(text: string, max = 155): string {

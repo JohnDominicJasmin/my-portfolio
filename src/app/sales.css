@@ -1286,7 +1286,7 @@ body:has(.sales) {
   }
 
   .l-case__before::before {
-    content: "Before — ";
+    content: "Before: ";
     font-family: var(--l-mono);
     font-size: 10px;
     letter-spacing: 1.5px;
@@ -1294,7 +1294,7 @@ body:has(.sales) {
   }
 
   .l-case__after::before {
-    content: "After — ";
+    content: "After: ";
     font-family: var(--l-mono);
     font-size: 10px;
     letter-spacing: 1.5px;

@@ -3,6 +3,15 @@ import AuditQuiz from "@/components/AuditQuiz";
 import BeforeAfterPanel from "@/components/BeforeAfterPanel";
 import ChatWidget from "@/components/ChatWidget";
 import Counters from "@/components/Counters";
+import LeakCalculator from "@/components/LeakCalculator";
+import {
+  DemoSection,
+  Fit,
+  HowWeWork,
+  Pricing,
+  WorksAroundYou,
+} from "@/components/OfferSections";
+import { offer } from "@/data/offer";
 import { booking, email } from "@/data/site";
 
 const bookingAttrs = booking.external
@@ -167,10 +176,9 @@ const faqs = [
   {
     q: "How much does this cost?",
     // Buyers who have used Zapier or Make have been burned by per-task
-    // pricing that scales with their own success. Self-hosting is a real
-    // difference and nobody selling against it can say the same. Kept honest:
-    // model usage is still a running cost, so do not imply nothing varies.
-    a: "It depends what you're automating — one Messenger flow is not the same job as a voice agent across 3 branches. You get a number on the audit call, before you commit to anything. Worth knowing up front: I build on self-hosted infrastructure, so there is no per-execution platform fee. Tools like Zapier and Make bill you per task, which means the bill grows the busier you get. Yours does not. You still pay for what the AI itself uses, and I will show you that number on the call.",
+    // pricing that grows with their own success. A flat monthly price with
+    // unlimited calls answers that directly, with AI usage inside it.
+    a: "One flat monthly price with unlimited calls, plus a one-time setup fee, half up front. The plans are listed above, and the free Leak Check tells you which one fits. I build on self-hosted infrastructure, so there is no per-task platform fee that grows the busier you get.",
   },
   {
     q: "How long before it's actually live?",
@@ -186,7 +194,11 @@ const faqs = [
   },
   {
     q: "Do I have to change the tools we already use?",
-    a: "No. It sits on top of what you have — Messenger, your phone line, your calendar, your CRM. If you're running on a notebook and a group chat, that works too, and it's worth saying on the call.",
+    a: "No. It sits on top of what you have: Messenger, your phone line, your calendar, your CRM. If you're running on a notebook and a group chat, that works too, and it's worth saying on the call.",
+  },
+  {
+    q: "Do I have to change my phone number?",
+    a: "No. Your number stays. In backup mode your phone rings first and only the calls you miss go to the AI. It is a forwarding setting on your line, and you can switch it off any time.",
   },
   {
     q: "What happens if you disappear?",
@@ -210,11 +222,12 @@ export default function SalesPage() {
         <div className="l-nav__links">
           <a href="#results">Results</a>
           <a href="#the-fix">The fix</a>
-          <a href="#in-their-words">In their words</a>
+          <a href="#demo">Hear it</a>
+          <a href="#pricing">Pricing</a>
           <a href="#faq">FAQ</a>
           {/* Recruiters land here too: this URL goes out in cover letters and
               as the proof-of-work link on job applications. Naming the audience
-              stops a hiring manager reading "Book a free audit" as the only
+              stops a hiring manager reading "Free Leak Check" as the only
               path. */}
           <Link href="/cv">Hiring? See my CV</Link>
           <a
@@ -222,7 +235,7 @@ export default function SalesPage() {
             {...bookingAttrs}
             className="l-btn l-btn--solid l-btn--small"
           >
-            Book a free audit
+            Free Leak Check
           </a>
         </div>
       </nav>
@@ -245,19 +258,19 @@ export default function SalesPage() {
         </h1>
         <p className="l-hero__sub">
           I build the system that answers straight away, asks what they need,
-          and puts the booking in your calendar — Tuesday afternoon or a public
-          holiday at 3am, same thing.
+          and puts the booking in your calendar, whether it is Tuesday
+          afternoon or a public holiday at 3am.
         </p>
         <div className="l-hero__ctas">
           <a href={booking.href} {...bookingAttrs} className="l-btn l-btn--solid">
-            Book a free audit
+            Book a free {offer.checkName}
           </a>
-          <a href="#results" className="l-btn l-btn--ghost">
-            See the results
+          <a href="#demo" className="l-btn l-btn--ghost">
+            Hear it work
           </a>
         </div>
         <p className="l-hero__note">
-          30 minutes, one workflow, an honest answer.
+          30 minutes, your numbers, an honest answer.
         </p>
         {/* Nothing on the page told an overseas visitor their work was wanted.
             Remote and time zones stated up front so a UK or US owner does not
@@ -416,6 +429,9 @@ export default function SalesPage() {
         </div>
       </section>
 
+      {/* BACKUP MODE, URGENT CALLS, TAKEOVER, TOOLS */}
+      <WorksAroundYou />
+
       {/* BEFORE / AFTER, THE SAME NIGHT */}
       <section className="l-band l-wrap">
         <div className="l-center" style={{ marginBottom: 40 }}>
@@ -425,6 +441,9 @@ export default function SalesPage() {
 
         <BeforeAfterPanel />
       </section>
+
+      {/* DEMO: the real system on video, or a live call on their own phone */}
+      <DemoSection page="home" />
 
       {/* TESTIMONIALS */}
       <section id="in-their-words" className="l-quotes l-wrap">
@@ -502,6 +521,17 @@ export default function SalesPage() {
         </div>
       </section>
 
+      {/* LEAK CHECK: client island. Their numbers, not an industry average. */}
+      <section className="l-section l-wrap">
+        <LeakCalculator />
+      </section>
+
+      <HowWeWork />
+
+      <Fit />
+
+      <Pricing />
+
       {/* FAQ */}
       <section id="faq" className="l-band l-wrap">
         <div className="l-center" style={{ marginBottom: 46 }}>
@@ -533,7 +563,7 @@ export default function SalesPage() {
           call. If I cannot help, I will say so and point you somewhere that can.
         </p>
         <a className="l-btn l-btn--solid" href={booking.href} {...bookingAttrs}>
-          Book a free audit
+          Book a free {offer.checkName}
         </a>
         <p className="l-cta__mail">
           Or just email me: <a href={`mailto:${email}`}>{email}</a>
@@ -630,7 +660,7 @@ export default function SalesPage() {
               {...bookingAttrs}
               className="l-btn l-btn--solid l-btn--small"
             >
-              Book a free audit
+              Free Leak Check
             </a>
           </div>
 
@@ -639,13 +669,18 @@ export default function SalesPage() {
               <span className="l-foot__label">This page</span>
               <a href="#results">What changed for them</a>
               <a href="#the-fix">How it works</a>
+              <a href="#how-we-work">How we work</a>
+              <a href="#pricing">Pricing</a>
               <a href="#in-their-words">In their words</a>
               <a href="#faq">Questions</a>
               <a href="#book">Book a call</a>
             </div>
             <div>
               <span className="l-foot__label">Elsewhere</span>
+              <Link href="/hvac">For HVAC companies</Link>
+              <Link href="/restoration">For restoration companies</Link>
               <Link href="/cv">CV and portfolio</Link>
+              <Link href="/privacy">Privacy</Link>
               <a
                 href="https://liquidity-hq.com"
                 target="_blank"

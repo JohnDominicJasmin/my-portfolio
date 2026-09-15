@@ -1,0 +1,539 @@
+/*
+  Offer sections: works around you, demo, leak check, how we work, fit,
+  pricing, and the niche-page extras. Same palette, type and scale as
+  sales.css, and every rule sits under the classes it already scopes.
+*/
+
+.l-section {
+  padding-top: 76px;
+  padding-bottom: 76px;
+  border-top: 1px solid var(--l-line);
+}
+
+.l-lede {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--l-fg-70);
+  max-width: 58ch;
+  margin: 14px auto 0;
+}
+
+.l-band .l-lede {
+  color: var(--l-cream-body);
+}
+
+.l-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* An urgent call is the one card that is about a person, not the system. */
+.l-card--alert {
+  border-color: rgba(160, 75, 75, 0.6);
+}
+
+.l-card--alert .l-card__label {
+  color: #e59b9b;
+}
+
+/* ---- works with ---- */
+
+.l-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.l-tool {
+  font-family: var(--l-mono);
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--l-fg-70);
+  border: 1px solid var(--l-line-md);
+  padding: 9px 14px;
+}
+
+.l-tools__note {
+  text-align: center;
+  font-size: 14px;
+  color: var(--l-fg-45);
+  margin-top: 14px;
+}
+
+/* ---- demo ---- */
+
+.l-demo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.l-demo__video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  background: var(--l-raised);
+  border: 1px solid var(--l-line-md);
+}
+
+.l-demo__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.l-demo__caption {
+  font-family: var(--l-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--l-fg-45);
+  margin-top: 12px;
+}
+
+.l-demo__lede {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--l-fg-70);
+  margin: 0 0 22px;
+}
+
+.l-demo__form .l-form__grid {
+  grid-template-columns: 1fr;
+}
+
+/* ---- leak check ---- */
+
+.l-leak {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.l-leak__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px;
+  background: var(--l-raised);
+  border: 1px solid var(--l-line-md);
+  border-radius: 10px;
+  padding: 32px;
+}
+
+.l-leak__inputs {
+  display: grid;
+  gap: 22px;
+  align-content: start;
+}
+
+.l-leak__range {
+  width: 100%;
+  accent-color: var(--l-amber);
+  min-height: 32px;
+}
+
+/* The range is an input too, so .l-field would give it a box. It is not
+   a text field: drop the padding, border and background. */
+.l-field input.l-leak__range {
+  padding: 0;
+  border: 0;
+  background: none;
+  min-height: 32px;
+}
+
+.l-leak__out {
+  border-left: 1px solid var(--l-line-md);
+  padding-left: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.l-leak__big {
+  font-family: var(--l-serif);
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  color: var(--l-amber);
+  font-variant-numeric: tabular-nums;
+}
+
+.l-leak__small {
+  font-family: var(--l-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--l-fg-45);
+  margin-top: 10px;
+}
+
+.l-leak__line {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--l-fg-70);
+  margin-top: 18px;
+}
+
+.l-leak__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.l-leak__note {
+  text-align: center;
+  font-size: 13.5px;
+  color: var(--l-fg-45);
+  margin-top: 16px;
+}
+
+/* ---- how we work ---- */
+
+.l-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.l-stepcard {
+  border-top: 2px solid var(--l-amber);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-stepcard__n {
+  font-family: var(--l-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--l-amber);
+}
+
+.l-stepcard__title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 10px 0;
+}
+
+.l-stepcard__body {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(242, 239, 233, 0.65);
+}
+
+.l-stepcard__meta {
+  font-family: var(--l-mono);
+  font-size: 10.5px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--l-fg-45);
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+/* ---- fit (cream band) ---- */
+
+.l-fit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px 56px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.l-fit__col h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin: 0 0 14px;
+}
+
+.l-fit__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.l-fit__list li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--l-cream-body);
+  border-top: 1px solid rgba(23, 27, 24, 0.14);
+  padding-top: 12px;
+}
+
+.l-fit__mark {
+  font-family: var(--l-mono);
+  font-weight: 600;
+}
+
+/* Mint and rust as text on cream both fall under AA, so these use the
+   deeper shades. */
+.l-fit__col--yes .l-fit__mark {
+  color: #1f7a5c;
+}
+
+.l-fit__col--no .l-fit__mark {
+  color: var(--l-rust);
+}
+
+/* ---- pricing ---- */
+
+.l-prices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.l-price {
+  display: flex;
+  flex-direction: column;
+  background: var(--l-raised);
+  border: 1px solid var(--l-line-md);
+  padding: 30px;
+}
+
+.l-price--featured {
+  border-color: var(--l-amber);
+}
+
+.l-price__tag {
+  align-self: flex-start;
+  font-family: var(--l-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--l-ink);
+  background: var(--l-amber);
+  padding: 4px 9px;
+  margin-bottom: 14px;
+}
+
+.l-price__name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.l-price__for {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--l-fg-60);
+  margin: 6px 0 20px;
+}
+
+.l-price__amount {
+  font-family: var(--l-serif);
+  font-size: 46px;
+  line-height: 1;
+  color: var(--l-fg);
+  font-variant-numeric: tabular-nums;
+}
+
+.l-price__amount small {
+  font-family: var(--l-sans);
+  font-size: 15px;
+  color: var(--l-fg-60);
+}
+
+.l-price__tbd {
+  font-family: var(--l-serif);
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--l-fg-70);
+}
+
+.l-price__list {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 26px;
+  display: grid;
+  gap: 10px;
+}
+
+.l-price__list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--l-fg-70);
+}
+
+.l-price__list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--l-mint);
+}
+
+.l-price__btn {
+  margin-top: auto;
+  text-align: center;
+}
+
+.l-prices__foot {
+  text-align: center;
+  font-size: 14.5px;
+  color: var(--l-fg-60);
+  margin-top: 26px;
+}
+
+.l-prices__foot strong {
+  color: var(--l-fg);
+  font-weight: 600;
+}
+
+.l-prices__founding {
+  max-width: 640px;
+  margin: 18px auto 0;
+  padding: 14px 20px;
+  border: 1px solid rgba(217, 154, 61, 0.55);
+  background: rgba(217, 154, 61, 0.08);
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--l-fg);
+}
+
+/* ---- niche pages ---- */
+
+.l-hero__notfor {
+  font-family: var(--l-mono);
+  font-size: 11.5px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--l-fg-45);
+  margin-top: 18px;
+}
+
+.sales .l-nav__brand a:hover {
+  color: var(--l-amber);
+}
+
+.l-intake {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 40px;
+}
+
+.l-intake li {
+  border-top: 1px solid rgba(23, 27, 24, 0.16);
+  padding-top: 12px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--l-cream-ink);
+}
+
+.l-intake__note {
+  text-align: center;
+  font-size: 15px;
+  color: var(--l-cream-body);
+  margin-top: 26px;
+}
+
+/* ---- legal ---- */
+
+.l-legal {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.l-legal h1 {
+  font-family: var(--l-serif);
+  font-size: 54px;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.l-legal h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin: 34px 0 10px;
+}
+
+.l-legal p,
+.l-legal li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--l-fg-70);
+}
+
+.l-legal ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.sales .l-legal a {
+  color: var(--l-amber);
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 1100px) {
+  .l-grid-4,
+  .l-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .l-demo,
+  .l-leak__panel,
+  .l-fit,
+  .l-intake,
+  .l-prices {
+    grid-template-columns: 1fr;
+  }
+
+  .l-leak__out {
+    border-left: 0;
+    border-top: 1px solid var(--l-line-md);
+    padding-left: 0;
+    padding-top: 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .l-grid-4,
+  .l-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .l-leak__panel {
+    padding: 24px 20px;
+  }
+
+  .l-leak__big {
+    font-size: 48px;
+  }
+
+  .l-legal h1 {
+    font-size: 38px;
+  }
+}

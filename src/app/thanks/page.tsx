@@ -30,7 +30,7 @@ export default function ThanksPage() {
             slot and we can talk sooner.
           </p>
           <a className="l-btn l-btn--solid" href={booking.href} {...bookingAttrs}>
-            Book a free audit
+            Book a free Leak Check
           </a>
           <p className="l-cta__mail">
             Or reply straight to me: <a href={`mailto:${email}`}>{email}</a>

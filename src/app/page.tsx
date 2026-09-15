@@ -5,6 +5,7 @@ import { siteUrl } from "@/data/site";
 import { salesFonts } from "./fonts";
 import "./sales.css";
 import "./chat.css";
+import "./offer.css";
 
 const title = "John Dominic Jasmin | AI Automation for Service Businesses";
 const description =
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: "The customer who called at 2am booked with whoever picked up — John Dominic Jasmin, AI automation for service businesses.",
+        alt: "The customer who called at 2am booked with whoever picked up. John Dominic Jasmin, AI automation for service businesses.",
       },
     ],
   },
