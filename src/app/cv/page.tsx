@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ChatWidget from "@/components/ChatWidget";
 import ProjectList from "@/components/ProjectList";
 import SiteFooter from "@/components/SiteFooter";
@@ -73,12 +72,9 @@ export default function CvPage() {
               GitHub
             </a>
             <a href="mailto:johndominicjasmin@gmail.com">Email</a>
-            <Link href="/">Automation services</Link>
           </div>
-          <p className="hero__partner">
-            Running an agency and need client builds delivered?{" "}
-            <Link href="/partners">See the partner terms</Link>
-          </p>
+          {/* Services and partner links live in the footer, so an employer
+              sees the engineer first, not the side business. */}
         </div>
       </section>
 

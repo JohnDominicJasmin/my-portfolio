@@ -32,7 +32,6 @@ export default function SiteFooter() {
             </div>
             <div>
               <span className="footer__label">Elsewhere</span>
-              <Link href="/">Automation services</Link>
               <a
                 href="/assets/resume.pdf"
                 target="_blank"

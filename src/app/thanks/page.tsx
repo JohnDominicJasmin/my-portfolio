@@ -36,7 +36,7 @@ export default function ThanksPage() {
             Or reply straight to me: <a href={`mailto:${email}`}>{email}</a>
           </p>
           <p className="l-form__note" style={{ marginTop: 34 }}>
-            <Link href="/">Back to the site</Link>
+            <Link href="/business">Back to the site</Link>
           </p>
         </section>
       </main>

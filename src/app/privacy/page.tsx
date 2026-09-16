@@ -37,6 +37,10 @@ export default function PrivacyPage() {
             <li>Your answers to the audit quiz, including a quiz you leave early.</li>
             <li>The messages you send to the chat assistant.</li>
             <li>Your booking details, if you book a call through the calendar link.</li>
+            <li>
+              Anonymous visit counts: which page was viewed, the site you came
+              from, and your country and device type. This does not identify you.
+            </li>
           </ul>
 
           <h2>Where it goes</h2>
@@ -50,6 +54,10 @@ export default function PrivacyPage() {
               AI model provider, only to write the reply you see on screen.
             </li>
             <li>Calendar bookings are handled by Cal.com.</li>
+            <li>
+              Visit counts are measured by Cloudflare Web Analytics, which sets no
+              cookies.
+            </li>
           </ul>
 
           <h2>What it is used for</h2>

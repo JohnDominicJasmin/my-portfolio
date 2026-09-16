@@ -69,7 +69,7 @@ export default function NichePage({ content }: { content: NicheContent }) {
 
       <nav className="l-nav l-wrap">
         <span className="l-nav__brand">
-          <Link href="/">John Dominic Jasmin</Link>
+          <Link href="/business">John Dominic Jasmin</Link>
         </span>
         <div className="l-nav__links">
           <details className="l-nav__menu">
@@ -189,7 +189,7 @@ export default function NichePage({ content }: { content: NicheContent }) {
             Or just email me: <a href={`mailto:${email}`}>{email}</a>
           </p>
           <p className="l-cta__mail">
-            <Link href="/#results">See what it changed for other businesses</Link>
+            <Link href="/business#results">See what it changed for other businesses</Link>
           </p>
         </section>
       </main>
@@ -208,11 +208,11 @@ export default function NichePage({ content }: { content: NicheContent }) {
               <span className="l-foot__label">Built for</span>
               <Link href="/hvac">HVAC companies</Link>
               <Link href="/restoration">Restoration companies</Link>
-              <Link href="/">Every service business</Link>
+              <Link href="/business">Every service business</Link>
             </div>
             <div>
               <span className="l-foot__label">Elsewhere</span>
-              <Link href="/cv">CV and portfolio</Link>
+              <Link href="/cv#portfolio">Past work</Link>
               <Link href="/privacy">Privacy</Link>
               <a href={`mailto:${email}`}>{email}</a>
             </div>

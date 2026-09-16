@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { siteUrl } from "@/data/site";
+import Script from "next/script";
+import { cfBeaconToken, siteUrl } from "@/data/site";
 import "./base.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,18 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        {cfBeaconToken ? (
+          <Script
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            // spa: count in-app page changes (next/link) as page views, so each
+            // route shows up in the per-path report.
+            data-cf-beacon={JSON.stringify({ token: cfBeaconToken, spa: true })}
+            strategy="afterInteractive"
+          />
+        ) : null}
+      </body>
     </html>
   );
 }

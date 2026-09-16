@@ -155,7 +155,7 @@ export default function PartnersPage() {
 
       <nav className="l-nav l-wrap">
         <span className="l-nav__brand">
-          <Link href="/">John Dominic Jasmin</Link>
+          <Link href="/partners">John Dominic Jasmin</Link>
         </span>
         <div className="l-nav__links">
           <details className="l-nav__menu">
@@ -240,7 +240,7 @@ export default function PartnersPage() {
             ))}
           </ul>
           <p className="l-intake__note">
-            <Link href="/#in-their-words">Read what the clients said</Link>
+            <Link href="/business#in-their-words">Read what the clients said</Link>
           </p>
         </section>
 
@@ -494,8 +494,8 @@ export default function PartnersPage() {
             </div>
             <div>
               <span className="l-foot__label">Elsewhere</span>
-              <Link href="/">For service businesses</Link>
-              <Link href="/cv">CV and portfolio</Link>
+              <Link href="/business">For service businesses</Link>
+              <Link href="/cv#portfolio">Past work</Link>
               <Link href="/privacy">Privacy</Link>
               <a href={`mailto:${email}`}>{email}</a>
             </div>

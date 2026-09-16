@@ -16,6 +16,16 @@ export const email = "johndominicjasmin@gmail.com";
 export const siteUrl = "https://johndominicjasmin.com";
 
 /**
+ * Cloudflare Web Analytics beacon token. Counts page views without cookies.
+ * The token is public by design (it ships in the page), so it can live here
+ * or in the Netlify env as NEXT_PUBLIC_CF_BEACON_TOKEN (the env value wins).
+ * Site added in Cloudflare Web Analytics on 2026-09-17. An empty value turns
+ * the beacon off.
+ */
+export const cfBeaconToken =
+  process.env.NEXT_PUBLIC_CF_BEACON_TOKEN ?? "59e57f323be84843b281eab2a78dda0d";
+
+/**
  * Cal.com booking link for the free audit call.
  *
  * Paste the full URL here once the event type exists, e.g.

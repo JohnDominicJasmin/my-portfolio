@@ -239,11 +239,6 @@ export default function SalesPage() {
               <a href="#demo">Hear it</a>
               <a href="#pricing">Pricing</a>
               <a href="#faq">FAQ</a>
-              {/* Recruiters land here too: this URL goes out in cover letters
-                  and as the proof-of-work link on job applications. Naming the
-                  audience stops a hiring manager reading "Free Leak Check" as
-                  the only path. */}
-              <Link href="/cv">Hiring? See my CV</Link>
             </div>
           </details>
           <a
@@ -703,7 +698,7 @@ export default function SalesPage() {
               <Link href="/hvac">For HVAC companies</Link>
               <Link href="/restoration">For restoration companies</Link>
               <Link href="/partners">For agencies</Link>
-              <Link href="/cv">CV and portfolio</Link>
+              <Link href="/cv#portfolio">Past work</Link>
               <Link href="/privacy">Privacy</Link>
               <a
                 href="https://liquidity-hq.com"

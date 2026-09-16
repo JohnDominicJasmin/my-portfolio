@@ -8,7 +8,6 @@ const links = [
   { href: "/cv#skills", label: "Skills" },
   { href: "/cv#portfolio", label: "Portfolio" },
   { href: "/cv#capabilities", label: "Capabilities" },
-  { href: "/", label: "Services" },
 ];
 
 export default function SiteHeader() {
