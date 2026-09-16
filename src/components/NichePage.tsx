@@ -72,9 +72,14 @@ export default function NichePage({ content }: { content: NicheContent }) {
           <Link href="/">John Dominic Jasmin</Link>
         </span>
         <div className="l-nav__links">
-          <a href="#demo">Hear it</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
+          <details className="l-nav__menu">
+            <summary>Menu</summary>
+            <div className="l-nav__menu-items">
+              <a href="#demo">Hear it</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#faq">FAQ</a>
+            </div>
+          </details>
           <a
             href={booking.href}
             {...bookingAttrs}

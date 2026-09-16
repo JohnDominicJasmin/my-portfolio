@@ -37,6 +37,21 @@
 
   --l-gutter: 72px;
 
+  /* Radii were drifting: 2, 3, 4, 5, 7, 8, 10, 16, 18 and 24px all appeared,
+     which is a scale nobody chose. Three steps plus a pill, and every rule
+     picks one of them. */
+  --l-r-xs: 4px;
+  --l-r-sm: 8px;
+  --l-r-lg: 16px;
+  --l-r-pill: 999px;
+
+  /* Section rhythm had one value (76px) everywhere, so every section landed
+     with the same weight. Three steps: supporting sections tighten, the
+     sections that carry proof get air. */
+  --l-sec-sm: 56px;
+  --l-sec: 76px;
+  --l-sec-lg: 104px;
+
   background: var(--l-ink);
   color: var(--l-fg);
   font-family: var(--l-sans);
@@ -188,6 +203,74 @@ body:has(.sales) {
   color: var(--l-amber);
 }
 
+/* The section links live inside a <details> so they survive on a phone. At
+   desktop width the element is display:contents, which takes it out of the
+   box tree entirely: the anchors stay direct flex children of .l-nav__links
+   and the row renders exactly as before. */
+.l-nav__menu,
+.l-nav__menu-items {
+  display: contents;
+}
+
+.l-nav__menu > summary {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .l-nav__menu {
+    display: block;
+    position: relative;
+  }
+
+  .l-nav__menu > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 44px;
+    padding: 0 4px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--l-fg-70);
+  }
+
+  .l-nav__menu > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .l-nav__menu > summary::after {
+    content: "\25BE";
+    font-size: 9px;
+  }
+
+  .l-nav__menu[open] > summary::after {
+    content: "\25B4";
+  }
+
+  .l-nav__menu-items {
+    display: none;
+  }
+
+  .l-nav__menu[open] .l-nav__menu-items {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    z-index: 40;
+    min-width: 212px;
+    padding: 4px 16px;
+    background: var(--l-raised);
+    border: 1px solid var(--l-line-md);
+    border-radius: var(--l-r-sm);
+  }
+
+  .l-nav__menu-items a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
 /* =========================================
    HERO
 ========================================= */
@@ -272,6 +355,9 @@ body:has(.sales) {
   display: flex;
   gap: 14px;
   width: max-content;
+  /* Purpose: the ticker is a night's worth of activity, so it has to keep
+     moving to read as a feed rather than a list. It pauses on hover (rule
+     below) and stops entirely under prefers-reduced-motion. */
   animation: l-marquee 38s linear infinite;
 }
 
@@ -349,8 +435,8 @@ body:has(.sales) {
 .l-band {
   background: var(--l-cream);
   color: var(--l-cream-ink);
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: var(--l-sec);
+  padding-bottom: var(--l-sec);
 }
 
 .l-band .l-eyebrow {
@@ -449,20 +535,36 @@ body:has(.sales) {
   margin-top: 3px;
 }
 
+/* Mono at 10.5px with 1.2px tracking was set for four words, not four
+   sentences. Now that the text reads in sentence case, it gets the body face
+   and normal tracking, and stays quiet through size and colour instead. */
 .l-cases__foot {
-  font-family: var(--l-mono);
-  font-size: 10.5px;
-  letter-spacing: 1.2px;
+  font-family: var(--l-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: 0;
+  max-width: 68ch;
   color: var(--l-cream-muted);
   margin-top: 22px;
+}
+
+/* "Back to the site" on the thanks pages measured 18px tall, which is the
+   whole navigation on that page. Inline-flex so the link keeps its place in
+   the sentence while the tap area reaches 44px. */
+.l-form__note a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 /* =========================================
    FLOW DIAGRAM
 ========================================= */
+/* Supporting section: it explains the shape of the thing, so it sits tighter
+   than the sections that carry proof. */
 .l-flow {
-  padding-top: 76px;
-  padding-bottom: 62px;
+  padding-top: var(--l-sec-sm);
+  padding-bottom: var(--l-sec-sm);
   border-bottom: 1px solid var(--l-line);
 }
 
@@ -486,6 +588,9 @@ body:has(.sales) {
 
 .l-flow-line {
   stroke-dasharray: 7 11;
+  /* Purpose: the dash travels the path a customer takes through the system,
+     so the diagram shows direction instead of asking the reader to infer it.
+     Stops under prefers-reduced-motion with the rest of the diagram. */
   animation: l-flow 3.4s linear infinite;
 }
 
@@ -581,8 +686,8 @@ body:has(.sales) {
    THE FIX
 ========================================= */
 .l-fix {
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: var(--l-sec);
+  padding-bottom: var(--l-sec);
 }
 
 .l-grid-3 {
@@ -865,9 +970,11 @@ body:has(.sales) {
 /* =========================================
    PROOF
 ========================================= */
+/* The proof section carries the client quotes and the numbers behind them.
+   It gets the extra air so it reads as the pause it is. */
 .l-proof {
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: var(--l-sec-lg);
+  padding-bottom: var(--l-sec-lg);
   border-top: 1px solid var(--l-line);
 }
 
@@ -1140,31 +1247,10 @@ body:has(.sales) {
 /* =========================================
    SHARED BITS
 ========================================= */
-.l-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--l-mint);
-  display: inline-block;
-  animation: l-pulse 2.1s ease-in-out infinite;
-}
-
-.l-dot--sm {
-  width: 6px;
-  height: 6px;
-}
-
-@keyframes l-pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(0.82);
-  }
-}
+/* The mint dot and its pulse lived here. It sat beside the ticker label and
+   marked nothing: live-indicator language on a line that reports no live
+   state, blinking forever next to the first words a visitor reads. Removed
+   rather than stilled, because a dot that marks nothing has no job. */
 
 .l-rise {
   animation: l-rise 0.7s cubic-bezier(0.22, 0.8, 0.3, 1) both;
@@ -1341,9 +1427,10 @@ body:has(.sales) {
     flex-wrap: wrap;
   }
 
-  .l-nav__links a:not(.l-btn) {
-    display: none;
-  }
+  /* This rule used to read `.l-nav__links a:not(.l-btn) { display: none }`,
+     which is what removed every section link from the page on a phone. The
+     links now live in the Menu disclosure above, so there is nothing to hide
+     here. */
 
   .l-hero {
     padding-top: 56px;
@@ -1396,7 +1483,6 @@ body:has(.sales) {
 @media (prefers-reduced-motion: reduce) {
   .l-ticker__track,
   .l-rise,
-  .l-dot,
   .l-flow-line,
   .l-node,
   .l-core,
@@ -1445,7 +1531,7 @@ body:has(.sales) {
 .l-quiz__panel {
   background: var(--l-raised);
   border: 1px solid var(--l-line-md);
-  border-radius: 10px;
+  border-radius: var(--l-r-sm);
   padding: 34px 32px;
 }
 
@@ -1487,7 +1573,7 @@ body:has(.sales) {
   color: var(--l-fg);
   background: transparent;
   border: 1px solid var(--l-line-md);
-  border-radius: 7px;
+  border-radius: var(--l-r-sm);
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
@@ -1510,7 +1596,7 @@ body:has(.sales) {
   color: var(--l-fg);
   background: rgba(242, 239, 233, 0.04);
   border: 1px solid var(--l-line-md);
-  border-radius: 7px;
+  border-radius: var(--l-r-sm);
   padding: 13px 15px;
   resize: vertical;
 }
@@ -1578,7 +1664,7 @@ body:has(.sales) {
   color: var(--l-ink);
   background: var(--l-amber);
   padding: 5px 11px;
-  border-radius: 3px;
+  border-radius: var(--l-r-xs);
   margin-bottom: 20px;
 }
 
@@ -1698,7 +1784,7 @@ body:has(.sales) {
   color: var(--l-fg);
   background: transparent;
   border: 1px solid var(--l-line-md);
-  border-radius: 24px;
+  border-radius: var(--l-r-pill);
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
@@ -1723,7 +1809,7 @@ body:has(.sales) {
   height: 17px;
   flex: 0 0 auto;
   border: 1px solid var(--l-line-md);
-  border-radius: 4px;
+  border-radius: var(--l-r-xs);
   font-size: 11px;
   line-height: 1;
   color: var(--l-ink);
@@ -1743,7 +1829,7 @@ body:has(.sales) {
   color: var(--l-fg);
   background: rgba(242, 239, 233, 0.04);
   border: 1px solid var(--l-line-md);
-  border-radius: 7px;
+  border-radius: var(--l-r-sm);
   cursor: pointer;
 }
 
@@ -1767,7 +1853,7 @@ body:has(.sales) {
   color: var(--l-fg);
   background: rgba(242, 239, 233, 0.04);
   border: 1px solid var(--l-amber);
-  border-radius: 7px;
+  border-radius: var(--l-r-sm);
 }
 
 .l-quiz__other::placeholder { color: var(--l-fg-45); }
@@ -1790,8 +1876,8 @@ body:has(.sales) {
    already cream, and every colour inside the quiz is picked against the ink
    ground. Putting it on .l-band made the heading cream on cream. */
 .l-quizband {
-  padding-top: 76px;
-  padding-bottom: 76px;
+  padding-top: var(--l-sec);
+  padding-bottom: var(--l-sec);
 }
 
 /* Measured on a 375x812 phone: by the last step the answer trail was 169px,

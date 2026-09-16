@@ -226,16 +226,26 @@ export default function SalesPage() {
       <nav className="l-nav l-wrap">
         <span className="l-nav__brand">John Dominic Jasmin</span>
         <div className="l-nav__links">
-          <a href="#results">Results</a>
-          <a href="#the-fix">The fix</a>
-          <a href="#demo">Hear it</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-          {/* Recruiters land here too: this URL goes out in cover letters and
-              as the proof-of-work link on job applications. Naming the audience
-              stops a hiring manager reading "Free Leak Check" as the only
-              path. */}
-          <Link href="/cv">Hiring? See my CV</Link>
+          {/* Below 900px this row used to be display:none, so a phone visitor
+              lost every section link. The same links now sit in a disclosure:
+              display:contents on desktop, so the row is unchanged, and a
+              labelled Menu button on small screens. No JS needed, and summary
+              is keyboard operable on its own. */}
+          <details className="l-nav__menu">
+            <summary>Menu</summary>
+            <div className="l-nav__menu-items">
+              <a href="#results">Results</a>
+              <a href="#the-fix">The fix</a>
+              <a href="#demo">Hear it</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#faq">FAQ</a>
+              {/* Recruiters land here too: this URL goes out in cover letters
+                  and as the proof-of-work link on job applications. Naming the
+                  audience stops a hiring manager reading "Free Leak Check" as
+                  the only path. */}
+              <Link href="/cv">Hiring? See my CV</Link>
+            </div>
+          </details>
           <a
             href={booking.href}
             {...bookingAttrs}
@@ -291,7 +301,6 @@ export default function SalesPage() {
       {/* TICKER */}
       <section className="l-ticker" aria-label="Example overnight activity">
         <p className="l-ticker__label">
-          <span className="l-dot l-dot--sm" aria-hidden="true" />
           WHAT A SYSTEM LIKE THIS HANDLES OVERNIGHT · EXAMPLE ACTIVITY
         </p>
         <div className="l-ticker__track">
@@ -345,10 +354,15 @@ export default function SalesPage() {
           </article>
         ))}
 
+        {/* This was four sentences in uppercase at 10.5px with 1.2px tracking.
+            Caps plus small type plus length is the hardest thing on the page
+            to read, and this is the disclosure that says which rows are
+            clients and which are my own builds. Sentence case, because being
+            read is the whole point of it. */}
         <p className="l-cases__foot">
-          NAMED BUSINESSES ARE CLIENTS. ROWS MARKED DEMO ARE WORKING BUILDS OF
-          MY OWN, MEASURED ON THE BUILD ITSELF. OUTCOMES IN ITALICS ARE THE
-          CLIENT&rsquo;S OWN WORDS. HAPPY TO WALK THROUGH ANY OF THEM ON A CALL.
+          Named businesses are clients. Rows marked Demo are working builds of
+          my own, measured on the build itself. Outcomes in italics are the
+          client&rsquo;s own words. Happy to walk through any of them on a call.
         </p>
       </section>
 

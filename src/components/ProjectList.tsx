@@ -98,7 +98,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                               className="chapter__demo"
                               onClick={() => setLoom(demo.url)}
                             >
-                              Watch demo →
+                              Watch demo
                             </button>
                           </div>
                         ) : null}
@@ -109,7 +109,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               ) : null}
               <div className="project__actions">
                 <Link href={`/work/${project.slug}`} className="btn btn--link">
-                  More details →
+                  More details
                 </Link>
                 {project.loom ? (
                   <button
@@ -117,7 +117,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                     className="btn btn--link"
                     onClick={() => setLoom(project.loom ?? null)}
                   >
-                    Watch demo →
+                    Watch demo
                   </button>
                 ) : null}
                 {project.liveUrl ? (

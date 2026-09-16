@@ -184,13 +184,26 @@ a {
   color: var(--teal);
 }
 
+/* Was 28x44: the glyph set the width, so the only way into the menu on a
+   phone was half a thumb wide. Squared off, and the word sits beside the
+   icon so the control says what it opens. */
 .header__burger {
   display: none;
+  align-items: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
+  font: inherit;
   color: var(--ink);
+}
+
+.header__burger-label {
+  font-size: 13px;
+  letter-spacing: 0.3px;
 }
 
 .header__mobile {
@@ -205,8 +218,13 @@ a {
   display: flex;
 }
 
+/* Every destination in the phone menu measured 151x24, so the whole menu sat
+   under the 44px touch height. */
 .header__mobile a {
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 4px 0;
   font-size: 15px;
 }
 
@@ -1031,7 +1049,7 @@ a {
   }
 
   .header__burger {
-    display: block;
+    display: inline-flex;
   }
 
   .section {

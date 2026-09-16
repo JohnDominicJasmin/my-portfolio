@@ -38,11 +38,11 @@ export const automationProjects: Project[] = [
       "A live SaaS product I built and run. Scores squeeze setups and whale activity across 50 coins in real time, with Grok reading 35 signals to give a direct trade bias. Free tier plus a $25/mo Pro plan, with paying users.",
     liveUrl: "https://liquidity-hq.com",
     intro:
-      "A live SaaS product I built and run: AI-powered crypto trading intelligence for retail traders. Squeeze scores, whale alerts, AI analysis, and macro events in one dashboard. Free tier plus a $25/mo Pro plan, with real paying users.",
+      "A live SaaS product I built and run: crypto trading intelligence for retail traders. Squeeze scores, whale alerts, AI analysis, and macro events in one dashboard. Free tier plus a $25/mo Pro plan, with real paying users.",
     body: [
       "LiquidityHQ solves a real problem for retail crypto traders: too much market data scattered across too many places to act on before a move has already happened. It pulls live price, funding, and order-flow data across 50 coins, scores squeeze setups and whale activity in real time, and hands a trader one dashboard instead of a dozen open tabs.",
       "The AI layer runs on Grok (xAI). Pick a coin, hit Analyze, and it reads 35 live signals, including funding rate, CVD, open interest trend, squeeze score, whale flow, and GEX, then returns a direct, actionable trade bias instead of raw numbers to interpret yourself. A separate news pipeline classifies breaking geopolitical headlines from 12+ sources for how they would move crypto, with roughly a 1 minute lag from publish to alert.",
-      "It shipped with a real pricing model, not a demo: a free tier covering the dashboard, morning briefing, news feed, and limited AI analyses, plus a $25/mo Pro tier that unlocks Telegram alerts, unlimited price alerts, and deeper AI usage.",
+      "It shipped with a real pricing model, not a demo: a free tier covering the dashboard, morning briefing, news feed, and limited AI analyses, plus a $25/mo Pro tier that adds Telegram alerts, unlimited price alerts, and deeper AI usage.",
     ],
     shots: [
       {
@@ -133,7 +133,7 @@ export const automationProjects: Project[] = [
       },
       {
         title: "Dead Lead Reactivation Engine",
-        desc: "Engaging old, neglected leads via personalized AI-powered conversations to recover lost revenue.",
+        desc: "Engaging old, neglected leads via personalized AI conversations to recover lost revenue.",
         url: "https://www.youtube.com/embed/sOgKiULP4Bg",
       },
     ],

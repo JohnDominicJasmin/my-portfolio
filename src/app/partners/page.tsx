@@ -158,9 +158,14 @@ export default function PartnersPage() {
           <Link href="/">John Dominic Jasmin</Link>
         </span>
         <div className="l-nav__links">
-          <a href="#resell">What you resell</a>
-          <a href="#terms">Terms</a>
-          <a href="#faq">FAQ</a>
+          <details className="l-nav__menu">
+            <summary>Menu</summary>
+            <div className="l-nav__menu-items">
+              <a href="#resell">What you resell</a>
+              <a href="#terms">Terms</a>
+              <a href="#faq">FAQ</a>
+            </div>
+          </details>
           <a href="#apply" className="l-btn l-btn--solid l-btn--small">
             Apply to partner
           </a>

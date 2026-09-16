@@ -49,7 +49,8 @@ export default function SiteHeader() {
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "✕" : "☰"}
+            <span aria-hidden="true">{open ? "✕" : "☰"}</span>
+            <span className="header__burger-label">Menu</span>
           </button>
         </div>
 
