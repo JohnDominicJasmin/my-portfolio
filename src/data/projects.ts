@@ -170,37 +170,45 @@ export const automationProjects: Project[] = [
     ],
   },
   {
-    // Copy below is lifted from the old site's own entry for this system, not
-    // rewritten, the only claims here are the ones you already published.
-    slug: "solar-roi-calculator",
-    result: "Estimate delivered in under 2 minutes",
-    title: "Solar ROI Calculator",
-    loom: "https://www.loom.com/embed/4a3c7aafba9d4442af246000afa6a97b",
-    tags: ["n8n", "OpenAI", "React Native", "Supabase"],
-    cover: "/assets/cs3_solar_roi_cover.webp",
-    coverAlt: "Solar ROI Calculator",
+    slug: "project-sentinel",
+    result:
+      "Zero data loss on a forced crash-and-recover test, zero duplicate alerts under load",
+    title: "Project Sentinel",
+    loom: "https://www.youtube.com/embed/1CxYP9RIuHc",
+    tags: ["FastAPI", "React", "Computer Vision", "Real-Time Alerts"],
+    cover: "/assets/project-sentinel-cover.webp",
+    coverAlt: "Project Sentinel operator console showing live alarms and camera feed",
     problem:
-      "Manual ROI estimates slowing down solar sales conversations.",
+      "Security alarm systems that drown operators in false positives, or silently drop real threats when events arrive in bursts.",
     summary:
-      "Cross-platform app delivering solar ROI estimates with automated lead capture and pipeline management.",
+      "A real-time alarm monitoring prototype I built end to end: WebSocket ingestion under bursty load, a computer vision camera worker, AI triage with fallbacks and a spend cap, a live dashboard, and pattern-based escalation.",
     intro:
-      "A cross-platform app that turns a solar sales conversation into a number the customer can see, then captures the lead and moves it into the pipeline without anyone retyping it.",
+      "A real-time alarm monitoring prototype, built for a technical assessment for a security company: ingestion, computer vision, AI triage, and escalation, all designed to degrade safely instead of failing silently.",
     body: [
-      "Solar sales stall at the estimate. A prospect asks what it would save them, and the answer needs a spreadsheet, a follow-up call, or both, and by then the conversation has cooled.",
-      "The app produces the ROI estimate on the spot, then hands the lead straight to the pipeline: captured, recorded, and routed without a manual step in between.",
+      "Security alarm platforms live or die on two things: never missing a real threat, and never burying operators under noise. Project Sentinel is a prototype that takes on both, end to end.",
+      "Events arrive over a WebSocket feed that bursts unpredictably. A camera worker runs object detection (YOLO26n on ONNX) on a separate process so video never blocks ingestion. Every event gets a rule-based severity first, then an AI triage pass classifies it as a real or false positive with a one-line action, backed by a hard spend cap and a rules-based fallback if the model is slow, down, or returns something unusable.",
+      "The store never loses an alarm: writes go through a write-behind SQLite layer with replay, verified by killing the backend mid-stream and confirming zero loss on restart. Under bursty load, the pipeline tracks received, accepted, rejected, and duplicate counts separately, so nothing silently disappears. Escalation rules were tuned against real volume: 18 pattern-based incidents raised out of 3,356 simulated alarms.",
     ],
     shots: [
       {
-        src: "/assets/cs3_solar_roi_cover.webp",
-        alt: "Solar ROI Calculator",
+        src: "/assets/project-sentinel-cover.webp",
+        alt: "Project Sentinel operator console showing live alarms and camera feed",
       },
     ],
     facts: [
       {
-        label: "Built with",
-        items: ["n8n", "OpenAI", "React Native", "Supabase"],
+        label: "Reliability patterns",
+        items: [
+          "Bursty WebSocket ingestion with accept/reject/duplicate accounting",
+          "AI triage with rule-based fallback and a hard spend cap",
+          "Write-behind SQLite persistence with crash-tested replay",
+          "Pattern-based escalation tuned against real alarm volume",
+        ],
       },
-      { label: "Result", items: ["Estimate delivered in under 2 minutes"] },
+      {
+        label: "Built with",
+        items: ["FastAPI", "React", "Python", "YOLO26n / ONNX", "SQLite"],
+      },
     ],
   },
   {
