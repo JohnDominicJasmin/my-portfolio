@@ -3,6 +3,7 @@ import ChatWidget from "@/components/ChatWidget";
 import ProjectList from "@/components/ProjectList";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import StructuredData from "@/components/StructuredData";
 import {
   automationProjects,
   capabilities,
@@ -29,6 +30,7 @@ export default function CvPage() {
       </a>
 
       <SiteHeader />
+      <StructuredData variant="person" />
 
       <main id="main">
       <section className="hero">

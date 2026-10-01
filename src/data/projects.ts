@@ -309,7 +309,7 @@ export const mobileProjects: Project[] = [
     coverAlt: "Cyclistance app",
     problem: "Cyclists stranded with no fast way to call for roadside help.",
     summary:
-      "Dynamic state management, low-latency database sync, and peer-to-peer mapping connect a stranded cyclist to the nearest available helper in a few taps.",
+      "A stranded rider taps once and the nearest available helper gets their exact GPS location, no directions to explain. Both positions stay live on the map as help gets closer.",
     intro:
       "An Android app that connects stranded cyclists with roadside help in a few taps, sending the closest available helper straight to their exact GPS location.",
     body: [
@@ -344,7 +344,7 @@ export const mobileProjects: Project[] = [
     coverAlt: "Byahero app",
     problem: "Missing your stop because there is no heads-up before it arrives.",
     summary:
-      "Real-time geolocation mapping, background processing, and geofencing alert commuters before their stop arrives.",
+      "Set your stop and relax. The app watches the route in the background and wakes you before you arrive, even with the screen off, so a long ride no longer ends in an overshoot.",
     intro:
       "An Android app that alerts commuters before their stop arrives, so falling asleep on the bus stops meaning a missed destination.",
     body: [
@@ -453,6 +453,11 @@ export const skillGroups = [
       "SQL",
       "NoSQL",
       "Docker",
+      "CI/CD",
+      "GitHub Actions",
+      "GitLab CI",
+      "Google Cloud (GCP)",
+      "Cloudflare Workers",
       "Git",
       "Figma",
     ],

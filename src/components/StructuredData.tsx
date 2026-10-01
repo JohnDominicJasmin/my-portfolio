@@ -7,12 +7,52 @@ import { email, siteUrl } from "@/data/site";
  * rate card and no review corpus, and inventing either is the kind of thing
  * Google penalises and prospects notice. Everything here is verifiable.
  */
-export default function StructuredData() {
+export default function StructuredData({
+  variant = "service",
+}: {
+  /** "person" is the recruiter-facing graph: no service listing. */
+  variant?: "service" | "person";
+}) {
   if (!siteUrl) return null;
+
+  const person = {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "John Dominic Jasmin",
+    url: `${siteUrl}/cv`,
+    email,
+    jobTitle: "AI Automation Engineer",
+    address: { "@type": "PostalAddress", addressCountry: "PH" },
+    sameAs: [
+      "https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0",
+      "https://github.com/JohnDominicJasmin",
+    ],
+    knowsAbout: [
+      "AI automation",
+      "AI agents",
+      "Voice agents",
+      "Claude Code",
+      "n8n",
+      "Python",
+      "FastAPI",
+      "TypeScript",
+      "Next.js",
+      "Android development",
+      "Kotlin",
+    ],
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: siteUrl,
+    name: "John Dominic Jasmin",
+    publisher: { "@id": `${siteUrl}/#person` },
+  };
 
   const data = {
     "@context": "https://schema.org",
-    "@graph": [
+    "@graph": variant === "person" ? [person, website] : [
       {
         "@type": "ProfessionalService",
         "@id": `${siteUrl}/#service`,
@@ -32,32 +72,8 @@ export default function StructuredData() {
           "Workflow automation",
         ],
       },
-      {
-        "@type": "Person",
-        "@id": `${siteUrl}/#person`,
-        name: "John Dominic Jasmin",
-        url: siteUrl,
-        email,
-        jobTitle: "AI Automation Engineer",
-        sameAs: [
-          "https://www.linkedin.com/in/john-dominic-jasmin-56645a1b0",
-          "https://github.com/JohnDominicJasmin",
-        ],
-        knowsAbout: [
-          "AI automation",
-          "Voice agents",
-          "n8n",
-          "Android development",
-          "Kotlin",
-        ],
-      },
-      {
-        "@type": "WebSite",
-        "@id": `${siteUrl}/#website`,
-        url: siteUrl,
-        name: "John Dominic Jasmin",
-        publisher: { "@id": `${siteUrl}/#person` },
-      },
+      person,
+      website,
     ],
   };
 
