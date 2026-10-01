@@ -156,6 +156,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
           <div className="modal__video">
             {loom ? (
               <iframe
+                title="Demo video"
                 src={loom}
                 allowFullScreen
                 allow="autoplay; fullscreen; picture-in-picture"

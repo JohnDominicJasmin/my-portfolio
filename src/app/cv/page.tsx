@@ -15,9 +15,9 @@ import "../portfolio.css";
 import "../chat.css";
 
 export const metadata: Metadata = pageMeta({
-  title: "CV: John Dominic Jasmin | AI Automation Engineer",
+  title: "John Dominic Jasmin | AI Automation Engineer & AI Developer",
   description:
-    "AI automation systems, a live SaaS product, and 6 years of production engineering. Work, skills and case studies for John Dominic Jasmin.",
+    "AI automation systems, a live SaaS product built with a multi-agent Claude Code team, and 6 years of production engineering. Work, skills and case studies.",
   path: "/cv",
 });
 
@@ -37,8 +37,10 @@ export default function CvPage() {
           <h1 className="hero__title">I build the systems businesses run on.</h1>
           <p className="hero__sub">
             AI chatbots, voice agents and lead-routing pipelines running for
-            real businesses, a live SaaS product of my own with paying users,
-            and 6 years of production Android in Kotlin behind all of it.
+            real businesses. A live SaaS product of my own, built with a
+            multi-agent Claude Code team I run daily. And 6 years of production
+            engineering behind all of it, including banking apps on secured
+            backend APIs.
           </p>
           {/* A recruiter's first three questions were unanswerable anywhere on
               this page: where are they, can I hire them, how long have they
@@ -95,12 +97,19 @@ export default function CvPage() {
               </p>
               <p>
                 I also build and run <strong>LiquidityHQ</strong>, my own live
-                SaaS product with paying users, so I know what it takes to ship
-                and operate something real, not just prototype it.
+                SaaS product for crypto traders. I built it with a{" "}
+                <strong>multi-agent Claude Code team</strong> I run every day:
+                developer, QA and PM/DevOps agents pick up GitHub issues, write
+                and test the code, and promote it from dev to staging to
+                production. I review the work and approve anything that touches
+                the live database or ships visually, so I know what it takes to
+                ship and operate something real, not just prototype it.
               </p>
               <p>
                 Underneath all of it is 6 years of production software
                 engineering, including{" "}
+                <strong>banking apps connected to secured backend banking APIs</strong>
+                , where I handled sensitive customer data, and{" "}
                 <strong>Android development in Kotlin</strong>. That is where
                 the reliability habits come from, and they are the reason these
                 systems hold up: my ingestion service rejects duplicate work
@@ -146,8 +155,9 @@ export default function CvPage() {
           <span className="eyebrow">Track 01</span>
           <h2 className="section__title">AI Automation</h2>
           <p className="section__lede">
-            Systems running for real businesses, plus a SaaS product of my own.
-            Each one replaced a specific manual process.
+            Production systems for real businesses, prototypes built to
+            production standards, and a SaaS product of my own. Each one
+            targets a specific manual process or failure point.
           </p>
           <ProjectList projects={automationProjects} />
         </div>

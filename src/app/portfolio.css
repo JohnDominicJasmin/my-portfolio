@@ -1002,7 +1002,8 @@ a {
   .btn--link,
   .chapter__demo,
   .contact__links a,
-  .footer__links a,
+  .hero__links a,
+  .footer__nav a,
   .header__burger {
     min-height: 44px;
     display: inline-flex;

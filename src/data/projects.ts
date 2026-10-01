@@ -35,14 +35,15 @@ export const automationProjects: Project[] = [
     problem:
       "Retail traders drowning in scattered market data across a dozen tabs, acting too late.",
     summary:
-      "A live SaaS product I built and run. Scores squeeze setups and whale activity across 50 coins in real time, with Grok reading 35 signals to give a direct trade bias. Free tier plus a $25/mo Pro plan, with paying users.",
+      "A live SaaS product I built and run. Scores squeeze setups and whale activity across 50 coins in real time, with Grok reading 35 signals to give a direct trade bias. Built with my multi-agent Claude Code team.",
     liveUrl: "https://liquidity-hq.com",
     intro:
-      "A live SaaS product I built and run: crypto trading intelligence for retail traders. Squeeze scores, whale alerts, AI analysis, and macro events in one dashboard. Free tier plus a $25/mo Pro plan, with real paying users.",
+      "A live SaaS product I built and run: crypto trading intelligence for retail traders. Squeeze scores, whale alerts, AI analysis, and macro events in one dashboard, with a free tier and a $25/mo Pro plan.",
     body: [
       "LiquidityHQ solves a real problem for retail crypto traders: too much market data scattered across too many places to act on before a move has already happened. It pulls live price, funding, and order-flow data across 50 coins, scores squeeze setups and whale activity in real time, and hands a trader one dashboard instead of a dozen open tabs.",
       "The AI layer runs on Grok (xAI). Pick a coin, hit Analyze, and it reads 35 live signals, including funding rate, CVD, open interest trend, squeeze score, whale flow, and GEX, then returns a direct, actionable trade bias instead of raw numbers to interpret yourself. A separate news pipeline classifies breaking geopolitical headlines from 12+ sources for how they would move crypto, with roughly a 1 minute lag from publish to alert.",
-      "It shipped with a real pricing model, not a demo: a free tier covering the dashboard, morning briefing, news feed, and limited AI analyses, plus a $25/mo Pro tier that adds Telegram alerts, unlimited price alerts, and deeper AI usage.",
+      "It is built around a real pricing model, not a demo: a free tier covering the dashboard, morning briefing, news feed, and limited AI analyses, plus a $25/mo Pro tier that adds Telegram alerts, unlimited price alerts, and deeper AI usage.",
+      "I built it with a multi-agent Claude Code team I run daily. Developer, QA and PM/DevOps agents pick up GitHub issues, write and test the code, and promote it from dev to staging to production. The QA agent writes the check before the feature exists and proves it fails on a bad build, so a passing test means something. I review the work and approve anything that touches the live database or ships visually.",
     ],
     shots: [
       {
@@ -78,11 +79,13 @@ export const automationProjects: Project[] = [
         label: "Built with",
         items: [
           "Next.js",
+          "Supabase",
           "Grok (xAI) API",
           "Binance API",
           "Bybit API",
           "Telegram Bot API",
           "Render",
+          "Claude Code agent team",
         ],
       },
       {
@@ -90,8 +93,8 @@ export const automationProjects: Project[] = [
         items: [
           "50 coins tracked",
           "35 signal types",
-          "Free plus $25/mo Pro",
-          "Real paying users",
+          "12+ news sources",
+          "About 1 min from headline to alert",
         ],
       },
     ],
@@ -411,9 +414,13 @@ export const skillGroups = [
     label: "Automation & AI",
     accent: true,
     items: [
+      "Claude Code",
+      "Codex",
       "n8n",
+      "Make",
+      "Zapier",
       "OpenAI",
-      "Anthropic Claude",
+      "Claude API",
       "Grok (xAI)",
       "RAG",
       "pgvector",
@@ -431,20 +438,22 @@ export const skillGroups = [
     ],
   },
   {
-    label: "Mobile & Backend",
+    label: "Web, Mobile & Backend",
     accent: false,
     items: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "PostgreSQL",
       "Kotlin",
       "Android",
       "Jetpack Compose",
       "Firebase",
       "Java",
-      "Next.js",
-      "TypeScript",
       "SQL",
       "NoSQL",
       "Docker",
-      "GIT",
+      "Git",
       "Figma",
     ],
   },
